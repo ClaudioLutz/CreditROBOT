@@ -167,3 +167,7 @@
 2025-05-13 10:25:02 - DE - Ich möchte meinen Webshop anbinden
 2025-05-13 10:25:59 - DE - Was muss ich wissen wenn ich Shopware habe?
 2025-05-13 10:26:50 - DE - Was für Möglichkeiten bietet die Systemintegration
+2025-05-13 11:27:41 - DE - Was für Möglichkeiten bietet die Systemintegration
+2025-05-13 11:28:20 - DE - Gibt es eine Direkt-Anbindung?
+2025-05-13 11:28:53 - DE - Gibt es eine Direkt-Anbindung?
+2025-05-13 11:29:33 - DE - Was kann ich tun wenn ich Schulden habe?

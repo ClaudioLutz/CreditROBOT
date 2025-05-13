@@ -14,13 +14,14 @@
       font-family: 'Open Sans', sans-serif;
     }
     body {
-      background-color: #EDECE5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: #f8f9fa; /* Changed background color */
+      display: flex; /* Restored for centering */
+      justify-content: center; /* Restored for centering */
+      align-items: center; /* Restored for centering */
       height: 100vh;
     }
     .chat-container {
+      /* margin: 20px; Removed margin, flexbox will center */
       width: 600px;
       height: 700px;
       background-color: white;
@@ -33,21 +34,33 @@
     .chat-header {
       background-color: #009EE2;
       color: white;
-      padding: 15px;
+      padding: 10px 15px; /* Adjusted padding */
       text-align: center;
       font-weight: bold;
       position: relative;
+      display: flex; /* For aligning items */
+      align-items: center; /* Vertically align items */
+    }
+    #header-logo {
+      height: 30px; /* Adjust as needed */
+      margin-right: 10px;
+    }
+    #chat-header-text {
+      flex-grow: 1; /* Allows text to take available space */
+      text-align: left; /* Align text to the left next to logo */
     }
     /* Language selector in header (top right) */
     #language-select {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: white;
-      color: #009EE2;
-      border: none;
+      position: static; /* Remove absolute positioning */
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
       padding: 5px;
       border-radius: 5px;
+      margin-left: auto; /* Pushes it to the right */
+    }
+    #language-select option {
+      color: black; /* Ensure dropdown options are visible */
     }
     .chat-messages {
       flex: 1;
@@ -65,12 +78,12 @@
     .user-message {
       background-color: #e6f2ff;
       float: right;
-      border-bottom-right-radius: 5px;
+      border-radius: 10px; /* Consistent rounded corners */
     }
     .bot-message {
       background-color: #f0f0f0;
       float: left;
-      border-bottom-left-radius: 5px;
+      border-radius: 10px; /* Consistent rounded corners */
       overflow: auto;
     }
     /* Styling for HTML content in bot messages */
@@ -135,6 +148,7 @@
 <body>
   <div class="chat-container">
     <div class="chat-header">
+      <img src="static/CR-RGB.png" alt="Creditreform Logo" id="header-logo"> <!-- Updated path to static folder -->
       <span id="chat-header-text">Creditreform Assistent</span>
       <select id="language-select">
         <option value="de">Deutsch</option>
