@@ -55,9 +55,9 @@ def scan_language_folders():
         if not os.path.exists(folder_path):
             print(f"[WARN] Folder {folder_path} does not exist, skipping.")
             continue
-        # List all .txt files in that folder
+        # List all .md files in that folder
         for filename in os.listdir(folder_path):
-            if filename.lower().endswith(".txt"):
+            if filename.lower().endswith(".md"):
                 full_path = os.path.join(folder_path, filename)
                 with open(full_path, "r", encoding="utf-8") as f:
                     text_content = f.read()

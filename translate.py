@@ -23,9 +23,9 @@ def translate_files_to_language(source_folder: str,
     # Ensure the target folder exists
     os.makedirs(target_folder, exist_ok=True)
 
-    # Process each .txt file in the source folder
+    # Process each .md file in the source folder
     for filename in os.listdir(source_folder):
-        if filename.endswith(".txt"):
+        if filename.endswith(".md"):
             source_path = os.path.join(source_folder, filename)
             target_path = os.path.join(target_folder, filename)
 

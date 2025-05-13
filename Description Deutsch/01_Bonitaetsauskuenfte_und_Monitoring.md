@@ -1,4 +1,4 @@
-# Bonitätsauskünfte kaufen aus dem Ausland
+# Bonitätsauskünfte
 
 ## Bonitätsauskünfte Inland
 (https://www.creditreform.ch/loesungen/auskuenfte-und-monitoring)
