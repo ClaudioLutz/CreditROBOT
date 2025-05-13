@@ -212,13 +212,16 @@ def chat():
         if not user_message:
             return jsonify({'error': 'No message provided'}), 400
 
-        # Log the question
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        with open("questions_log.txt", "a", encoding="utf-8") as log_file:
-            log_file.write(f"{timestamp} - {language.upper()} - {user_message}\n")
-
         # Retrieve best doc for the user query
         best_doc, score = retrieve_best_doc(user_message, user_lang=language)
+
+        # Log the question and the match
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        match_path  = best_doc['filepath'] if best_doc else "NO_MATCH"
+        match_score = f"{score:.3f}"          if best_doc else "-"
+        with open("questions_log.txt", "a", encoding="utf-8") as log:
+            log.write(f"{timestamp} | {language.upper()} | {user_message} | "
+                      f"{match_path} | {match_score}\n")
         if not best_doc:
             # fallback: no doc found or the folder was empty
             system_prompt = load_base_prompt(language)

@@ -1,8 +1,6 @@
 # Über uns
 https://www.creditreform.ch/creditreform/ueber-uns
 
-Kontaktformular (auch mit Rückrufservice) https://www.creditreform.ch/creditreform/kontakt
-
 ## Ziele und Werte von Creditreform
 
 - Creditreform schafft Sicherheit durch aktuelle und qualitativ hochwertige Daten.  
@@ -51,3 +49,6 @@ Kontaktformular (auch mit Rückrufservice) https://www.creditreform.ch/creditref
 - **700'000 Datensätze zu Schweizer Unternehmen**
 - **150 Mitarbeitende in der Schweiz**
 - **23 Landesgesellschaften in Europa und China**
+
+Mehr Informationen:
+- https://www.creditreform.ch/creditreform/ueber-uns

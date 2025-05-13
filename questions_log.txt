@@ -173,3 +173,21 @@
 2025-05-13 11:29:33 - DE - Was kann ich tun wenn ich Schulden habe?
 2025-05-13 11:43:17 - EN - I cant pay my bills.
 2025-05-13 12:18:30 - EN - What is system integration
+2025-05-13 12:22:52 - EN - how can i check the solvabilty of my customers?
+2025-05-13 12:28:46 | EN | how can i check the solvabilty of my customers? | Description English\06_ComplianceCHECK.txt | 0.786
+2025-05-13 12:32:04 | EN | how can i check the solvabilty of my customers? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.txt | 0.833
+2025-05-13 12:33:02 | EN | tell me about creditreform | Description English\04_Beratung_und_Analyse.txt | 0.881
+2025-05-13 12:34:30 | EN | tell me about creditreform | Description English\08_Ueber_uns.txt | 0.893
+2025-05-13 12:35:16 | EN | is this legal? | Description English\02_Inkasso.txt | 0.722
+2025-05-13 12:36:24 | EN | is this legal? | Description English\09_Rechtliche_Aspekte.txt | 0.752
+2025-05-13 12:37:00 | EN | Im not going to Pay this bill! | Description English\02_Inkasso.txt | 0.735
+2025-05-13 12:39:04 | EN | I want to become a member. | Description English\07_Mitgliedschaft.txt | 0.769
+2025-05-13 12:39:31 | EN | i want to now information about a company in sweden | Description English\08_Ueber_uns.txt | 0.755
+2025-05-13 12:40:56 | EN | i want to now information about a company in sweden | Description English\01_Bonitaetsauskuenfte_und_Monitoring.txt | 0.788
+2025-05-13 12:41:12 | EN | i want to now information about a company in italy | Description English\01_Bonitaetsauskuenfte_und_Monitoring.txt | 0.756
+2025-05-13 12:41:30 | EN | i want to now information about a company in china | Description English\01_Bonitaetsauskuenfte_und_Monitoring.txt | 0.752
+2025-05-13 12:52:09 | EN | why should i become member? | Description English\07_Mitgliedschaft.txt | 0.781
+2025-05-13 12:52:54 | DE | Wie viele Creditreform Gesellschafte gibt es? | Description Deutsch\08_Ueber_uns.txt | 0.875
+2025-05-13 12:55:58 | DE | Wie viele Creditreform Gesellschafte gibt es? | Description Deutsch\07_Mitgliedschaft.txt | 0.868
+2025-05-13 12:56:44 | DE | wo sind die standorte der schweizer creditreform gesellschaften? | Description Deutsch\08_Ueber_uns.txt | 0.850
+2025-05-13 12:58:35 | DE | Ich habe einen Kunden der seine Rechnungen nicht bezahlt | Description Deutsch\02_Inkasso.txt | 0.822

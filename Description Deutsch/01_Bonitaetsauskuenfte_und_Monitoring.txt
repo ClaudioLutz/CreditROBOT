@@ -90,5 +90,19 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_lo
 https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_loesungen/11_auskunft_monitoring/05_Flyer_International_DE.pdf
 - Strategische Partner oder Schlüsselkunden können auch in den wichtigsten europäischen Ländern überwacht werden.
 
+## ComplianceCHECK
+https://www.creditreform.ch/loesungen/know-your-customer
+https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_loesungen/11_auskunft_monitoring/04_Flyer_ComplianceCHECK_DE.pdf
+- Creditreform unterstützt Finanzintermediäre bei der Einhaltung der Geldwäschereiverordnung (GwV).  
+- ComplianceCHECK umfasst die Überprüfung der Identität wirtschaftlich Berechtigter, politisch exponierter Personen (PEP), Ex-PEPs und Einträge in Sanktionslisten sowie Watch- & Blacklisten.  
+- Die ComplianceCHECK-Auskunft kann sowohl via CrediWEB für Einzelfälle als auch via Schnittstelle CrediCONNECT bezogen werden.
+
+## Beratung und Analyse
+
+- Creditreform bietet Know-how für die Anreicherung von Stammdaten, die Analyse von Kundendaten und die Festlegung von kundenindividuellen Kreditlimiten.  
+- Creditreform ist Spezialistin für datenbasierte Auswertungen und verfügt über ein enormes Wissen aufgrund der Informationsbreite und -tiefe ihrer Datenbank.  
+- Creditreform kann auf Rohdaten zurückgreifen und diese zu aussagekräftigen Analysen verdichten, wie z.B. Potenzialanalysen des Marktes oder Vergleiche der Zahlungsweise von Kunden.  
+- Die Analysen ermöglichen es Unternehmen, individuelle Kreditentscheidungen festzulegen und zu standardisieren.  
+- Creditreform unterstützt bei der Identifikation von Kunden und der Ergänzung interner Informationen mit Bonitätsmerkmalen.
 
 Verweise auf das Kontaktformular bei weiteren Fragen [https://www.creditreform.ch/creditreform/kontakt]
