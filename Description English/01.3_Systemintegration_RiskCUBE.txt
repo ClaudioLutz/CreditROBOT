@@ -1,0 +1,158 @@
+# RiskCUBE
+
+**RiskCUBE** is a solution provided by Creditreform that enables online shops to offer the payment method "purchase on invoice" exclusively to credit-checked customers with manageable risk. Through an intelligent set of rules, risks and fraud attempts are identified and minimized. Shop operators can thus safely integrate the "invoice" payment method, which experience shows leads to higher conversion rates and increased sales.
+
+> *"With this module, we can now also sell on invoice in our webshop. Since then, our sales have increased by 30%." – Markus Roger Jenny, Managing Director, deinKonzept GmbH, Uznach*
+
+## Customer Need
+
+- "Invoice" is the most popular payment method in Swiss online commerce.
+- If this payment method is not offered, there is an increased risk of abandoned purchases.
+- Without credit checks, there is a potentially high risk of payment defaults.
+- RiskCUBE ensures that only customers with sufficient creditworthiness can use invoice purchasing.
+
+## Background
+
+- Due to the high popularity of invoice purchasing, fraud and payment defaults are a significant issue.
+- RiskCUBE determines, based on credit checks and other factors, whether the invoice option can be offered.
+
+## Scope of Services
+
+1. **Credit Check Before Displaying Payment Options**
+   - After entering address details during the ordering process, data is transmitted to RiskCUBE.
+   - RiskCUBE assesses the customer's creditworthiness and behavior.
+   - Depending on the result, payment methods are either restricted or permitted.
+
+2. **Individual Configuration Options**
+   - Invoice option only available with sufficient creditworthiness.
+   - Optionally: no invoice option for suspicious behavior, invalid addresses, or exceeded credit limits.
+   - Possibility to allow invoice payment even with medium creditworthiness (yellow) or unknown persons (no match).
+
+3. **Risk Management**
+   - Approval or blocking rules for specific time windows (e.g., nighttime block between 01:00 and 04:30).
+   - Definable minimum order values, maximum credit limits, and match tolerances.
+
+## Fraud Detection
+
+- **Suspicious Shop Behavior**: Invoice payment can be disabled if fraud indicators appear (e.g., multiple orders in a short time, differing delivery addresses, etc.).
+- **Invalid Postal Addresses**: No invoice option if the address does not exist or has been previously flagged as suspicious.
+- **Time-based Restrictions**: Nighttime block (no invoice purchases between 01:00 and 04:30).
+- **Known Fraudulent Addresses**: Blocked and reported by Creditreform.
+- **Additional IP Fraud Analysis**: Recommendation to use supplementary fraud add-ons.
+
+## Control Options (Excerpt)
+
+- **Match Tolerance**: Adjustable to allow minor address spelling errors.
+- **Minimum Order Value per Transaction**: Invoice purchase only above a certain order value.
+- **Individual Credit Limits**:
+  - B2B/B2C, per day and/or within a defined period (e.g., 30 days).
+  - Different limits depending on credit rating (green/yellow/red) or special customer types (public administration, etc.).
+- **Maximum Credit Limit in Case of System Failure**: Fallback rule if RiskCUBE or the interface is unavailable.
+- **Different Billing and Delivery Addresses**: Allow or block as desired.
+- **Payment Issues**: Automatic exclusion from invoice purchasing if past payment issues occurred.
+
+## General Procedure
+
+1. **Provide Information to Creditreform**
+   - Shop software and version
+   - Expected number of shop orders per year
+   - Planned installation date (plug-in or interface)
+
+2. **Review by Creditreform**
+   - Joint clarification with the respective development partner to determine if a plug-in exists for your shop version or if a custom integration is necessary.
+   - Preparation of an offer for credit checks.
+
+3. **Contract Conclusion and Installation**
+   - After contract signing, a Creditreform project manager coordinates the installation or integration.
+   - You receive access credentials, technical documentation, and further details for configuring your risk management.
+
+## Available Shop Plug-ins & Systems
+
+### General Overview
+
+- **Magento** (from version 2.2)
+- **PrestaShop** (version 8.1.x)
+- **Gambio** (from version 3.14)
+- **WooCommerce** (WordPress from version 5.3, PHP from version 7.4)
+- **Shopware** (from version 6 with RiskCUBE, from version 5.1.0 without RiskCUBE)
+- **PepperShop** (from version 9 with RiskCUBE, up to version 8 without RiskCUBE)
+- **AbaShop** (from version 2016 without RiskCUBE, with separate credit check)
+
+Current overview of all plug-ins:  
+[plugin.creditreform.ch](http://plugin.creditreform.ch)
+
+### Magento & Shopware
+
+- **Supported Countries**: Switzerland, Liechtenstein (for companies)
+- **Pricing**
+  - RiskCUBE license usage and setup: CHF 960 per year
+  - Setup fee (one-time): € 399 (incl. 2 hours support)
+  - Module fee: € 39 per month (annual prepayment)
+  - Credit check: Individual offer by Creditreform (flat rates cheaper with additional debt collection or delivery of payment experiences)
+
+- **Plug-in Partner**
+  - *LEONEX Internet GmbH*  
+    Technologiepark 6, DE-33100 Paderborn  
+    +49 5251 4142 500  
+    [www.leonex.de](https://www.leonex.de)  
+    info@leonex.de  
+
+### PrestaShop & WooCommerce
+
+- **Supported Countries**: Switzerland, Liechtenstein
+- **Pricing**
+  - RiskCUBE license usage and setup incl. shop plug-in: CHF 960 per year
+  - Credit check: Individual offer (flat rates possible, cheaper with additional debt collection or payment experiences)
+
+- **Download**
+  - **WooCommerce**: [WordPress Plug-in](https://wordpress.org/plugins/riskcube-von-creditreform-schweiz)
+  - **PrestaShop**: [addons.prestashop.com](https://addons.prestashop.com/de/search.php?search_query=riskcube&compatibility=8.1.7&)
+
+- **Plug-in Partner**
+  - *Masterhomepage GmbH*  
+    Thiersteinerallee 17, 4053 Basel  
+    +41 61 681 54 50  
+    [masterhomepage.ch](https://www.masterhomepage.ch)  
+    info@masterhomepage.ch  
+
+### PepperShop
+
+- **Supported Countries**: Switzerland, Liechtenstein (for companies)
+- **Pricing**
+  - RiskCUBE license with plug-in: CHF 960 p.a.
+  - RiskCUBE license *without* plug-in: CHF 660 p.a.
+  - Shop plug-in usage fee: CHF 9.60 per month (minimum term 12 months)
+  - Credit check: Individual offer (flat rates cheaper with additional debt collection or payment experiences)
+
+- **Plug-in Partner**
+  - *Glarotech GmbH*  
+    Toggenburgerstr. 156, 9500 Wil  
+    [www.peppershop.com](https://www.peppershop.com)
+
+### Gambio
+
+- **Supported Countries**: Switzerland, Liechtenstein (for companies)
+- **Pricing**
+  - RiskCUBE license usage and setup incl. shop plug-in: CHF 960 p.a.
+  - Shop plug-in: various licensing and support options (see details above)
+  - Credit check: Individual offer (flat rates cheaper with additional debt collection or payment experiences)
+
+- **Plug-in Partner**
+  - *WinHelp GmbH*  
+    Bienwaldstrasse 41, DE-76287 Rheinstetten  
+    +49 721 8198 7100  
+    [www.winhelp.eu](https://www.winhelp.eu)  
+    info@winhelp.eu  
+
+## Contact Creditreform AG
+
+- **Address**  
+  Teufener Strasse 36  
+  CH-9000 St. Gallen  
+- **Phone**  
+  +41 71 221 11 99  
+- **E-Mail**  
+  support@creditreform.ch  
+
+For detailed information on plug-ins, pricing, credit checks, and debt collection, please contact your account manager or visit  
+[plugin.creditreform.ch](http://plugin.creditreform.ch).

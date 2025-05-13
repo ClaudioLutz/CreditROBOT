@@ -171,3 +171,5 @@
 2025-05-13 11:28:20 - DE - Gibt es eine Direkt-Anbindung?
 2025-05-13 11:28:53 - DE - Gibt es eine Direkt-Anbindung?
 2025-05-13 11:29:33 - DE - Was kann ich tun wenn ich Schulden habe?
+2025-05-13 11:43:17 - EN - I cant pay my bills.
+2025-05-13 12:18:30 - EN - What is system integration

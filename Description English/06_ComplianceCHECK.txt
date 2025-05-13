@@ -1,0 +1,7 @@
+# ComplianceCHECK
+https://www.creditreform.ch/loesungen/know-your-customer  
+https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_loesungen/11_auskunft_monitoring/04_Flyer_ComplianceCHECK_DE.pdf  
+
+- Creditreform supports financial intermediaries in complying with the Anti-Money Laundering Ordinance (GwV).  
+- ComplianceCHECK includes verification of the identity of beneficial owners, politically exposed persons (PEP), former PEPs, as well as checks against sanction lists, watchlists, and blacklists.  
+- ComplianceCHECK reports can be obtained either via CrediWEB for individual cases or via the CrediCONNECT interface.

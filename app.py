@@ -38,16 +38,18 @@ def cosine_similarity(a, b):
 
 def scan_language_folders():
     """
-    Recursively scans the three folders:
+    Recursively scans the four folders:
       - "Description Deutsch"
       - "Description Französisch"
       - "Description Italienisch"
+      - "Description English"
     Each .txt file is read & embedded as a separate 'document'.
     """
     folders = [
         ("Description Deutsch", "de"),
         ("Description Französisch", "fr"),
         ("Description Italienisch", "it"),
+        ("Description English", "en"),
     ]
     for folder_path, lang_code in folders:
         if not os.path.exists(folder_path):
@@ -120,6 +122,15 @@ Sei un assistente altamente specializzato di Creditreform, in grado di fornire r
 
 Ecco le informazioni contestuali tratte dal documento corrispondente:
         """
+    elif language == 'en':
+        return """
+Respond in English.
+
+**Role:**  
+You are a highly-specialised Creditreform assistant who provides precise, expert answers about creditworthiness information, debt-collection and other Creditreform services.
+
+Here is contextual information taken from the relevant document:
+    """
     else:
         # fallback if unknown
         return "You are a Creditreform assistant. Please answer in HTML."
@@ -169,9 +180,23 @@ MANTIENITI BREVE
 SE NON SEI SICURO DELLA TUA RISPOSTA, RIMANDA AL MODULO DI CONTATTO:  
 [https://www.creditreform.ch/creditreform/kontakt](https://www.creditreform.ch/creditreform/kontakt)
 """
+    elif language == 'en':
+        return """
+**Answer format**
+- Answer *exclusively* in HTML
+- Use paragraphs `<p>` for continuous text
+- Use headings `<h4>` for titles
+- Use lists `<ul>`, `<li>` for bullet points
+
+Most important:
+YOU MUST ALWAYS OUTPUT *ALL* LINKS  
+KEEP IT SHORT  
+IF YOU ARE NOT SURE ABOUT YOUR ANSWER, REFER TO THE CONTACT FORM:  
+https://www.creditreform.ch/creditreform/kontakt
+"""
     else:
         # fallback if unknown
-        return "Please answer in HTML."    
+        return "Please answer in HTML."
 
 ########################################################
 # 2) FLASK ROUTES
