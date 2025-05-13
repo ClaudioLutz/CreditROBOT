@@ -1,0 +1,38 @@
+# Solution de recouvrement
+https://www.creditreform.ch/loesungen/systemintegration/forderungsmanagement-und-zahlungsabwicklung
+
+## Gestion optimisée des créances
+
+- **Gérez efficacement vos créances sans perdre le contrôle**
+  - Conservez un contrôle total sur vos créances
+  - Gestion professionnelle grâce à des solutions intégrées
+
+- **Réduisez les coûts et les efforts**
+  - Traitement simplifié des débiteurs
+  - Gestion efficace des retards de paiement
+  - Traitement optimisé des procédures de poursuite
+
+- **Solutions proposées par EGELI Informatik**
+  - Simplification durable des processus de recouvrement
+  - Logiciel spécialisé pour la gestion des créances
+
+## Interfaces intégrées avec Creditreform
+
+La solution de recouvrement offre des interfaces intégrées avec Creditreform pour :
+
+- **Identification des débiteurs**
+  - Identification fiable des débiteurs
+  - Comparaison avec la base de données Creditreform
+
+- **Évaluation de la solvabilité**
+  - Vérification automatisée de la solvabilité
+  - Évaluation des risques liés aux débiteurs
+
+- **Surveillance des débiteurs**
+  - Notification automatique en cas de changement de nom ou d'adresse
+  - Signalement des changements de solvabilité
+  - Information immédiate en cas d'annonce de faillite
+
+- **Obtention de renseignements officiels**
+  - Demande directe auprès du contrôle des habitants
+  - Obtention automatisée d'informations sur les poursuites

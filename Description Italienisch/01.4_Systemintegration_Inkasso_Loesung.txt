@@ -1,0 +1,38 @@
+# Soluzione di recupero crediti
+https://www.creditreform.ch/loesungen/systemintegration/forderungsmanagement-und-zahlungsabwicklung
+
+## Gestione ottimizzata dei crediti
+
+- **Gestire i crediti in modo efficiente senza perdere il controllo**
+  - Mantenete il pieno controllo sui vostri crediti
+  - Gestione professionale tramite soluzioni integrate
+
+- **Ridurre costi e impegno**
+  - Gestione semplificata dei debitori
+  - Elaborazione efficiente dei pagamenti insoluti
+  - Gestione ottimizzata delle procedure esecutive
+
+- **Soluzioni di EGELI Informatik**
+  - Semplificazione sostenibile dei processi di recupero crediti
+  - Software specializzato per la gestione dei crediti
+
+## Interfacce integrate con Creditreform
+
+La soluzione di recupero crediti offre interfacce integrate con Creditreform per:
+
+- **Identificazione dei debitori**
+  - Identificazione affidabile dei debitori
+  - Confronto con la banca dati Creditreform
+
+- **Valutazione della solvibilità**
+  - Verifica automatizzata dell'affidabilità creditizia
+  - Valutazione del rischio dei debitori
+
+- **Monitoraggio dei debitori**
+  - Notifica automatica in caso di cambiamenti di nome e indirizzo
+  - Segnalazione di variazioni della solvibilità
+  - Informazioni immediate in caso di dichiarazione di fallimento
+
+- **Ottenimento di informazioni ufficiali**
+  - Richiesta diretta presso l'ufficio anagrafe
+  - Ottenimento automatizzato di informazioni sulle procedure esecutive

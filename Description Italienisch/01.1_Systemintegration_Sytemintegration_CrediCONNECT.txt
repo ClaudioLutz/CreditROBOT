@@ -1,0 +1,26 @@
+# CrediCONNECT
+https://www.creditreform.ch/loesungen/systemintegration/individuelle-anbindung
+
+- La banca dati economica della Svizzera può essere collegata direttamente ad applicazioni principali come sistemi ERP o CRM.
+- Controlli di solvibilità, monitoraggio dei limiti di credito e altri processi possono essere integrati automaticamente nei processi aziendali.
+- **Opzioni di connessione flessibili**: Creditreform consente l'accesso tramite diversi protocolli e connessioni comuni.
+- **Adattamento ai sistemi del cliente**: integrazione possibile in infrastrutture di diversa complessità, da semplici a complesse.
+- **Consulenza tecnica e specialistica**: supporto completo per l'implementazione personalizzata delle vostre esigenze.
+
+## CrediCONNECT – Integrazione massima:
+- **Interfaccia in tempo reale** per un'integrazione dei dati rapida e flessibile.
+- Supporta sistemi come:
+  - Sistemi CRM
+  - Sistemi ERP
+  - Scorecard
+  - Applicazioni web personalizzate
+- **Formato XML** per lo scambio elettronico strutturato dei dati.
+- **Livello di automazione scalabile individualmente**: da sistemi POS completamente automatici fino ad applicazioni gestite manualmente.
+- Disponibile anche come **WebService**.
+
+## Collegamenti personalizzati possibili per:
+- Gestione degli indirizzi
+- Dati del registro di commercio
+- Informazioni economiche e sulla solvibilità
+- Collegamenti economici
+- Monitoraggio

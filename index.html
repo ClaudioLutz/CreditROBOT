@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaktive Hilfe</title>
+  <!-- Load Open Sans from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+    body {
+      background-color: #EDECE5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .chat-container {
+      width: 600px;
+      height: 700px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-header {
+      background-color: #009EE2;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      position: relative;
+    }
+    /* Language selector in header (top right) */
+    #language-select {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: white;
+      color: #009EE2;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+    }
+    .message {
+      margin-bottom: 15px;
+      max-width: 80%;
+      padding: 10px;
+      border-radius: 15px;
+      clear: both;
+      word-wrap: break-word;
+    }
+    .user-message {
+      background-color: #e6f2ff;
+      float: right;
+      border-bottom-right-radius: 5px;
+    }
+    .bot-message {
+      background-color: #f0f0f0;
+      float: left;
+      border-bottom-left-radius: 5px;
+      overflow: auto;
+    }
+    /* Styling for HTML content in bot messages */
+    .bot-message h4 {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      color: #009EE2;
+    }
+    .bot-message p {
+      margin-bottom: 10px;
+    }
+    .bot-message ul {
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+    .bot-message a {
+      color: #009EE2;
+      text-decoration: underline;
+    }
+    .chat-input {
+      display: flex;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-top: 1px solid #eee;
+    }
+    #user-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      outline: none;
+    }
+    #send-button {
+      background-color: #009EE2;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 15px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #send-button:hover {
+      background-color: #004884;
+    }
+    /* Spinner styling */
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #009EE2;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 10px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <span id="chat-header-text">Creditreform Assistent</span>
+      <select id="language-select">
+        <option value="de">Deutsch</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+      </select>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="message bot-message" id="welcome-message">
+        <p id="welcome-message-1">Willkommen beim Creditreform Assistenten. Wie kann ich Ihnen heute helfen?</p>
+        <p id="welcome-message-2">Sie können Fragen stellen zu Themen wie Mitgliedschaft, Bonitätsauskünfte, Inkasso oder technische Integration.</p>
+      </div>
+    </div>
+    <form id="chat-form" class="chat-input">
+      <input type="text" id="user-input" placeholder="Ihre Frage hier eingeben...">
+      <button type="submit" id="send-button">Senden</button>
+    </form>
+  </div>
+
+  <script>
+    // Translation object for the static texts
+    const translations = {
+      de: {
+        header: "Creditreform Assistent",
+        welcome1: "Willkommen beim Creditreform Assistenten. Wie kann ich Ihnen heute helfen?",
+        welcome2: "Sie können Fragen stellen zu Themen wie Mitgliedschaft, Bonitätsauskünfte, Inkasso oder technische Integration.",
+        placeholder: "Ihre Frage hier eingeben...",
+        sendButton: "Senden"
+      },
+      en: {
+        header: "Creditreform Assistant",
+        welcome1: "Welcome to the Creditreform Assistant. How can I help you today?",
+        welcome2: "You can ask questions about topics such as membership, credit checks, debt collection, or technical integration.",
+        placeholder: "Enter your question here...",
+        sendButton: "Send"
+      },
+      fr: {
+        header: "Assistant Creditreform",
+        welcome1: "Bienvenue chez l'Assistant Creditreform. Comment puis-je vous aider aujourd'hui?",
+        welcome2: "Vous pouvez poser des questions sur des sujets tels que l'adhésion, les vérifications de solvabilité, le recouvrement de créances ou l'intégration technique.",
+        placeholder: "Entrez votre question ici...",
+        sendButton: "Envoyer"
+      },
+      it: {
+        header: "Assistente Creditreform",
+        welcome1: "Benvenuto nell'Assistente Creditreform. Come posso aiutarti oggi?",
+        welcome2: "Puoi fare domande su argomenti come l'adesione, le verifiche di solvibilità, il recupero crediti o l'integrazione tecnica.",
+        placeholder: "Inserisci la tua domanda qui...",
+        sendButton: "Invia"
+      }
+    };
+
+    // When the document loads, detect the browser language and update UI texts accordingly.
+    document.addEventListener('DOMContentLoaded', function() {
+      // Detect browser language (e.g., "en-US" -> "en")
+      let browserLang = navigator.language || navigator.userLanguage;
+      let langCode = browserLang.slice(0, 2).toLowerCase();
+      const supportedLanguages = ['de', 'en', 'fr', 'it'];
+      if (!supportedLanguages.includes(langCode)) {
+        langCode = 'de'; // fallback if unsupported
+      }
+      
+      // Set the language-select dropdown to the detected language
+      const languageSelect = document.getElementById('language-select');
+      languageSelect.value = langCode;
+      
+      // Update the document language attribute
+      document.documentElement.lang = langCode;
+      
+      // Update all static text based on the detected language
+      document.getElementById('chat-header-text').textContent = translations[langCode].header;
+      document.getElementById('welcome-message-1').textContent = translations[langCode].welcome1;
+      document.getElementById('welcome-message-2').textContent = translations[langCode].welcome2;
+      document.getElementById('user-input').placeholder = translations[langCode].placeholder;
+      document.getElementById('send-button').textContent = translations[langCode].sendButton;
+    });
+
+    // Change static text based on user selection in the language dropdown
+    document.getElementById('language-select').addEventListener('change', function() {
+      const lang = this.value;
+      document.documentElement.lang = lang;
+      document.getElementById('chat-header-text').textContent = translations[lang].header;
+      document.getElementById('welcome-message-1').textContent = translations[lang].welcome1;
+      document.getElementById('welcome-message-2').textContent = translations[lang].welcome2;
+      document.getElementById('user-input').placeholder = translations[lang].placeholder;
+      document.getElementById('send-button').textContent = translations[lang].sendButton;
+    });
+
+    // Existing chat logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatMessages = document.getElementById('chat-messages');
+      const userInput = document.getElementById('user-input');
+      const sendButton = document.getElementById('send-button');
+
+      // Function to add a message to the chat
+      function addMessage(message, isUser) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message');
+        messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+        
+        if (isUser) {
+          // User messages are plain text
+          messageDiv.textContent = message;
+        } else {
+          // Bot messages may contain HTML
+          messageDiv.innerHTML = message;
+          // Make links open in a new tab
+          const links = messageDiv.querySelectorAll('a');
+          links.forEach(link => {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+          });
+        }
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      // Function to show loading indicator (spinner)
+      function showLoading() {
+        const loadingDiv = document.createElement('div');
+        loadingDiv.classList.add('message', 'bot-message');
+        loadingDiv.id = 'loading-message';
+
+        // Create spinner element
+        const spinner = document.createElement('div');
+        spinner.classList.add('spinner');
+
+        loadingDiv.appendChild(spinner);
+        chatMessages.appendChild(loadingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      // Function to remove loading indicator
+      function hideLoading() {
+        const loadingDiv = document.getElementById('loading-message');
+        if (loadingDiv) {
+          loadingDiv.remove();
+        }
+      }
+      
+      // Function to get bot response from API, including the selected language
+      async function getBotResponse(userMessage) {
+        showLoading();
+        try {
+          // Get the selected language value from the dropdown
+          const selectedLang = document.getElementById('language-select').value;
+          const response = await fetch('http://localhost:5000/api/chat', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            // Include both the user message and the language code
+            body: JSON.stringify({ message: userMessage, lang: selectedLang }),
+          });
+          
+          const data = await response.json();
+          if (!response.ok) {
+            throw new Error(data.error || 'Failed to get response');
+          }
+          return data.response;
+        } catch (error) {
+          return `<p>Entschuldigung, es ist ein Fehler aufgetreten: ${error.message}.</p>
+                  <p>Bitte stellen Sie sicher, dass der Python-Backend läuft und der API-Schlüssel konfiguriert ist.</p>`;
+        } finally {
+          hideLoading();
+        }
+      }
+
+      // Function to handle sending a message
+      async function sendMessage() {
+        try {
+          const message = userInput.value.trim();
+          if (message !== '') {
+            // Add user message to chat
+            addMessage(message, true);
+            userInput.value = '';
+            userInput.disabled = true;
+            sendButton.disabled = true;
+            
+            // Get and add bot response
+            const botResponse = await getBotResponse(message);
+            addMessage(botResponse, false);
+          }
+        } catch (error) {
+          addMessage(`<p>Ein Fehler ist aufgetreten: ${error.message}</p>`, false);
+        } finally {
+          userInput.disabled = false;
+          sendButton.disabled = false;
+          userInput.focus();
+        }
+      }
+
+      // Event listener for form submission
+      const chatForm = document.getElementById('chat-form');
+      chatForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        sendMessage();
+      });
+    });
+  </script>
+</body>
+</html>

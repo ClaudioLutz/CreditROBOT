@@ -1,0 +1,69 @@
+# Ready4 Credit Management – Svizzera per SAP
+https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_loesungen/14_systemintegration/_erp_cmgmt/00_ProduktFlyer_Ready4CMGMT_CH_DE_202308.pdf
+
+## Ambito delle prestazioni
+«Ready4 Credit Management – Svizzera» è un sistema di gestione del credito. Singoli sottoprocessi, come l'identificazione del cliente e la valutazione del rischio nella concessione del credito, possono essere gestiti in modo efficiente e trasparente direttamente in SAP.
+
+## Vantaggi per il cliente
+- **Risparmio di tempo:** nessuna interruzione del sistema grazie all'integrazione completa.
+- **Semplificazione dei processi:** nella creazione dei dati anagrafici, nella verifica e nel monitoraggio del rischio.
+- **Progetto di implementazione rapido ed economico.**
+- **Archiviazione strutturata di tutte le informazioni** in SAP®; evita richieste multiple.
+- **Valutazione efficiente** della struttura del rischio e delle caratteristiche rilevanti per la solvibilità.
+- **Collegamento completamente automatizzato dei dati anagrafici** (debitori, creditori o partner commerciali) con le informazioni Creditreform. Se necessario, semplice pulizia dei dati anagrafici tramite funzioni standard.
+- **Integrazione** nel pool di pagamento Creditreform Xchange.
+
+## Architettura
+- L'AddOn funziona sullo stesso sistema SAP ERP in un proprio namespace SAP-Partner.
+- Nessuna collisione con sviluppi personalizzati.
+- Comunicazione criptata basata su standard web.
+
+## Fornitore dell'AddOn SAP
+L'AddOn SAP è distribuito dalla società **SOA People AG**. Questo partner SAP Gold è un fornitore leader di soluzioni standard integrate SAP per la gestione del credito. Centinaia di clienti si affidano ai loro servizi.
+
+**SOA People AG**  
+Fautenbruchstrasse 46  
+D-76137 Karlsruhe  
+[www.soapeople.com](http://www.soapeople.com)
+
+## Funzioni
+- Ricerca online e recupero informazioni su aziende (Svizzera e Liechtenstein) e persone private (Svizzera).
+- Ricerca online e recupero informazioni estere.
+- Recupero batch ed elaborazione batch (richieste di massa).
+- Ordine e gestione di incarichi di ricerca e monitoraggio.
+- Ordine dell'estratto esecuzioni con upload della prova di interesse, visualizzazione strutturata delle informazioni in formato PDF.
+- Estrazione delle esperienze di pagamento Xchange.
+
+## Integrazione SAP
+- Integrazione nella gestione del credito SAP FD32 / FD33.
+- Integrazione nei partner commerciali SAP e FSCM.
+- Interfaccia utente classica in SAPGUI.
+- Nuova interfaccia utente in Fiori.
+
+## Procedura
+**1. Kick-Off Meeting**  
+Gli specialisti Creditreform raccolgono sul posto le esigenze aziendali. I risultati e le proposte di soluzione vengono documentati e i costi complessivi stimati approssimativamente.
+
+**2. Presentazione live**  
+Creditreform organizza una conferenza web per dimostrare dal vivo le funzioni e chiarire questioni tecniche.
+
+**3. Firma del contratto e pianificazione del progetto**  
+Dopo la firma del contratto, seguono la pianificazione dell'installazione e la formazione degli utenti.
+
+## Prezzi (IVA esclusa)
+- **Prezzo di noleggio incl. manutenzione software (READY4 Credit Rating Bureaus)**  
+  Una società (codice azienda) su un mandante produttivo:  
+  **Euro 6'000.- all'anno**  
+  *(ulteriori società su richiesta)*
+
+- **Messa in funzione, personalizzazione e formazione**  
+  **Euro 1'360.- al giorno** *(valore empirico: ca. 3-4 giorni)*
+
+- **Lingue disponibili:** Tedesco, Francese (altre lingue su richiesta)
+
+**Nota:**  
+Per i membri con modulo esistente, passando al nuovo AddOn non ci sono costi di licenza. Per la migrazione dei dati e la messa in funzione viene applicata una tariffa forfettaria di **Euro 5'000.-**.
+
+## Requisiti
+- Adesione a Creditreform
+- SAP® ECC 6.0 da EhP5 o S/4HANA

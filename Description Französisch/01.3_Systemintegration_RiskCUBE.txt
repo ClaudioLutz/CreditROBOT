@@ -1,0 +1,126 @@
+Voici la traduction complète du texte en français :
+
+# RiskCUBE
+
+**RiskCUBE** est une solution proposée par Creditreform permettant aux boutiques en ligne d'offrir le paiement sur facture uniquement aux clients dont la solvabilité a été vérifiée et dont le risque est calculable. Grâce à un système intelligent de règles, les risques et tentatives de fraude sont détectés et minimisés. Ainsi, les exploitants de boutiques peuvent intégrer en toute sécurité le paiement sur facture, ce qui entraîne généralement un taux de conversion plus élevé et une augmentation du chiffre d'affaires.
+
+> *« Grâce à ce module, nous pouvons désormais vendre sur facture dans notre boutique en ligne. Depuis, notre chiffre d'affaires a augmenté de 30 %. » – Markus Roger Jenny, Directeur général, deinKonzept GmbH, Uznach*
+
+## Besoin
+
+- En Suisse, le paiement sur facture est le mode de paiement préféré dans le commerce en ligne.
+- Si ce mode de paiement n'est pas proposé, le risque d'abandon d'achat augmente.
+- Sans vérification de solvabilité, il existe un risque élevé de défaut de paiement.
+- RiskCUBE garantit que seuls les clients ayant une solvabilité suffisante peuvent utiliser le paiement sur facture.
+
+## Contexte
+
+- En raison de la popularité élevée du paiement sur facture, la fraude et les défauts de paiement constituent un problème.
+- RiskCUBE détermine, sur la base d'une vérification de solvabilité et d'autres facteurs, si l'option de paiement sur facture peut être proposée.
+
+## Étendue des prestations
+
+1. **Vérification de solvabilité avant l'affichage des options de paiement**
+   - Après saisie des coordonnées dans le processus de commande, les données sont transmises à RiskCUBE.
+   - RiskCUBE évalue la solvabilité et le comportement de l'acheteur.
+   - Selon le résultat, les modes de paiement sont restreints ou autorisés.
+
+2. **Paramétrages individuels**
+   - Option facture uniquement en cas de solvabilité suffisante.
+   - Sur demande : pas d'option facture en cas de comportement suspect, adresse invalide ou dépassement des limites de crédit.
+   - Possibilité d'autoriser le paiement sur facture même en cas de solvabilité moyenne (jaune) ou de personne inconnue (aucun résultat).
+
+3. **Gestion des risques**
+   - Règles d'autorisation ou de blocage pour certaines périodes (par ex. blocage nocturne entre 01h00 et 04h30).
+   - Valeurs minimales de commande, limites maximales de crédit et tolérances de correspondance paramétrables.
+
+## Détection des fraudes
+
+- **Comportement suspect dans la boutique** : En cas d'indicateurs de fraude (par ex. plusieurs commandes en peu de temps, adresse de livraison différente, etc.), le paiement sur facture peut être désactivé.
+- **Adresses postales invalides** : Pas d'option facture si l'adresse n'existe pas ou est déjà signalée comme suspecte.
+- **Restrictions horaires** : Blocage nocturne (pas de paiement sur facture entre 01h00 et 04h30).
+- **Adresses frauduleuses connues** : Bloquées et signalées par Creditreform.
+- **Analyse complémentaire de fraude par IP** : Recommandation d'utiliser des modules complémentaires anti-fraude.
+
+## Options de paramétrage (extrait)
+
+- **Tolérance de correspondance** : Réglable pour autoriser par exemple de légères erreurs d'orthographe dans les adresses.
+- **Valeur minimale de commande par transaction** : Paiement sur facture uniquement à partir d'un certain montant d'achat.
+- **Limites de crédit individuelles** :
+  - B2B/B2C, par jour et/ou sur une période définie (par ex. 30 jours).
+  - Limites différentes selon le résultat de solvabilité (vert/jaune/rouge) ou type de client particulier (administration publique, etc.).
+- **Limite maximale de crédit en cas de panne du système** : Règle de secours si RiskCUBE ou l'interface n'est pas disponible.
+- **Adresse de facturation et de livraison différente** : Autoriser ou bloquer selon les préférences.
+- **Incidents de paiement** : Exclusion automatique du paiement sur facture en cas d'incidents passés.
+
+## Démarche (générale)
+
+1. **Transmission des informations à Creditreform**
+   - Logiciel de boutique et version
+   - Nombre prévu de commandes par an
+   - Date prévue pour l'installation (plug-in ou interface)
+
+2. **Vérification par Creditreform**
+   - Clarification avec le partenaire de développement concerné pour déterminer si un plug-in existe pour votre version de boutique ou si une connexion individuelle est nécessaire.
+   - Établissement d'une offre pour les vérifications de solvabilité.
+
+3. **Conclusion du contrat et installation**
+   - Après signature du contrat, un chef de projet Creditreform coordonne l'installation ou la connexion.
+   - Vous recevez les identifiants, la documentation technique et d'autres détails pour configurer votre gestion des risques.
+
+## Plug-ins & systèmes disponibles
+
+### Aperçu général
+
+- **Magento** (à partir de la version 2.2)
+- **PrestaShop** (version 8.1.x)
+- **Gambio** (à partir de la version 3.14)
+- **WooCommerce** (WordPress à partir de la version 5.3, PHP à partir de la version 7.4)
+- **Shopware** (à partir de la version 6 avec RiskCUBE, à partir de la version 5.1.0 sans RiskCUBE)
+- **PepperShop** (à partir de la version 9 avec RiskCUBE, jusqu'à la version 8 sans RiskCUBE)
+- **AbaShop** (à partir de la version 2016 sans RiskCUBE, avec vérification de solvabilité séparée)
+
+Aperçu actuel de tous les plug-ins :  
+[plugin.creditreform.ch](http://plugin.creditreform.ch)
+
+*(Pour des raisons de longueur, les détails spécifiques aux plug-ins, prix et partenaires ne sont pas répétés ici, mais peuvent être traduits sur demande.)*
+
+## API RiskCUBE & connexion individuelle
+
+- **Interface REST**
+  - API REST moderne et évolutive pour solutions individuelles.
+  - Documentation et accès fournis après signature d'un accord de confidentialité.
+
+- **Sans RiskCUBE**
+  - Possibilité d'intégrer des vérifications de solvabilité (adaptées) même sans les fonctions RiskCUBE.
+  - Nécessite une documentation d'interface séparée et éventuellement un développement propre.
+
+## Prix (résumé)
+
+1. **Licence RiskCUBE**
+   - Avec plug-in : CHF 960/an (sauf indication contraire)
+   - Sans plug-in : CHF 660/an
+
+2. **Coûts des plug-ins**
+   - Licences ou frais d'installation selon le système et le partenaire.
+
+3. **Vérification de solvabilité**
+   - Offres individuelles avec forfaits possibles (tarifs avantageux en cas de recouvrement supplémentaire ou de fourniture d'expériences de paiement).
+
+4. **Autres coûts**
+   - Installation, maintenance, mise à jour ou support selon les indications des partenaires.
+
+*Tous les prix s'entendent hors TVA.*
+
+## Contact Creditreform AG
+
+- **Adresse**  
+  Teufener Strasse 36  
+  CH-9000 St. Gallen  
+- **Téléphone**  
+  +41 71 221 11 99  
+- **E-mail**  
+  support@creditreform.ch  
+
+Pour des informations détaillées sur les plug-ins, tarifs, vérifications de solvabilité et recouvrement, veuillez contacter votre conseiller clientèle ou visiter  
+[plugin.creditreform.ch](http://plugin.creditreform.ch).
