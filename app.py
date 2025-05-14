@@ -48,7 +48,7 @@ def scan_language_folders():
     folders = [
         ("Description Deutsch", "de"),
         ("Description Französisch", "fr"),
-        ("Description Italienisch", "it"),
+        ("Description Italienisch", "it"),  # <-- Temporarily commented out
         ("Description English", "en"),
     ]
     for folder_path, lang_code in folders:
@@ -61,7 +61,13 @@ def scan_language_folders():
                 full_path = os.path.join(folder_path, filename)
                 with open(full_path, "r", encoding="utf-8") as f:
                     text_content = f.read()
+                print(f"Processing file: {full_path}, Length: {len(text_content)}")
+                
                 # Compute embedding
+                if not text_content.strip():
+                    print(f"[WARN] Skipping empty file: {full_path}")
+                    continue
+
                 emb = compute_embedding(text_content)
                 DOCS.append({
                     "language": lang_code,
