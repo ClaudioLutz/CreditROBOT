@@ -1,3 +1,7 @@
+What are Creditreform's main goals?
+Where does Creditreform get its data from?
+How many members does Creditreform have in Europe?
+
 # About Us
 
 ## Creditreform’s Goals and Values

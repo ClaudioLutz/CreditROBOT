@@ -260,3 +260,6 @@
 2025-05-14 14:27:09 | EN | Is creditreform better than criff? | Description English\04_Mitgliedschaft.md | 0.848
 2025-05-14 14:59:29 | DE | Darf die Creditreform Daten über mich speichern? | Description Deutsch\06_Rechtliche_Aspekte.md | 0.852
 2025-05-14 15:13:43 | DE | Is it legal that creditreform can save information about my company? | Description Deutsch\06_Rechtliche_Aspekte.md | 0.839
+2025-05-14 16:06:33 | DE | Is it legal that creditreform can save information about my company? | Description Deutsch\06_Rechtliche_Aspekte.md | 0.839
+2025-05-14 17:13:25 | EN | how can i check the solvabilty of my customers? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.792
+2025-05-14 17:19:53 | DE | is this legal? | Description Deutsch\06_Rechtliche_Aspekte.md | 0.745

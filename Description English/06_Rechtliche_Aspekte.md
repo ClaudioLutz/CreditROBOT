@@ -1,5 +1,7 @@
-Questions  
+Possible Questions:
 Is this legal?
+What rights do I have regarding my stored data under GDPR?
+How does Creditreform ensure data protection?
 
 # Legal Aspects of Credit Checks
 

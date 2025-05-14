@@ -84,8 +84,39 @@
       background-color: #f0f0f0;
       float: left;
       border-radius: 10px; /* Consistent rounded corners */
-      overflow: auto;
+      overflow: visible; /* Allow icon to be visible outside bounds */
+      position:relative;         /* anchor for ::after */
+      /* padding-right:50px;        REMOVED - icon is outside */
+      /* padding-bottom:45px;       REMOVED - icon is outside */
+      margin-right: 45px;       /* Make space for the icon outside */
     }
+
+    /* 2️⃣  Paint the icon to the bottom-right, OUTSIDE the bubble */
+    .bot-message::after{
+      content:"";
+      position:absolute;
+      right:-75px; /* Positioned 34px (width) + 8px (gap) to the right of the bubble */
+      bottom:-10px;  /* Slight offset from the bottom */
+      width:60px;                /* tweak to taste */
+      height:60px;
+      background:url('static/BotHead.png') no-repeat center/contain;
+      pointer-events:none;       /* clicks go through the image */
+      border-radius: 8px;
+    }
+
+    /* --- NEW tail that “points” to the icon --- */
+    .bot-message::before{
+      content:"";
+      position:absolute;
+      right:-7px;
+      bottom:10px;
+      width:50px;
+      height:50px;
+      background:#f0f0f0;   /* bubble colour */
+      transform:rotate(45deg);       /* makes a diamond shape */
+      border-radius:2px;             /* softens the edges     */
+    }
+
     /* Styling for HTML content in bot messages */
     .bot-message h4 {
       margin-top: 10px;
