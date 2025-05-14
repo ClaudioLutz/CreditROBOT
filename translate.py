@@ -6,7 +6,7 @@ def translate_files_to_language(source_folder: str,
                                 target_folder: str,
                                 language: str,
                                 openai_api_key: str,
-                                model_name: str = "gpt-4"):
+                                model_name: str = "gpt-4.1"):
     """
     Translates all .txt files in source_folder to a specified language using OpenAI GPT API
     and saves the translated files in target_folder.
@@ -39,7 +39,7 @@ def translate_files_to_language(source_folder: str,
                     model=model_name,
                     messages=[
                         {"role": "system", "content": "You are a helpful translator."},
-                        {"role": "user", "content": f"Translate the following text to {language}:\n\n{original_text}"}
+                        {"role": "user", "content": f"Translate the following text, but not the links, to {language}:\n\n{original_text}"}
                     ],
                     temperature=0
                 )
@@ -64,9 +64,9 @@ if __name__ == "__main__":
     YOUR_OPENAI_API_KEY =  "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"
 
     SOURCE_FOLDER = "Description Deutsch"
-    TARGET_FOLDER = "Description English"
-    TARGET_LANGUAGE = "English"
-    MODEL_NAME = "gpt-4.5-preview"
+    TARGET_FOLDER = "Description Italienisch"
+    TARGET_LANGUAGE = "Italian"
+    MODEL_NAME = "gpt-4.1"
 
     translate_files_to_language(
         source_folder=SOURCE_FOLDER,
