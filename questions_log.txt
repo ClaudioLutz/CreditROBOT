@@ -214,3 +214,49 @@
 2025-05-14 10:27:16 | DE | Ich möchte wissen ob ich mit der Firma Permapack ein Geschäft eingehen darf. | Description Deutsch\02_Inkasso.md | 0.773
 2025-05-14 10:31:16 | DE | Ich möchte wissen ob ich mit der Firma Permapack ein Geschäft eingehen darf. | Description Deutsch\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.782
 2025-05-14 10:32:21 | DE | Kann ich informationen über eine Firma in Nicaragua kaufen? | Description Deutsch\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.809
+2025-05-14 11:07:46 | EN | I want information about a company. | Description English\05_Ueber_uns.md | 0.765
+2025-05-14 11:08:12 | EN | I want information about a company. | Description English\05_Ueber_uns.md | 0.765
+2025-05-14 11:08:51 | EN | I want information about a company. | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.793
+2025-05-14 11:09:48 | EN | How can i become a member? | Description English\04_Mitgliedschaft.md | 0.783
+2025-05-14 11:11:55 | EN | How can i become a member? | Description English\04_Mitgliedschaft.md | 0.783
+2025-05-14 11:12:48 | EN | WHAT IF MY CUSTOMER WANT PAY? | Description English\02_Inkasso.md | 0.741
+2025-05-14 11:13:49 | EN | i need information about Company xyz | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.772
+2025-05-14 11:14:51 | EN | what can i do if my own company has a bad solvability? | Description English\02_Inkasso.md | 0.753
+2025-05-14 11:15:28 | EN | What solvability do i have? | Description English\02_Inkasso.md | 0.729
+2025-05-14 11:17:24 | EN | What solvability do i have? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.751
+2025-05-14 11:21:44 | EN | How to check my own solvency | Description English\02_Inkasso.md | 0.769
+2025-05-14 11:23:49 | EN | How to check my own solvency | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.810
+2025-05-14 11:25:32 | EN | How to check my own solvency | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.809
+2025-05-14 11:27:25 | EN | can i connect my backend system to creditreform? | Description English\03_Systemintegration.md | 0.858
+2025-05-14 11:28:04 | EN | how can i connect my system to creditreform | Description English\03_Systemintegration.md | 0.849
+2025-05-14 13:10:00 | EN | What are the benefits of using Creditreform credit reports? | Description English\04_Mitgliedschaft.md | 0.880
+2025-05-14 13:11:40 | EN | What are the benefits of using Creditreform credit reports? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.883
+2025-05-14 13:12:48 | EN | Can I get international credit reports? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.845
+2025-05-14 13:18:19 | EN | How can I check my own creditworthiness? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.835
+2025-05-14 13:18:50 | EN | What is ComplianceCHECK used for? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.787
+2025-05-14 13:19:29 | EN | What should I do if I receive a payment reminder from a collection agency? | Description English\02_Inkasso.md | 0.822
+2025-05-14 13:20:28 | EN | How high are the additional fees if payment is late? | Description English\02_Inkasso.md | 0.766
+2025-05-14 13:21:58 | EN | How does RiskCUBE help online shops? | Description English\03_Systemintegration.md | 0.810
+2025-05-14 13:22:36 | EN | What are Creditreform's main goals? | Description English\05_Ueber_uns.md | 0.892
+2025-05-14 13:23:28 | EN | How does Creditreform ensure data protection? | Description English\06_Rechtliche_Aspekte.md | 0.876
+2025-05-14 13:24:24 | EN | What rights do I have regarding my stored data under GDPR? | Description English\06_Rechtliche_Aspekte.md | 0.800
+2025-05-14 13:25:16 | EN | How can i find out what informations creditreform has about me? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.874
+2025-05-14 13:38:59 | EN | Can i integrate my webshop? | Description English\03_Systemintegration.md | 0.791
+2025-05-14 13:39:57 | EN | Can i use RiskCUBE without a plugin? | Description English\03_Systemintegration.md | 0.763
+2025-05-14 13:51:09 | EN | Can i use RiskCUBE without a plugin? | Description English\03_Systemintegration.md | 0.789
+2025-05-14 13:51:56 | EN | Can i use RiskCUBE without a plugin? | Description English\03_Systemintegration.md | 0.789
+2025-05-14 13:52:25 | EN | Can i integrate my webshop? | Description English\03_Systemintegration.md | 0.809
+2025-05-14 13:53:13 | EN | can you tell me more about Shopware? | Description English\03_Systemintegration.md | 0.777
+2025-05-14 13:58:55 | EN | how to use riskcube with magenot? | Description English\03_Systemintegration.md | 0.777
+2025-05-14 14:12:50 | EN | What are the benefits of using Creditreform credit reports? | Description English\04_Mitgliedschaft.md | 0.901
+2025-05-14 14:13:39 | EN | What should I do if I receive a payment reminder from a collection agency? | Description English\02_Inkasso.md | 0.822
+2025-05-14 14:15:02 | EN | Can i connect my Webshop?= | Description English\03_Systemintegration.md | 0.796
+2025-05-14 14:15:32 | EN | How many credit reports do members get per month? | Description English\04_Mitgliedschaft.md | 0.831
+2025-05-14 14:15:57 | EN | Where does Creditreform get its data from? | Description English\05_Ueber_uns.md | 0.878
+2025-05-14 14:16:17 | EN | How does Creditreform ensure data protection? | Description English\06_Rechtliche_Aspekte.md | 0.876
+2025-05-14 14:21:23 | EN | How does Creditreform ensure data protection? | Description English\06_Rechtliche_Aspekte.md | 0.876
+2025-05-14 14:21:33 | EN | How does Creditreform ensure data protection? | Description English\06_Rechtliche_Aspekte.md | 0.876
+2025-05-14 14:25:23 | EN | How can i get information about my self? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.793
+2025-05-14 14:27:09 | EN | Is creditreform better than criff? | Description English\04_Mitgliedschaft.md | 0.848
+2025-05-14 14:59:29 | DE | Darf die Creditreform Daten über mich speichern? | Description Deutsch\06_Rechtliche_Aspekte.md | 0.852
+2025-05-14 15:13:43 | DE | Is it legal that creditreform can save information about my company? | Description Deutsch\06_Rechtliche_Aspekte.md | 0.839

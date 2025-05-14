@@ -39,7 +39,7 @@ def translate_files_to_language(source_folder: str,
                     model=model_name,
                     messages=[
                         {"role": "system", "content": "You are a helpful translator."},
-                        {"role": "user", "content": f"Translate the following text, but not the links, to {language}:\n\n{original_text}"}
+                        {"role": "user", "content": f"Translate the following text to {language}:\n\n{original_text}"}
                     ],
                     temperature=0
                 )

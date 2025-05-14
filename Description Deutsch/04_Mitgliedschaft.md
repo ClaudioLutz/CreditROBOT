@@ -33,5 +33,6 @@ Die konkreten Vorteile einer Mitgliedschaft beinhalten unter anderem:
 - Persönliche Inkasso-Hotline und kostenfreies vorrechtliches Inkasso (ohne Eröffnungsgebühr)
 - Regelmäßige Publikationen wie die zweiwöchentliche Creditreform-Zeitung und der wöchentliche LETTER mit Informationen über Neueintragungen und Konkursmeldungen
 - Individuelle Beratung und Schulungen durch spezialisierte Experten vor Ort
+- Zugang zum [CrediWEB](https://www.crediweb.ch), Plattform zur Abfrage von Informationen über Firmen und Personen.
 
 Creditreform positioniert sich somit als strategischer Partner, der durch zuverlässige Informationen, ein effektives Inkassowesen und eine intensive Betreuung nachhaltig zum wirtschaftlichen Erfolg seiner Mitglieder beiträgt. Die Mitgliedschaft bei Creditreform ist daher eine wertvolle Investition in langfristige Sicherheit, Stabilität und Rentabilität.

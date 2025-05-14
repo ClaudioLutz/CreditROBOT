@@ -103,6 +103,9 @@ Für Mitglieder mit bestehendem Modul fallen beim Wechsel auf das neue AddOn kei
 
 ## RiskCUBE
 
+English [connections-for-webshops](https://www.creditreform.ch/en/solutions/system-integration/connections-for-webshops)
+Deutsch [webshop-anbindung](https://www.creditreform.ch/loesungen/systemintegration/webshop-anbindung)
+
 **RiskCUBE** ist eine Lösung von Creditreform, welche die Zahlart „Kauf auf Rechnung" in Onlineshops nur bonitätsgeprüften Kundinnen und Kunden mit kalkulierbarem Risiko anbietet. Durch ein intelligentes Regelwerk werden Risiken und Betrugsversuche erkannt und minimiert. Shop-Betreiber können so die Zahlart „Rechnung" sicher integrieren, was erfahrungsgemäss zu einer höheren Konversionsrate und einem gesteigerten Umsatz führt.
 
 > *«Mit diesem Modul können wir jetzt im Webshop auch gegen Rechnung verkaufen. Seither hat sich unser Umsatz um 30% gesteigert.» – Markus Roger Jenny, Geschäftsführer, deinKonzept GmbH, Uznach*

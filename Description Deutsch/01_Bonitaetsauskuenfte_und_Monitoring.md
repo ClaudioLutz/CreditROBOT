@@ -1,6 +1,12 @@
 Mögliche Fragen:
-Kann ich Informationen über eine Firma kaufen?
-Darf ich mit Firma X ein Geschäft eingehen?
+Kann ich Informationen über ein Unternehmen kaufen?
+Darf ich mit Firma X Geschäfte machen?
+Ich benötige eine Auskunft über ein Unternehmen
+Wie überprüfe ich meine eigene Bonität
+Was sind die Vorteile der Creditreform Wirtschaftsauskunft?
+Kann ich internationale Wirtschaftsauskünfte erhalten?
+Wie kann ich meine eigene Kreditwürdigkeit prüfen?
+Wofür wird ComplianceCHECK eingesetzt?
 
 # Bonitätsauskünfte
 
@@ -120,5 +126,7 @@ Verweise auf das Kontaktformular bei weiteren Fragen
 - Sobald eine Mitgliedschaft eröffnet wurde, erhalten Sie Zugang zum CrediWEB [https://www.crediweb.ch], wo sie Auskünfte über Firmen und Privatpersonen abfragen könnnen.
 
 ## Eigene Bonität prüfen
-- Verweise auf die Seite [Deutsch](https://www.creditreform.ch/ihr-recht/selbstauskunft) [English](https://www.creditreform.ch/en/creditreform/contact)
+- Verweise auf die Seite
+Deutsch [selbstauskunft](https://www.creditreform.ch/ihr-recht/selbstauskunft)  
+English [self-information](https://www.creditreform.ch/en/your-right/self-information)  
   Eine Selbstauskunft ist gratis und wird in der Regel innerhalb einer Woche per Post zugestellt.

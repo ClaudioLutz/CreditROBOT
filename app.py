@@ -195,7 +195,7 @@ SE NON SEI SICURO DELLA TUA RISPOSTA, RIMANDA AL MODULO DI CONTATTO:
 - Use lists `<ul>`, `<li>` for bullet points
 
 Most important:
-YOU MUST ALWAYS OUTPUT *ALL* LINKS  
+YOU MUST ALWAYS OUTPUT *ALL* LINKS. BUT IF POSSIBLE CHOOSE THE ONE IN THE CORRECT LANGUAGE
 KEEP IT SHORT  
 IF YOU ARE NOT SURE ABOUT YOUR ANSWER, REFER TO THE CONTACT FORM:  
 https://www.creditreform.ch/creditreform/kontakt
@@ -251,7 +251,7 @@ def chat():
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_message}
             ],
-            max_tokens=500,
+            max_tokens=700,
             temperature=0.0
         )
 

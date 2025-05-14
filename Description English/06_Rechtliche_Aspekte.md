@@ -1,4 +1,4 @@
-Questions
+Questions  
 Is this legal?
 
 # Legal Aspects of Credit Checks
@@ -9,7 +9,7 @@ English [your-right]https://www.creditreform.ch/en/your-right/your-right
 
 ## Data Protection and Data Security
 - Technical and organizational security measures to protect data
-- Encrypted communication (especially via Internet and email)
+- Encrypted communication (especially over the Internet and email)
 - Logging and traceability of all data access and disclosures
 - Data storage takes place exclusively in Switzerland
 
@@ -38,16 +38,16 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
 
 ### Data Protection Classification of Credit Reports
 - Disclosure of data for credit checks constitutes a transfer of data to third parties.
-- Client (customer) and credit agency are legally separate controllers under data protection law.
-- Not data processing on behalf, as credit agencies act independently and on their own responsibility.
+- The client (customer) and the credit agency are legally separate controllers under data protection law.
+- No data processing on behalf, as credit agencies act independently and on their own responsibility.
 
 ### Characteristics of Genuine Data Processing on Behalf (in the sense of data protection law)
-- The processor acts exclusively according to contractually fixed instructions of the client.
+- The processor acts exclusively according to contractually fixed instructions of the controller.
 - Examples:
   - Document destruction
   - Call center services
   - External mail delivery service providers
-- No own decision-making or scope for action for the processor.
+- The processor has no decision-making or discretionary power of its own.
 
 ### No Data Processing on Behalf for Credit Inquiries
 - Credit agencies conduct research independently and are responsible for their own disclosures.
@@ -141,22 +141,22 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
 - Data is stored as long as necessary to fulfill the purpose.
 
 ### Rights of Data Subjects
-- Information, correction, deletion, restriction of processing.
+- Access, correction, deletion, restriction of processing.
 - Right to data portability (Art. 20 EU GDPR).
 - Objection only possible for special, demonstrable reasons.
 
 ## Automated Decisions Switzerland
 
 1. **High-Risk Profiling**  
-   If the score directly leads to a decision with **significant impact** (e.g., credit denial, contract refusal), this is considered **high-risk profiling**:
+   If the score directly leads to a decision with **significant impact** (e.g., credit denial, contract refusal), this constitutes **high-risk profiling**:
    - It requires **a legal basis, consent, or contractual necessity**.
    - The affected person has the right to:
      - Information about the automated decision,
      - Information about the logic of the scoring,
-     - the **right to request human review**.
+     - **Request a human review**.
 
 2. **Transparency Obligation**  
-   Creditreform must disclose **how the score is calculated** (at least in general terms, e.g., which types of data are included). => https://www.creditreform.ch/ihr-recht/selbstauskunft
+   Creditreform must disclose **how the score is determined** (at least in general terms, e.g., which types of data are included). => https://www.creditreform.ch/ihr-recht/selbstauskunft
 
-3. **Accuracy and Up-to-dateness**  
-   The data on which the score is based must be **correct and up to date**. Otherwise, there is **a risk under the Unfair Competition Act (UWG)** or **the Swiss Civil Code (violation of personal rights)**.
+3. **Up-to-dateness and Accuracy**  
+   The data on which the score is based must be **correct and up to date**. Otherwise, there is a **risk under the Unfair Competition Act (UWG)** or **Swiss Civil Code (violation of personality rights)**.
