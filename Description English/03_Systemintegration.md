@@ -1,15 +1,17 @@
 # System Integration
-https://www.creditreform.ch/loesungen/systemintegration
+German [Systemintegration](https://www.creditreform.ch/loesungen/systemintegration)
+English [system-integration](https://www.creditreform.ch/en/solutions/system-integration)
 
-CrediCONNECT connection to ERP / accounting for credit checks | RiskCUBE connection to online shop for approval of purchase on account | Collection solution for optimized receivables management
+CrediCONNECT connection to ERP / accounting for credit checks | RiskCUBE connection to online shop for approval of purchase on account | Debt collection solution for optimized receivables management
 
 ## CrediCONNECT
-https://www.creditreform.ch/loesungen/systemintegration/individuelle-anbindung
+German [individuelle-anbindung](https://www.creditreform.ch/loesungen/systemintegration/individuelle-anbindung)
+English [individual-connection](https://www.creditreform.ch/en/solutions/system-integration/individual-connection)
 - The Swiss business database can be connected directly to core applications such as ERP or CRM systems.
 - Credit checks, monitoring of credit limits, and other processes can be automated and integrated into business processes.
 - **Flexible connection options**: Creditreform enables access via various common protocols and connections.
 - **Adaptation to customer systems**: Integration into different infrastructures is possible, from simple to complex.
-- **Technical and professional consulting**: Comprehensive support for the individual implementation of your needs.
+- **Technical and professional consulting**: Comprehensive support for the individual implementation of your requirements.
 
 ### CrediCONNECT – Maximum Integration:
 - **Realtime interface** for fast and flexible data integration.
@@ -18,7 +20,7 @@ https://www.creditreform.ch/loesungen/systemintegration/individuelle-anbindung
   - ERP systems
   - Scorecards
   - Own web applications
-- **XML format** for structured, electronic data exchange.
+- **XML format** for structured electronic data exchange.
 - **Individually scalable degree of automation**: From fully automated POS systems to manually controlled applications.
 - Also available as a **WebService**.
 
@@ -36,8 +38,8 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_lo
 "Ready4 Credit Management – Switzerland" is a credit management system. Individual subprocesses such as customer identification and risk assessment during credit granting can be handled efficiently and transparently in SAP.
 
 #### Customer Benefits
-- **Time savings:** No system break due to seamless integration.
-- **Process simplification:** For master data creation, risk assessment, and monitoring.
+- **Time savings:** no system break due to seamless integration.
+- **Process simplification:** for master data creation, risk assessment, and monitoring.
 - **Fast and cost-effective implementation project.**
 - **Storage of all information** in SAP® in a structured form; avoids multiple queries.
 - **Efficient analysis** of risk structure and credit-relevant characteristics.
@@ -46,7 +48,7 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_lo
 
 #### Architecture
 - AddOn runs on the same SAP-ERP system under its own SAP partner namespace.
-- No collision with in-house developments.
+- No conflict with in-house developments.
 - Encrypted communication based on web standards.
 
 #### Provider of the SAP AddOn
@@ -73,7 +75,7 @@ D-76137 Karlsruhe
 
 #### Procedure
 **1. Kick-off meeting**  
-Creditreform specialists record the business needs on site. Results and solution proposals are documented, total costs roughly estimated.
+Creditreform specialists record the business requirements on site. Results and solution proposals are documented, total costs roughly estimated.
 
 **2. Live presentation**  
 Creditreform organizes a web conference to demonstrate functions live and clarify technical questions.
@@ -88,7 +90,7 @@ After contract conclusion, planning of installation and user training follows.
   *(additional company codes on request)*
 
 - **Commissioning, customizing, and training**  
-  **Euro 1,360 per day** *(experience shows: approx. 3-4 days)*
+  **Euro 1,360 per day** *(experience shows approx. 3-4 days)*
 
 - **Available languages:** German, French (other languages on request)
 
@@ -101,7 +103,7 @@ For members with an existing module, there are no license costs when switching t
 
 ## RiskCUBE
 
-**RiskCUBE** is a solution from Creditreform that offers the payment method "purchase on account" in online shops only to credit-checked customers with a calculable risk. Through an intelligent set of rules, risks and fraud attempts are detected and minimized. Shop operators can thus safely integrate the "invoice" payment method, which, according to experience, leads to a higher conversion rate and increased sales.
+**RiskCUBE** is a solution from Creditreform that offers the payment method "purchase on account" in online shops only to customers with a credit check and calculable risk. Through an intelligent set of rules, risks and fraud attempts are detected and minimized. Shop operators can thus safely integrate the "invoice" payment method, which typically leads to a higher conversion rate and increased sales.
 
 > *"With this module, we can now also sell on account in the webshop. Since then, our sales have increased by 30%." – Markus Roger Jenny, Managing Director, deinKonzept GmbH, Uznach*
 
@@ -119,17 +121,17 @@ For members with an existing module, there are no license costs when switching t
 
 ### Scope of Services
 
-1. **Credit check before displaying payment options**  
-   - After entering address details in the order process, the data is passed to RiskCUBE.
+1. **Credit check before displaying payment options**
+   - After entering address details in the order process, the data is transferred to RiskCUBE.
    - RiskCUBE determines the creditworthiness and behavior of the buyer.
    - Depending on the result, payment methods are restricted or allowed.
 
-2. **Individual configuration options**  
+2. **Individual configuration options**
    - Invoice option only with sufficient creditworthiness.
    - On request: no invoice option in case of suspicious behavior, invalid address, or exceeding credit limits.
    - Option to still allow the "invoice" payment method for medium creditworthiness (yellow) or unknown person (no match).
 
-3. **Risk control**  
+3. **Risk control**
    - Approval or blocking rules for certain time windows (e.g., night block between 01:00 and 04:30).
    - Definable minimum order values, maximum credit limits, and match tolerances.
 
@@ -139,13 +141,13 @@ For members with an existing module, there are no license costs when switching t
 - **Postal invalid addresses**: No invoice option if the address does not exist or has already been reported as suspicious.
 - **Time-based restrictions**: Night block (no purchase on account between 01:00 and 04:30).
 - **Known fraud addresses**: Blocked and reported by Creditreform.
-- **Supplementary IP fraud analysis**: Recommendation to use additional fraud add-ons.
+- **Additional IP fraud analysis**: Recommendation to use additional fraud add-ons.
 
 ### Control Options (Excerpt)
 
 - **Match tolerance**: Adjustable to allow, for example, minor spelling errors in addresses.
 - **Minimum order value per transaction**: Purchase on account only from a certain purchase value.
-- **Individual credit limits**:  
+- **Individual credit limits**:
   - B2B/B2C, per day and/or within a defined period (e.g., 30 days).
   - Different limits depending on credit traffic light (green/yellow/red) or special customer type (public administration, etc.).
 - **Maximum credit limit in case of system failure**: Fallback rule if RiskCUBE or the interface is not available.
@@ -154,17 +156,17 @@ For members with an existing module, there are no license costs when switching t
 
 ### Procedure (General)
 
-1. **Submit information to Creditreform**  
+1. **Send information to Creditreform**
    - Shop software and version
    - Expected number of shop orders per year
    - Planned date for installation (plug-in or interface)
 
-2. **Check by Creditreform**  
+2. **Check by Creditreform**
    - Joint clarification with the respective development partner whether a plug-in exists for your shop version or an individual connection is necessary.
    - Preparation of an offer for credit checks.
 
-3. **Contract conclusion and installation**  
-   - After contract conclusion, a Creditreform project manager coordinates the installation or connection.
+3. **Contract conclusion and installation**
+   - After conclusion of the contract, a Creditreform project manager coordinates the installation or connection.
    - You receive access data, technical documentation, and further details for configuring your risk control.
 
 ### Available Shop Plug-ins & Systems
@@ -189,7 +191,7 @@ A current overview of all plug-ins:
   - Use and setup of the RiskCUBE license: CHF 960 per year
   - Setup costs (one-time): €399 (incl. 2 hours support)
   - Module costs: €39 per month (annual prepayment)
-  - Credit check: Individual offer by Creditreform (flat rates cheaper with additional collection or provision of payment experiences)
+  - Credit check: Individual offer by Creditreform (flat rates cheaper with additional debt collection or provision of payment experiences)
 
 - **Plug-in partner**
   - *LEONEX Internet GmbH*
@@ -203,7 +205,7 @@ A current overview of all plug-ins:
 - **Supported countries**: Switzerland, Liechtenstein
 - **Prices**
   - Use and setup of the RiskCUBE license incl. shop plug-in: CHF 960 per year
-  - Credit check: Individual offer (flat rates possible, cheaper with additional collection or provision of payment experiences)
+  - Credit check: Individual offer (flat rates possible, cheaper with additional debt collection or provision of payment experiences)
 
 - **Download**
   - **WooCommerce**: [WordPress plug-in](https://wordpress.org/plugins/riskcube-von-creditreform-schweiz)
@@ -223,7 +225,7 @@ A current overview of all plug-ins:
   - RiskCUBE license with plug-in: CHF 960 p.a.
   - RiskCUBE license *without* plug-in: CHF 660 p.a.
   - Shop plug-in usage fee: CHF 9.60 per month (minimum term 12 months)
-  - Credit check: Individual offer (flat rates cheaper with additional collection or provision of payment experiences)
+  - Credit check: Individual offer (flat rates cheaper with additional debt collection or provision of payment experiences)
 
 - **Plug-in partner**
   - *Glarotech GmbH*
@@ -239,7 +241,7 @@ A current overview of all plug-ins:
     - License per URL (one-time): €150 (maintenance/upgrade as needed)
     - License per URL *incl. maintenance/upgrade*: €29 per month (minimum term 12 months)
     - Installation support (one-time, recommended): €340
-  - Credit check: Individual offer (flat rates cheaper with additional collection or payment experiences)
+  - Credit check: Individual offer (flat rates cheaper with additional debt collection or payment experiences)
 
 - **Plug-in partner**
   - *WinHelp GmbH*
@@ -266,7 +268,7 @@ A current overview of all plug-ins:
 
 - **Configuration options for payment methods** (examples from AbaShop):
   - Credit check before, during, or after payment selection.
-  - Time interval for updating the credit check.
+  - Time interval for updating the credit check query.
   - Invoice option for credit yellow (yes/no), no match (yes/no), or in case of connection error (yes/no).
   - Restriction to shopping carts from CHF X to CHF Y.
   - Minimum order amounts for displaying the invoice option.
@@ -274,7 +276,7 @@ A current overview of all plug-ins:
 **Requirements**
 - Abacus from version 2016
 - Membership with Creditreform
-- If applicable, collection processing via Creditreform (recommended)
+- If applicable, debt collection processing via Creditreform (recommended)
 
 ### RiskCUBE API & Individual Connection
 
@@ -297,7 +299,7 @@ A current overview of all plug-ins:
    - Partly monthly, partly one-time license or installation costs depending on system and partner.
 
 3. **Credit check**
-   - Individual offers with flat rates (discounted with additional collection or provision of payment experiences).
+   - Individual offers with flat rates (cheaper with additional debt collection or provision of payment experiences).
 
 4. **Other costs**
    - Installation, maintenance, upgrade, or support according to the information provided by the respective plug-in partners.
@@ -314,15 +316,16 @@ A current overview of all plug-ins:
 - **E-mail**
   support@creditreform.ch
 
-For detailed information on plug-ins, prices, credit checks, and collections, please contact your account manager or visit  
+For detailed information about plug-ins, prices, credit checks, and debt collection, please contact your account manager or visit  
 [plugin.creditreform.ch](http://plugin.creditreform.ch).
 
-## Collection Solution
-https://www.creditreform.ch/loesungen/systemintegration/forderungsmanagement-und-zahlungsabwicklung
+## Debt Collection Solution
+German [forderungsmanagement-und-zahlungsabwicklung](https://www.creditreform.ch/loesungen/systemintegration/forderungsmanagement-und-zahlungsabwicklung)
+English [debt-collection-and-and-payment-processing](https://www.creditreform.ch/en/solutions/system-integration/debt-collection-and-and-payment-processing)
 - **Optimized receivables management**
   - Manage receivables efficiently without giving up control
   - Reduce costs and effort (accounts receivable management, outstanding payments, debt collection)
-  - Solutions from EGELI Informatik sustainably simplify processes in collections
+  - Solutions from EGELI Informatik sustainably simplify processes in debt collection
 
 - **Integrated interfaces to Creditreform for:**
   - Debtor identification

@@ -1,10 +1,12 @@
 # Systemintegration
-https://www.creditreform.ch/loesungen/systemintegration
+Deutsch [Systemintegration](https://www.creditreform.ch/loesungen/systemintegration)
+English [system-integration](https://www.creditreform.ch/en/solutions/system-integration)
 
 CrediCONNECT Anbindung an ERP / Buchaltung für Bonitätsprüfung | RiskCUBE Anbindung an Online Shop für Freigabe für Bestellung auf Rechnung | Inkasso-Lösung für Opimitertes Forderungsmanagement
 
 ## CrediCONNECT
-https://www.creditreform.ch/loesungen/systemintegration/individuelle-anbindung
+Deutsch [individuelle-anbindung](https://www.creditreform.ch/loesungen/systemintegration/individuelle-anbindung)
+English [individual-connection](https://www.creditreform.ch/en/solutions/system-integration/individual-connection)
 - Die Wirtschaftsdatenbank der Schweiz kann direkt an Kernapplikationen wie ERP- oder CRM-Systeme angebunden werden.
 - Bonitätsprüfungen, Überwachung von Kreditlimiten und andere Prozesse können automatisiert in Geschäftsprozesse integriert werden.  
 - **Flexible Anbindungsmöglichkeiten**: Creditreform ermöglicht Zugriff über diverse gängige Protokolle und Verbindungen.
@@ -318,7 +320,8 @@ Für detaillierte Auskünfte zu Plug-ins, Preisen, Bonitätsprüfungen und Inkas
 [plugin.creditreform.ch](http://plugin.creditreform.ch).
 
 ## Inkasso-Lösung
-https://www.creditreform.ch/loesungen/systemintegration/forderungsmanagement-und-zahlungsabwicklung
+Deutsch [forderungsmanagement-und-zahlungsabwicklung](https://www.creditreform.ch/loesungen/systemintegration/forderungsmanagement-und-zahlungsabwicklung)
+English [debt-collection-and-and-payment-processing](https://www.creditreform.ch/en/solutions/system-integration/debt-collection-and-and-payment-processing)
 - **Optimiertes Forderungsmanagement**
   - Forderungen effizient verwalten, ohne Kontrolle abzugeben
   - Kosten und Aufwand reduzieren (Debitorenhandling, Zahlungsausstände, Betreibungen)

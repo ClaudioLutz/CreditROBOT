@@ -1,7 +1,12 @@
+Mögliche Fragen:
+Kann ich Informationen über eine Firma kaufen?
+Darf ich mit Firma X ein Geschäft eingehen?
+
 # Bonitätsauskünfte
 
 ## Bonitätsauskünfte Inland
-(https://www.creditreform.ch/loesungen/auskuenfte-und-monitoring)
+[auskuenfte-und-monitoring](https://www.creditreform.ch/loesungen/auskuenfte-und-monitoring)
+[information-and-monitoring](https://www.creditreform.ch/en/solutions/information-and-monitoring)
 - **Creditreform stellt Bonitätsauskünfte bereit**, um Transparenz in Geschäftsbeziehungen zu schaffen und Risiken zu minimieren.  
 - Diese Auskünfte helfen Unternehmen, **die Fähigkeit von Geschäftspartnern einzuschätzen**, ihren Zahlungsverpflichtungen nachzukommen.  
 - Creditreform **bewertet bonitätsrelevante Inhalte** und stellt das Ergebnis in Form von Teilscores, Risikoklassen, Bonitätsbändern oder Bonitätsampeln dar.  
@@ -74,9 +79,9 @@ Die Creditreform Wirtschaftsauskunft International bietet somit ein **wichtiges 
 
 Mit den Auslandsauskünften von Creditreform erhalten Unternehmen einen umfassenden, **länderübergreifenden Einblick** in die Bonität ihrer potenziellen und bestehenden Geschäftspartner. So lassen sich **internationale Geschäftsbeziehungen** noch sicherer und transparenter gestalten.
 
-# Monitoring
+## Monitoring
 
-## Monitoring Schweiz
+### Monitoring Schweiz
 https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_loesungen/11_auskunft_monitoring/01_Prospekt_Auskuenfte_Monitoing_DE.pdf
 - Creditreform bietet Monitoring-Services an, um Unternehmen über aktuelle Veränderungen in Bezug auf ihre Kunden auf dem Laufenden zu halten.  
 - Durch ein systematisches Monitoring werden laufend aktuelle Daten zur Verfügung gestellt, und Unternehmen können entscheiden, welche Informationen für sie relevant sind.  
@@ -86,12 +91,14 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_lo
 - Bei CrediRISK und CrediCHECK ist ein Signalmonitoring inklusive.  
 - Die Monitoring-Verwaltung im CrediWEB ermöglicht die Verwaltung und den Abruf von Überwachungen.  
 
-## Monitoring Ausland 
+### Monitoring Ausland 
 https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_loesungen/11_auskunft_monitoring/05_Flyer_International_DE.pdf
 - Strategische Partner oder Schlüsselkunden können auch in den wichtigsten europäischen Ländern überwacht werden.
 
 ## ComplianceCHECK
-https://www.creditreform.ch/loesungen/know-your-customer
+[ComplianceCHECK Deutsch](https://www.creditreform.ch/loesungen/know-your-customer)
+[ComplianceCHECK English](https://www.creditreform.ch/en/solutions/know-your-customer)
+
 https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_loesungen/11_auskunft_monitoring/04_Flyer_ComplianceCHECK_DE.pdf
 - Creditreform unterstützt Finanzintermediäre bei der Einhaltung der Geldwäschereiverordnung (GwV).  
 - ComplianceCHECK umfasst die Überprüfung der Identität wirtschaftlich Berechtigter, politisch exponierter Personen (PEP), Ex-PEPs und Einträge in Sanktionslisten sowie Watch- & Blacklisten.  
@@ -105,4 +112,13 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_lo
 - Die Analysen ermöglichen es Unternehmen, individuelle Kreditentscheidungen festzulegen und zu standardisieren.  
 - Creditreform unterstützt bei der Identifikation von Kunden und der Ergänzung interner Informationen mit Bonitätsmerkmalen.
 
-Verweise auf das Kontaktformular bei weiteren Fragen [https://www.creditreform.ch/creditreform/kontakt]
+Verweise auf das Kontaktformular bei weiteren Fragen 
+[Deutsch](https://www.creditreform.ch/creditreform/kontakt)
+[English](https://www.creditreform.ch/en/creditreform/contact)
+
+## Bonitätsauskünfte abfragen
+- Sobald eine Mitgliedschaft eröffnet wurde, erhalten Sie Zugang zum CrediWEB [https://www.crediweb.ch], wo sie Auskünfte über Firmen und Privatpersonen abfragen könnnen.
+
+## Eigene Bonität prüfen
+- Verweise auf die Seite [Deutsch](https://www.creditreform.ch/ihr-recht/selbstauskunft) [English](https://www.creditreform.ch/en/creditreform/contact)
+  Eine Selbstauskunft ist gratis und wird in der Regel innerhalb einer Woche per Post zugestellt.

@@ -1,5 +1,4 @@
 # Über uns
-https://www.creditreform.ch/creditreform/ueber-uns
 
 ## Ziele und Werte von Creditreform
 
@@ -51,4 +50,5 @@ https://www.creditreform.ch/creditreform/ueber-uns
 - **23 Landesgesellschaften in Europa und China**
 
 Mehr Informationen:
-- https://www.creditreform.ch/creditreform/ueber-uns
+Deutsch [ueber-uns](https://www.creditreform.ch/creditreform/ueber-uns)
+English [about-us](https://www.creditreform.ch/en/creditreform/about-us)

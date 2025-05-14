@@ -64,8 +64,8 @@ if __name__ == "__main__":
     YOUR_OPENAI_API_KEY =  "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"
 
     SOURCE_FOLDER = "Description Deutsch"
-    TARGET_FOLDER = "Description Italienisch"
-    TARGET_LANGUAGE = "Italian"
+    TARGET_FOLDER = "Description English"
+    TARGET_LANGUAGE = "English"
     MODEL_NAME = "gpt-4.1"
 
     translate_files_to_language(

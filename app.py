@@ -153,7 +153,7 @@ def load_final_prompt(language='de'):
 - Verwende Listen <ul>, <li> für Aufzählungen
 
 Am allerwichtigste:
-DU MUSST IMMER ALLE LINKS AUSGEBEN
+DU MUSST IMMER ALLE LINKS AUSGEBEN. WENN VORHANDEN IN DER RICHTIGEN SPRACHE
 HALTE DICH KURZ
 WENN DU NICHT SICHER BIST BEI DEINER ANTWORT VERWEISE AUF DAS KONTAKTFORMULAR: https://www.creditreform.ch/creditreform/kontakt
         """

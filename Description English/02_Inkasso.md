@@ -1,26 +1,27 @@
 # Debt Collection
 
-## INFO FOR CREDITORS (Companies/Customers of Creditreform)
+## INFO FOR CREDITORS (Companies/Clients of Creditreform)
 
 ---
 
-### Debt Collection: Fast Collection of Receivables and Securing Liquidity
+### Debt Collection: Fast Recovery of Claims and Securing Liquidity
 
 - **Services**  
   - Pre-legal, legal, and judicial debt collection as well as realization of loss certificates  
-  - Online portal for submitting outstanding receivables  
-  - Calculation of realization chances via [inkassorechner.ch](https://inkassorechner.ch/)  
+  - Online portal for submitting outstanding claims  
+  - Calculation of recovery chances via inkassorechner.ch  
 - **Advantages**  
   - Accelerated receipt of payments  
   - Minimization of defaults  
   - Reduction of administrative burden  
 - **Process**  
-  - **Pre-legal collection**: Debtor identification, credit check, payment request, mediation, installment agreement and monitoring  
+  - **Pre-legal collection**: Debtor identification, credit check, payment reminder, mediation, installment agreement and monitoring  
   - **Legal/Judicial collection**: Legally compliant execution of debt enforcement, continuation, realization, bankruptcy petitions; communication with authorities  
 - **Further Information**  
-  - [Debt Collection and Receivables Management](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement)  
-  - [Debt Collection Order for Members](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement/inkassoauftrag-erteilen)
-
+  - German Inkasso- und Forderungsmanagement  
+  - English debt-collection  
+  - German Inkassoauftrag für Mitglieder  
+  - English issue-a-collection-order  
 ---
 
 ### Successful Dunning Process: Procedure and Advantages
@@ -31,7 +32,7 @@
 
 2. **Our Service**  
    - Identification and credit check of the debtor  
-   - Mediation and payment request, installment agreement, monitoring  
+   - Mediation and payment reminder, installment agreement, monitoring  
 
 3. **Your Advantage**  
    - Maintain customer relationships  
@@ -66,13 +67,13 @@
 
 2. **Our Service**  
    - Contact with authorities, deadline monitoring  
-   - Objections, applications for debt enforcement, conciliation requests  
+   - Legal objections, requests for legal opening, conciliation requests  
    - International network via trusted attorneys  
 
 3. **Your Advantage**  
    - Professional, cost-effective process with transparent costs  
    - Administrative relief, fee only in case of success  
-   - Optional **CrediCAP Debt Collection Insurance**  
+   - Optional **CrediCAP debt collection insurance**  
    - Worldwide support  
 
 ---
@@ -80,7 +81,7 @@
 ### Turning Loss Certificates into Liquidity
 
 1. **What You Do**  
-   - Submit loss certificates or written-off receivables, report direct payments  
+   - Submit loss certificates or written-off claims, report direct payments  
 
 2. **Our Service**  
    - Persistent management of your loss certificates  
@@ -98,16 +99,16 @@
 ### CrediCAP Debt Collection Insurance for SMEs
 
 1. **Common Challenge**  
-   - Objection makes collection of receivables more difficult  
+   - Legal objection makes debt collection more difficult  
 
 2. **Solution**  
-   - Insurance for court and attorney costs in case of objection  
+   - Insurance for court and attorney costs in case of legal objection  
    - Exclusive for Creditreform members  
 
 3. **Conditions**  
    - Membership with Creditreform  
    - Max. 25 employees **or** CHF 6 million annual turnover  
-   - Receivables between CHF 1,000 and CHF 25,000  
+   - Claims between CHF 1,000 and CHF 25,000  
    - Max. 3 cases per year  
    - Documented order (delivery note or order confirmation)  
    - No connection to projects requiring building permits  
@@ -115,7 +116,7 @@
 4. **Your Advantage**  
    - Protection against legal costs  
    - Legal pursuit without cost risk  
-   - Greater certainty in decision-making when collecting receivables  
+   - Greater certainty in decision-making for debt collection  
 
 
 ### Integrated Debt Collection Interfaces to Creditreform
@@ -124,7 +125,7 @@ The debt collection solution offers integrated interfaces to Creditreform for:
 
 - **Debtor Identification**
   - Reliable identification of debtors
-  - Comparison with Creditreform database
+  - Matching with Creditreform database
 
 - **Credit Assessment**
   - Automated creditworthiness check
@@ -150,33 +151,33 @@ The debt collection solution offers integrated interfaces to Creditreform for:
 ### Received a Payment Reminder – What to Do?
 
 1. **Payment for a Legitimate Claim**  
-   - Transfer the outstanding amount using the payment slip provided  
-   - If you have financial difficulties: contact the collection agency, arrange for installment payments  
+   - Transfer the outstanding amount using the payment slip received  
+   - If you have financial difficulties: contact the collection agency, arrange installment payments  
 
 2. **Lost Payment Slip**  
    - Request a new copy from the collection company  
 
-3. **Already Paid, but Still Received a Reminder**  
+3. **Payment Already Made, but Still Received a Reminder**  
    - Overlap possible: briefly inform the collection agency about your payment  
 
-**Further information**: [inkassoverband.ch](https://www.inkassoverband.ch/)
+**Further information**: inkassoverband.ch
 
 ---
 
 ### Objection and Complaint
 
 1. **Unjustified Payment Reminder**  
-   - Contact the collection company directly and clarify the situation  
+   - Report directly to the collection company and clarify the situation  
 
 2. **Procedure for Objections**  
    - First complain to the collection agency  
    - If disagreement persists: file a complaint with the Ombudsman of Inkasso Suisse  
-     - [Procedure for Objections (PDF)](https://inkassosuisse.ch/wp-content/uploads/2022/01/202214_Vorgehen-Beschwerden.pdf)  
+     - Vorgehen bei Beanstandungen (PDF)  
 
 3. **Complaint to the Ombudsman**  
    - Written complaint after an unsuccessful objection with the collection company  
-   - [Information about the Ombudsman](https://www.inkassoverband.ch/#kontakt)  
-   - [Instructions (PDF)](https://inkassosuisse.ch/wp-content/uploads/2022/01/202214_Vorgehen-Beschwerden.pdf)  
+   - Informationen zur Ombudsstelle  
+   - Anleitung (PDF)  
 
 **Information to Include in the Complaint**  
 - Which member is the complaint against?  
@@ -192,9 +193,9 @@ The debt collection solution offers integrated interfaces to Creditreform for:
    - Request correction directly from the collection agency  
 
 2. **Payment Reminder Does Not Concern Me**  
-   - Inform the collection agency so the matter can be checked  
+   - Inform the collection agency so the facts can be checked  
 
-3. **Unable to Keep Up with Installments**  
+3. **Unable to Keep Up with Installment Payments**  
    - Contact the collection company as early as possible to arrange new solutions  
 
 ---
@@ -203,14 +204,14 @@ The debt collection solution offers integrated interfaces to Creditreform for:
 
 1. **Default Damages**  
    - Costs incurred by the creditor due to late payment  
-   - [Information on Default Damages (PDF)](https://inkassosuisse.ch/wp-content/uploads/2022/11/20221128-Glaeubigerschaden_extern.pdf)  
+   - Informationen zum Verzugsschaden (PDF)  
 
 2. **Other Permissible Charges**  
    - **Default interest**: regulated by law or contract  
    - **Reminder fees**: max. CHF 30.00 per reminder (total max. CHF 120.00)  
    - **Third-party costs**: enforcement costs, credit checks, address investigations, official fees, etc.  
    - **Installment payment surcharge**: max. CHF 20.00 per installment  
-   - **Fee for deletion of enforcement**: max. CHF 110.00 per enforcement (up to three times)  
+   - **Fee for cancellation of enforcement**: max. CHF 110.00 per enforcement (up to three times)  
 
 ---
 
@@ -224,7 +225,7 @@ The debt collection solution offers integrated interfaces to Creditreform for:
    - Inform the collection agency about your situation  
    - Possible: deferral or reduction of installments  
    - Advice from **non-commercial debt counseling centers**:  
-     - [List of Debt Counseling Members (PDF)](https://schulden.ch/wp-content/uploads/2022/01/mitgliederliste-homepage-23122021.pdf)  
+     - Mitgliederliste Schuldenberatung (PDF)  
 
 3. **Proof of Insolvency**  
    - Certificate from the social welfare office or other evidence (tax assessment, etc.)  

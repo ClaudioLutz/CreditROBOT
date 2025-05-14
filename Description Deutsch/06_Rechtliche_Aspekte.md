@@ -3,7 +3,9 @@ Ist dies legal?
 
 # Rechtliche Aspekte der Bonitätsprüfung
 
-https://www.creditreform.ch/ihr-recht/ihr-recht
+Deutsch [ihr-recht](https://www.creditreform.ch/ihr-recht/ihr-recht)
+
+English [your-right]https://www.creditreform.ch/en/your-right/your-right
 
 ## Datenschutz und Datensicherheit
 - Technische und organisatorische Sicherheitsmassnahmen zum Schutz der Daten

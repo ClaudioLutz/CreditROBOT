@@ -1,5 +1,6 @@
 # Mitgliedschaft bei Creditreform
-https://www.creditreform.ch/mitgliedschaft/mitglied-werden/formular-mitglied-werden (Sie werden im Anschluss von einem unserer Spezialisten kontaktiert)
+Deutsch [Mitgliedschafts Formular](https://www.creditreform.ch/mitgliedschaft/mitglied-werden/formular-mitglied-werden) (Sie werden im Anschluss von einem unserer Spezialisten kontaktiert)
+English [form-become-member](https://www.creditreform.ch/en/membership/become-member/form-become-member)
 - Mitglieder profitieren von Spezialtarifen im Inkasso und günstigeren Konditionen beim Bezug von Bonitäts-Auskünften.  
 - Creditreform ist die grösste Gläubigerschutzorganisation der Schweiz.
 

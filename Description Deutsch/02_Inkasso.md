@@ -18,9 +18,10 @@
   - **Vorrechtliches Inkasso**: Schuldneridentifikation, Bonitätsprüfung, Zahlungsaufforderung, Vermittlung, Ratenvereinbarung und -überwachung  
   - **Rechtliches/Gerichtliches Inkasso**: Rechtssichere Durchführung von Betreibungen, Fortsetzungen, Verwertungen, Konkursbegehren; Kommunikation mit Behörden  
 - **Weitere Infos**  
-  - [Inkasso- und Forderungsmanagement](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement)  
-  - [Inkassoauftrag für Mitglieder](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement/inkassoauftrag-erteilen)
-
+  - Deutsch [Inkasso- und Forderungsmanagement](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement)  
+  - English [debt-collection](https://www.creditreform.ch/en/solutions/debt-collection)
+  - Deutsch [Inkassoauftrag für Mitglieder](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement/inkassoauftrag-erteilen)
+  - English [issue-a-collection-order](https://www.creditreform.ch/en/solutions/debt-collection/issue-a-collection-order)
 ---
 
 ### Erfolgreiches Mahnwesen: Ablauf und Vorteile

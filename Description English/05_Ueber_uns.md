@@ -1,14 +1,13 @@
-# About us
-https://www.creditreform.ch/creditreform/ueber-uns
+# About Us
 
 ## Goals and Values of Creditreform
 
-- Creditreform creates security through up-to-date and high-quality data.  
-- The goal is to make customer relationships more secure and to increase customers’ liquidity.
+- Creditreform provides security through up-to-date and high-quality data.  
+- The goal is to make customer relationships safer and to increase customers’ liquidity.
 
 ## Data Sources and Expertise in Detail
 
-- International network with a comprehensive database.  
+- International network with a comprehensive data base.  
 - Data comes from commercial register data, debt collection information, residents’ registration offices, and payment experiences.  
 - Creditreform refines this data and condenses it into high-quality analyses.
 
@@ -26,7 +25,7 @@ https://www.creditreform.ch/creditreform/ueber-uns
 
 ## Well-Founded Information as a Security Factor
 - 150 employees in Switzerland conduct 80,000 interviews annually
-- Up-to-date and relevant information for optimizing credit and accounts receivable management
+- Up-to-date and relevant information to optimize credit and accounts receivable management
 - Support from experienced consultants in compliance with data protection regulations
 
 ## Powerful Online Database
@@ -51,4 +50,5 @@ https://www.creditreform.ch/creditreform/ueber-uns
 - **23 national companies in Europe and China**
 
 More information:
-- https://www.creditreform.ch/creditreform/ueber-uns
+German [ueber-uns](https://www.creditreform.ch/creditreform/ueber-uns)
+English [about-us](https://www.creditreform.ch/en/creditreform/about-us)
