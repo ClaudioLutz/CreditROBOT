@@ -1,17 +1,15 @@
-Possible Questions:
+Questions  
 Is this legal?
-What rights do I have regarding my stored data under GDPR?
-How does Creditreform ensure data protection?
 
 # Legal Aspects of Credit Checks
 
-German [ihr-recht](https://www.creditreform.ch/ihr-recht/ihr-recht)
+German [your-right](https://www.creditreform.ch/ihr-recht/ihr-recht)
 
 English [your-right]https://www.creditreform.ch/en/your-right/your-right
 
 ## Data Protection and Data Security
 - Technical and organizational security measures to protect data
-- Encrypted communication (especially over the Internet and email)
+- Encrypted communication (especially via Internet and email)
 - Logging and traceability of all data access and disclosures
 - Data storage takes place exclusively in Switzerland
 
@@ -25,8 +23,8 @@ English [your-right]https://www.creditreform.ch/en/your-right/your-right
 - Statement on the distinction of functions available in the download area
 
 ## International Cooperation with Partner Organizations
-- **Switzerland**: Schweizerischer Verband Creditreform Gen (www.creditreform.ch)
-- **Germany**: Verband der Vereine Creditreform e.V. (www.creditreform.de)
+- **Switzerland**: Swiss Association Creditreform Gen (www.creditreform.ch)
+- **Germany**: Association of Creditreform Associations e.V. (www.creditreform.de)
 - **Europe-wide**: Creditreform International e.V. (www.creditreform.com)
   - Austria, Bulgaria, Estonia, Latvia, Lithuania, Luxembourg, Croatia, Poland, Romania, Serbia, Slovenia, Slovakia, Czech Republic, Turkey, United Kingdom
 - **Other European countries**: BIGnet Information Network (www.bignetalliance.com)
@@ -40,7 +38,7 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
 
 ### Data Protection Classification of Credit Reports
 - Disclosure of data for credit checks constitutes a transfer of data to third parties.
-- The client (customer) and the credit agency are legally separate controllers under data protection law.
+- Client (customer) and credit agency are legally separate controllers under data protection law.
 - No data processing on behalf, as credit agencies act independently and on their own responsibility.
 
 ### Characteristics of Genuine Data Processing on Behalf (in the sense of data protection law)
@@ -49,14 +47,14 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
   - Document destruction
   - Call center services
   - External mail delivery service providers
-- The processor has no decision-making or discretionary power of its own.
+- No own decision-making or scope of action for the processor.
 
 ### No Data Processing on Behalf for Credit Inquiries
 - Credit agencies conduct research independently and are responsible for their own disclosures.
-- They are independent, responsible entities outside the inquiring company.
+- They are independent, responsible entities outside the requesting company.
 
 ### Data Protection Situation for Debt Collection Services
-- Debt collection service providers independently decide on measures (reminder letters, telephone reminders, legal action).
+- Debt collection service providers decide independently on measures (reminder letters, telephone reminders, legal action).
 - Transfer of claim data from the creditor to the collection agency is also not considered data processing on behalf.
 - The collection agency is an independent and responsible entity under data protection law.
 
@@ -64,15 +62,15 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
 - July 2023, St. Gallen
 - Applies equally under the EU GDPR.
 
-### In Summary
+### Summary
 - Credit reports and debt collection services are not considered data processing on behalf under data protection law, as credit agencies and collection companies act independently and on their own responsibility.
 
-## Data Protection Declaration Swiss DPA
+## Data Protection Declaration Swiss Data Protection Act (DSG)
 
 https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ihr_recht/31_datenschutz/01_Datenschutzerklaerung_2024_CH-DSG_DE.pdf
 
 ### Responsible Entity
-- Schweizerischer Verband Creditreform Gen (SVC), St. Gallen.
+- Swiss Association Creditreform Gen (SVC), St. Gallen.
 
 ### Purpose of Data Processing
 - Credit and identity checks.
@@ -82,7 +80,7 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
 - Anti-money laundering and screening against sanctions lists.
 
 ### Legal Basis
-- Swiss Data Protection Act (DSG), especially creditor and credit protection (Art. 31 para. 2 DSG).
+- Swiss Data Protection Act (DSG), in particular creditor and credit protection (Art. 31 para. 2 DSG).
 
 ### Data Sources
 - Publicly accessible sources (registers, internet, media).
@@ -94,13 +92,13 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
 - Payment experiences and credit-relevant data.
 
 ### Data Recipients
-- Credit-granting businesses in Switzerland and Europe (e.g., banks, insurance companies, debt collection agencies).
-- Data may also be passed on to KünzlerBachmann Directmarketing AG.
+- Credit-granting businesses in Switzerland and Europe (e.g. banks, insurance companies, debt collection agencies).
+- Disclosure also possible to KünzlerBachmann Directmarketing AG.
 
 ### Processing by Third Parties
 - IT and communication service providers may have access to data; protection is ensured by contractual agreements.
 
-### Storage Duration
+### Storage Period
 - In accordance with legal requirements.
 
 ### Rights of Data Subjects
@@ -111,7 +109,7 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
 https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ihr_recht/31_datenschutz/02_Datenschutzerklaerung_2024_EU-DSGVO_DE.pdf
 
 ### Responsible Entity
-- Schweizerischer Verband Creditreform Gen (SVC), represented by BATLINER WANGER BATLINER Rechtsanwälte AG, Vaduz.
+- Swiss Association Creditreform Gen (SVC), represented by BATLINER WANGER BATLINER Attorneys at Law AG, Vaduz.
 
 ### Purpose of Data Processing
 - Identity and credit checks to assess the risk of payment defaults.
@@ -120,7 +118,7 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
 - Anti-money laundering and screening against sanctions lists.
 
 ### Legal Bases
-- Article 6 para. 1 lit. b) and f) EU GDPR (contractual purpose and protection of legitimate interests, e.g., creditor and credit protection).
+- Article 6 para. 1 lit. b) and f) EU GDPR (contractual purpose and protection of legitimate interests, e.g. creditor and credit protection).
 
 ### Data Sources
 - Publicly accessible sources (registers, internet, press).
@@ -129,17 +127,17 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
 ### Categories of Stored Data
 - Identification data (name, address, date of birth, etc.).
 - Data from commercial and debt enforcement registers.
-- Payment experiences and credit-relevant information from media and the internet.
+- Payment experiences and credit-relevant information from media and internet.
 
 ### Data Recipients
 - Credit-granting companies in Switzerland and Europe (banks, insurance companies, telecommunications, trade, debt collection).
-- Possible transfer to KünzlerBachmann Directmarketing AG.
+- Possible disclosure to KünzlerBachmann Directmarketing AG.
 
 ### Processing by Third Parties
 - External service providers (IT infrastructure), possibly with access to personal data.
 - Protection is ensured by contractual agreements.
 
-### Storage Duration
+### Storage Period
 - Data is stored as long as necessary to fulfill the purpose.
 
 ### Rights of Data Subjects
@@ -150,7 +148,7 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
 ## Automated Decisions Switzerland
 
 1. **High-Risk Profiling**  
-   If the score directly leads to a decision with **significant impact** (e.g., credit denial, contract refusal), this constitutes **high-risk profiling**:
+   If the score directly leads to a decision with **significant impact** (e.g. credit rejection, contract refusal), this constitutes **high-risk profiling**:
    - It requires **a legal basis, consent, or contractual necessity**.
    - The affected person has the right to:
      - Information about the automated decision,
@@ -158,7 +156,7 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ih
      - **Request a human review**.
 
 2. **Transparency Obligation**  
-   Creditreform must disclose **how the score is determined** (at least in general terms, e.g., which types of data are included). => https://www.creditreform.ch/ihr-recht/selbstauskunft
+   Creditreform must disclose **how the score is calculated** (at least in general terms, e.g. which types of data are included). => https://www.creditreform.ch/ihr-recht/selbstauskunft
 
 3. **Up-to-dateness and Accuracy**  
-   The data on which the score is based must be **correct and up to date**. Otherwise, there is a **risk under the Unfair Competition Act (UWG)** or **Swiss Civil Code (violation of personality rights)**.
+   The data on which the score is based must be **correct and up to date**. Otherwise, there is **a risk under the Unfair Competition Act (UWG)** or **the Swiss Civil Code (violation of personality rights)**.

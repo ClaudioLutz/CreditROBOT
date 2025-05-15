@@ -1,18 +1,14 @@
-What are Creditreform's main goals?
-Where does Creditreform get its data from?
-How many members does Creditreform have in Europe?
-
 # About Us
 
-## Creditreform’s Goals and Values
+## Goals and Values of Creditreform
 
-- Creditreform provides security through up-to-date and high-quality data.  
-- The goal is to make customer relationships safer and to increase customers’ liquidity.
+- Creditreform provides security through up-to-date and high-quality data.
+- The goal is to make customer relationships more secure and to increase customers’ liquidity.
 
 ## Data Sources and Expertise in Detail
 
-- International network with a comprehensive data base.  
-- Data comes from commercial registers, debt collection records, residents’ offices, and payment experiences.  
+- International network with a comprehensive database.
+- Data comes from commercial register data, debt collection information, residents’ registration offices, and payment experiences.
 - Creditreform refines this data and condenses it into high-quality analyses.
 
 ## Actively Minimizing Economic Risks
@@ -56,8 +52,8 @@ How many members does Creditreform have in Europe?
 - **12,000 members**
 - **700,000 data records on Swiss companies**
 - **150 employees in Switzerland**
-- **23 national subsidiaries in Europe and China**
+- **23 national companies in Europe and China**
 
-More information:  
-German [ueber-uns](https://www.creditreform.ch/creditreform/ueber-uns)  
+More information:
+German [ueber-uns](https://www.creditreform.ch/creditreform/ueber-uns)
 English [about-us](https://www.creditreform.ch/en/creditreform/about-us)

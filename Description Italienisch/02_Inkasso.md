@@ -1,39 +1,44 @@
-# Inkasso
+Here is the translation from German to Italian:
+
+---
+
+# Recupero crediti
 
 ## INFORMAZIONI PER I CREDITORI (Aziende/clienti di Creditreform)
 
 ---
 
-### Recupero crediti: Incasso rapido e salvaguardia della liquidità
+### Recupero crediti: Incasso rapido dei crediti e garanzia di liquidità
 
 - **Servizi**  
   - Recupero crediti stragiudiziale, legale e giudiziale, nonché realizzazione di attestati di carenza beni  
   - Portale online per la trasmissione dei crediti aperti  
   - Calcolo delle probabilità di recupero tramite [inkassorechner.ch](https://inkassorechner.ch/)  
 - **Vantaggi**  
-  - Accelerazione degli incassi  
+  - Incasso dei pagamenti accelerato  
   - Minimizzazione delle perdite  
   - Riduzione del carico amministrativo  
 - **Procedura**  
   - **Recupero stragiudiziale**: identificazione del debitore, verifica della solvibilità, sollecito di pagamento, mediazione, accordo e monitoraggio delle rate  
-  - **Recupero legale/giudiziale**: esecuzione conforme alla legge di procedure esecutive, proseguimenti, realizzazioni, richieste di fallimento; comunicazione con le autorità  
+  - **Recupero legale/giudiziale**: esecuzione conforme alla legge di procedure esecutive, continuazioni, realizzazioni, richieste di fallimento; comunicazione con le autorità  
 - **Ulteriori informazioni**  
-  - [Gestione crediti e recupero crediti](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement)  
-  - [Mandato di recupero per i soci](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement/inkassoauftrag-erteilen)
-
+  - Tedesco [Gestione crediti e recupero crediti](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement)  
+  - Inglese [debt-collection](https://www.creditreform.ch/en/solutions/debt-collection)
+  - Tedesco [Mandato di recupero per soci](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement/inkassoauftrag-erteilen)
+  - Inglese [issue-a-collection-order](https://www.creditreform.ch/en/solutions/debt-collection/issue-a-collection-order)
 ---
 
 ### Sollecito efficace: Procedura e vantaggi
 
-1. **Cosa fare**  
+1. **Cosa deve fare il creditore**  
    - Dopo fattura e sollecito senza esito: contatto telefonico con il cliente  
    - Se il pagamento non avviene: trasmissione a Creditreform  
 
 2. **Il nostro servizio**  
    - Identificazione e verifica della solvibilità del debitore  
-   - Mediazione e sollecito di pagamento, accordo sulle rate, monitoraggio  
+   - Mediazione e sollecito di pagamento, accordo di rateizzazione, monitoraggio  
 
-3. **Il vostro vantaggio**  
+3. **I suoi vantaggi**  
    - Mantenimento del rapporto con il cliente  
    - Aumento della liquidità, riduzione dello stress emotivo  
    - Focus sull’attività principale, meno azioni legali  
@@ -43,15 +48,15 @@
 
 ### Far valere i crediti secondo la LEF (SchKG)
 
-1. **Cosa fare**  
+1. **Cosa deve fare il creditore**  
    - Fornire tutte le informazioni necessarie, segnalare i pagamenti diretti  
    - Dare il consenso per ulteriori passi  
 
 2. **Il nostro servizio**  
-   - Esecuzione conforme alla LEF (procedura esecutiva, proseguimento, realizzazione, fallimento)  
+   - Esecuzione conforme alla LEF (procedura esecutiva, continuazione, realizzazione, fallimento)  
    - Monitoraggio delle scadenze e anticipi spese  
 
-3. **Il vostro vantaggio**  
+3. **I suoi vantaggi**  
    - Sicurezza delle scadenze ed evitamento di errori formali  
    - Concentrazione sull’attività principale  
    - Compenso solo in caso di successo  
@@ -60,7 +65,7 @@
 
 ### Recupero crediti da parte di professionisti
 
-1. **Cosa fare**  
+1. **Cosa deve fare il creditore**  
    - Fornire la documentazione, eventualmente anticipare le spese  
    - Partecipare all’udienza di conciliazione se necessario  
 
@@ -69,24 +74,24 @@
    - Opposizioni, richieste di rigetto dell’opposizione, domande di conciliazione  
    - Rete internazionale tramite avvocati fiduciari  
 
-3. **Il vostro vantaggio**  
-   - Procedura professionale ed economica con costi trasparenti  
+3. **I suoi vantaggi**  
+   - Procedura professionale, economica e con costi trasparenti  
    - Alleggerimento amministrativo, compenso solo in caso di successo  
-   - Opzionale: **Assicurazione CrediCAP Inkasso**  
+   - Opzionale: **Assicurazione CrediCAP recupero crediti**  
    - Supporto a livello mondiale  
 
 ---
 
 ### Trasformare gli attestati di carenza beni in liquidità
 
-1. **Cosa fare**  
+1. **Cosa deve fare il creditore**  
    - Trasmettere attestati di carenza beni o crediti già svalutati, segnalare i pagamenti diretti  
 
 2. **Il nostro servizio**  
-   - Gestione perseverante degli attestati di carenza beni  
-   - Prevenzione della prescrizione (termine di 20 anni)  
+   - Gestione persistente degli attestati di carenza beni  
+   - Evitare la prescrizione (termine di 20 anni)  
 
-3. **Il vostro vantaggio**  
+3. **I suoi vantaggi**  
    - Nessun onere di personale e nessun rischio di costi  
    - Aumento dei ricavi straordinari  
    - Compenso solo in caso di successo  
@@ -95,14 +100,14 @@
 
 ---
 
-### Assicurazione CrediCAP Inkasso per PMI
+### Assicurazione CrediCAP recupero crediti per PMI
 
 1. **Sfida nota**  
    - L’opposizione rende difficile il recupero del credito  
 
 2. **Soluzione**  
    - Assicurazione delle spese legali e giudiziarie in caso di opposizione  
-   - Esclusiva per i soci Creditreform  
+   - Esclusiva per i membri Creditreform  
 
 3. **Condizioni**  
    - Iscrizione a Creditreform  
@@ -110,11 +115,11 @@
    - Crediti tra CHF 1’000 e CHF 25’000  
    - Max. 3 casi all’anno  
    - Mandato documentato (bolla di consegna o conferma d’ordine)  
-   - Nessun collegamento a progetti soggetti a permesso edilizio  
+   - Nessun riferimento a progetti soggetti a permesso edilizio  
 
-4. **Il vostro vantaggio**  
+4. **I suoi vantaggi**  
    - Copertura contro i costi processuali  
-   - Prosecuzione giudiziaria senza rischio di costi  
+   - Azione giudiziaria senza rischio di costi  
    - Maggiore sicurezza decisionale nel recupero crediti  
 
 
@@ -127,7 +132,7 @@ La soluzione di recupero crediti offre interfacce integrate con Creditreform per
   - Confronto con la banca dati Creditreform
 
 - **Valutazione della solvibilità**
-  - Verifica automatizzata dell’affidabilità creditizia
+  - Verifica automatica della solvibilità
   - Valutazione del rischio dei debitori
 
 - **Monitoraggio del debitore**
@@ -136,8 +141,8 @@ La soluzione di recupero crediti offre interfacce integrate con Creditreform per
   - Informazione immediata in caso di dichiarazione di fallimento
 
 - **Richiesta di informazioni ufficiali**
-  - Richiesta diretta presso il controllo abitanti  
-  - Richiesta automatizzata di informazioni sulle esecuzioni
+  - Richiesta diretta presso l’ufficio controllo abitanti  
+  - Richiesta automatica di informazioni sulle esecuzioni
   
 ---
 
@@ -149,21 +154,21 @@ La soluzione di recupero crediti offre interfacce integrate con Creditreform per
 
 ### Ricevuto un sollecito di pagamento – cosa fare?
 
-1. **Pagamento in caso di credito legittimo**  
-   - Versare l’importo dovuto con il bollettino di versamento ricevuto  
+1. **Pagamento in caso di credito giustificato**  
+   - Versare l’importo dovuto con il bollettino di pagamento ricevuto  
    - In caso di difficoltà finanziarie: contattare l’agenzia di recupero crediti, concordare un pagamento rateale  
 
-2. **Bollettino di versamento smarrito**  
+2. **Bollettino di pagamento smarrito**  
    - Richiedere un nuovo esemplare all’agenzia di recupero crediti  
 
-3. **Pagamento già effettuato, ma sollecito ricevuto**  
+3. **Pagamento già effettuato, ma si riceve comunque un sollecito**  
    - Possibile sovrapposizione: informare brevemente l’agenzia di recupero crediti del pagamento effettuato  
 
 **Ulteriori informazioni**: [inkassoverband.ch](https://www.inkassoverband.ch/)
 
 ---
 
-### Contestazione e reclamo
+### Reclamo e contestazione
 
 1. **Sollecito di pagamento ingiustificato**  
    - Segnalare direttamente all’agenzia di recupero crediti e chiarire la situazione  
@@ -178,10 +183,10 @@ La soluzione di recupero crediti offre interfacce integrate con Creditreform per
    - [Informazioni sull’Ombudsman](https://www.inkassoverband.ch/#kontakt)  
    - [Istruzioni (PDF)](https://inkassosuisse.ch/wp-content/uploads/2022/01/202214_Vorgehen-Beschwerden.pdf)  
 
-**Dati da includere nel reclamo**  
+**Dati da indicare nel reclamo**  
 - Contro quale membro è rivolto il reclamo?  
 - Descrizione dei fatti  
-- Mezzi di prova (allegati numerati, indice)  
+- Prove (allegati numerati, indice)  
 - Prova della prima contestazione presso l’agenzia di recupero crediti  
 
 ---
@@ -192,9 +197,9 @@ La soluzione di recupero crediti offre interfacce integrate con Creditreform per
    - Richiedere la correzione direttamente all’agenzia di recupero crediti  
 
 2. **Il sollecito di pagamento non mi riguarda**  
-   - Informare l’agenzia di recupero crediti affinché la situazione venga verificata  
+   - Informare l’agenzia di recupero crediti affinché verifichi la situazione  
 
-3. **Impossibilità di rispettare i pagamenti rateali**  
+3. **Impossibilità di rispettare le rate**  
    - Contattare il prima possibile l’agenzia di recupero crediti per concordare nuove soluzioni  
 
 ---
@@ -221,13 +226,13 @@ La soluzione di recupero crediti offre interfacce integrate con Creditreform per
    - Ogni interruzione prolunga il termine  
 
 2. **Insolvente – cosa fare?**  
-   - Informare l’agenzia di recupero crediti sulla situazione  
+   - Informare l’agenzia di recupero crediti della situazione  
    - Possibile: dilazione o riduzione delle rate  
-   - Consulenza presso **centri di consulenza debiti non commerciali**:  
+   - Consulenza presso **centri di consulenza sul debito non commerciali**:  
      - [Elenco membri consulenza debiti (PDF)](https://schulden.ch/wp-content/uploads/2022/01/mitgliederliste-homepage-23122021.pdf)  
 
 3. **Prova dell’insolvenza**  
-   - Certificato dell’assistenza sociale o altri documenti (notifica fiscale ecc.)  
+   - Certificato dell’assistenza sociale o altri documenti (dichiarazione dei redditi ecc.)  
    - Il membro verifica la sospensione del pagamento secondo l’art. 4.2.11 CoC  
 
 ---

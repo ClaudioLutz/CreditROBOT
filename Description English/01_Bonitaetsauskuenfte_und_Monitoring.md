@@ -1,11 +1,11 @@
 Possible Questions:
-Can I buy information about a company?
+Can I purchase information about a company?
 Am I allowed to do business with company X?
-I need information about a company
-How to check my own solvency
-What are the benefits of using Creditreform credit reports?
-Can I get international credit reports?
-How can I check my own creditworthiness?
+I need information about a company.
+How do I check my own creditworthiness?
+What are the advantages of the Creditreform business information report?
+Can I obtain international business information?
+How can I check my own credit rating?
 What is ComplianceCHECK used for?
 
 # Credit Reports
@@ -17,16 +17,16 @@ What is ComplianceCHECK used for?
 - These reports help companies **assess the ability of business partners** to meet their payment obligations.
 - Creditreform **evaluates credit-relevant content** and presents the results in the form of partial scores, risk classes, credit bands, or credit traffic lights.
 - In addition to creditworthiness, **the reports contain further information** that provides a comprehensive picture of the customer.
-- Creditreform offers **reports on companies and private individuals** both domestically and abroad.
+- Creditreform offers **reports on companies and private individuals** both domestically and internationally.
 - With credit and business reports, **companies can know in advance** who they are dealing with and assess the risk of loss.
-- Creditreform offers **various report products** such as CrediPLUS, CrediRISK, CrediCHECK, and CrediDATA.
-- For **reports outside Switzerland and Liechtenstein**, foreign surcharges usually apply, and countries are divided into country groups.
+- Creditreform offers **various information products** such as CrediPLUS, CrediRISK, CrediCHECK, and CrediDATA.
+- For **reports outside Switzerland and Liechtenstein**, foreign surcharges usually apply, and countries are grouped into country groups.
 
-## International Credit Reports, International Business Information
+## International Reports, International Business Information
 (https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_loesungen/11_auskunft_monitoring/05_Flyer_International_DE.pdf)
 
 **General Purpose and Benefits**  
-The Creditreform International Business Information supports companies in **minimizing risks in international business** by providing detailed credit information on foreign business partners. This is especially important because international business, in addition to growth opportunities, also involves **increased entrepreneurial risks**.
+The Creditreform International Business Information supports companies in **minimizing risks in international business** by providing detailed credit information on foreign business partners. This is especially important as international business, in addition to growth opportunities, also involves **increased entrepreneurial risks**.
 
 **Areas of Application**  
 - **Checking the creditworthiness and risk classification** of international customers and suppliers
@@ -41,12 +41,12 @@ The Creditreform International Business Information supports companies in **mini
 - Information is **standardized and multilingual** (German, French, English, soon also Italian)
 - **IT integration** is possible via standardized interfaces as well as individual systems
 - Available via the **online platform “CrediWEB”**
-- Option for **individual research** in addition to standard reports
+- Option for **individual research** in addition to the standard report
 - For numerous countries, **automatic monitoring** of credit information is possible
 
 **Product Offerings and Country Groups**  
-- There are **four graduated information products** tailored to respective risk needs
-- Foreign surcharges are **added to the base price of the respective report products**
+- There are **four graduated information products** tailored to specific risk requirements
+- Foreign surcharges are **added to the base price of the respective information products**
 - The **level of detail of the reports varies by country**
 - Information typically includes **detailed data on creditworthiness, financial situation, and the business environment** of the respective international partner
 
@@ -60,7 +60,7 @@ The Creditreform International Business Information supports companies in **mini
 - [Creditreform International](http://www.creditreform.com/)
 - [BigNet Alliance](http://www.bignetalliance.com/)
 
-Thus, the Creditreform International Business Information offers an **important tool for securing** and successfully managing **international business relationships**.
+The Creditreform International Business Information thus offers an **important tool for securing** and successfully managing **international business relationships**.
 
 ### Country Groups, Products, and Surcharges
 
@@ -75,7 +75,7 @@ Thus, the Creditreform International Business Information offers an **important 
 **Available and orderable online:** LG 0, LG 1, LG 2  
 **Orderable online:** LG 3, LG 4  
 
-#### Number of Surcharges at CHF 5.00 each
+#### Number of surcharges at CHF 5.00 each
 
 - **LG 0:** –
 - **LG 1:** 1 ×
@@ -83,13 +83,13 @@ Thus, the Creditreform International Business Information offers an **important 
 - **LG 3:** 3 ×
 - **LG 4:** 10 ×
 
-With Creditreform’s international reports, companies receive a comprehensive, **cross-border insight** into the creditworthiness of their potential and existing business partners. This allows **international business relationships** to be made even safer and more transparent.
+With Creditreform’s international reports, companies receive a comprehensive, **cross-border insight** into the creditworthiness of their potential and existing business partners. This allows **international business relationships** to be made even more secure and transparent.
 
 ## Monitoring
 
 ### Monitoring Switzerland
 https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_loesungen/11_auskunft_monitoring/01_Prospekt_Auskuenfte_Monitoing_DE.pdf
-- Creditreform offers monitoring services to keep companies informed about current changes regarding their customers.
+- Creditreform offers monitoring services to keep companies up to date on current changes regarding their customers.
 - Through systematic monitoring, up-to-date data is continuously provided, and companies can decide which information is relevant to them.
 - Notifications can be integrated into your own applications.
 - Creditreform monitors credit-relevant changes as well as master data.
@@ -97,7 +97,7 @@ https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_lo
 - With CrediRISK and CrediCHECK, signal monitoring is included.
 - Monitoring management in CrediWEB enables the management and retrieval of monitoring activities.
 
-### Monitoring Abroad
+### International Monitoring
 https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/01_loesungen/11_auskunft_monitoring/05_Flyer_International_DE.pdf
 - Strategic partners or key customers can also be monitored in the most important European countries.
 
@@ -123,9 +123,9 @@ References to the contact form for further questions
 [English](https://www.creditreform.ch/en/creditreform/contact)
 
 ## Requesting Credit Reports
-- Once a membership has been opened, you will receive access to CrediWEB [https://www.crediweb.ch], where you can request reports on companies and private individuals.
+- Once a membership has been opened, you will receive access to CrediWEB [https://www.crediweb.ch], where you can request information about companies and private individuals.
 
-## Check Your Own Creditworthiness / Solvency
+## Checking Your Own Creditworthiness
 - Reference to the page  
 German [selbstauskunft](https://www.creditreform.ch/ihr-recht/selbstauskunft)  
 English [self-information](https://www.creditreform.ch/en/your-right/self-information)  

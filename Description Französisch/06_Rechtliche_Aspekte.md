@@ -1,7 +1,11 @@
 Questions  
 Est-ce légal ?
 
-# Aspects juridiques de l’évaluation de la solvabilité
+# Aspects juridiques de la vérification de la solvabilité
+
+Allemand [ihr-recht](https://www.creditreform.ch/ihr-recht/ihr-recht)
+
+Anglais [your-right]https://www.creditreform.ch/en/your-right/your-right
 
 ## Protection des données et sécurité des données
 - Mesures de sécurité techniques et organisationnelles pour la protection des données
@@ -12,44 +16,46 @@ Est-ce légal ?
 ## Accès et utilisation
 - Accès réservé aux membres enregistrés
 - Utilisation des informations pertinentes pour la solvabilité, non accessibles au public, exclusivement à des fins d’évaluation économique et d’usage personnel
-- Intérêt légitime du destinataire impératif
+- Intérêt légitime du destinataire impérativement requis
 
 ## Traitement des données personnelles
-- Creditreform agit en tant que responsable indépendant (Controller), et non comme sous-traitant
+- Creditreform agit en tant que responsable indépendant (controller), et non comme sous-traitant
 - Prise de position sur la délimitation des fonctions disponible dans la zone de téléchargement
 
 ## Coopération internationale avec des organisations partenaires
-- **Suisse** : Association suisse Creditreform Gen
-- **Allemagne** : Verband der Vereine Creditreform e.V.
-- **Europe** : Creditreform International e.V.
-  - Autriche, Bulgarie, Estonie, Lettonie, Lituanie, Luxembourg, Croatie, Pologne, Roumanie, Serbie, Slovénie, Slovaquie, République tchèque, Turquie, Royaume-Uni
-- **Autres pays européens** : Réseau d’information BIGnet
+- **Suisse** : Association suisse Creditreform Gen (www.creditreform.ch)
+- **Allemagne** : Verband der Vereine Creditreform e.V. (www.creditreform.de)
+- **Europe** : Creditreform International e.V. (www.creditreform.com)
+  - Autriche, Bulgarie, Estonie, Lettonie, Lituanie, Luxembourg, Croatie, Pologne, Roumanie, Serbie, Slovénie, Slovaquie, Tchéquie, Turquie, Royaume-Uni
+- **Autres pays européens** : Réseau d’information BIGnet (www.bignetalliance.com)
 
 ## Informations complémentaires sur la protection des données
 - www.edoeb.admin.ch
 
-## Prise de position sur le traitement des mandats
+## Prise de position sur le traitement des commandes
 
-### Qualification juridique des renseignements de solvabilité en matière de protection des données
-- La transmission de données pour l’évaluation de la solvabilité constitue une communication de données à des tiers.
+https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ihr_recht/31_datenschutz/04_Stellungnahme_Auftragsbearbeitung_2023_DSG_DE.pdf
+
+### Qualification juridique des renseignements de solvabilité
+- La transmission de données pour la vérification de la solvabilité constitue une communication de données à des tiers.
 - Le donneur d’ordre (client) et l’agence de renseignements sont des responsables distincts au sens de la protection des données.
-- Pas de traitement de mandat, car les agences de renseignements agissent de manière autonome et sous leur propre responsabilité.
+- Il ne s’agit pas d’un traitement sur instruction, car les agences de renseignements agissent de manière autonome et sous leur propre responsabilité.
 
-### Caractéristiques d’un véritable traitement de mandat (au sens de la protection des données)
+### Caractéristiques d’un véritable traitement sur instruction (au sens de la protection des données)
 - Le sous-traitant agit exclusivement selon les instructions contractuelles du donneur d’ordre.
 - Exemples :
   - Destruction d’archives
   - Services de centre d’appels
   - Prestataires externes d’envoi postal
-- Aucune marge de décision ou d’action propre pour le sous-traitant.
+- Aucun pouvoir de décision ou d’action propre pour le sous-traitant.
 
-### Pas de traitement de mandat pour les demandes de solvabilité
-- Les agences de renseignements effectuent leurs recherches de manière autonome et assument elles-mêmes la responsabilité de la communication des informations.
+### Pas de traitement sur instruction pour les demandes de solvabilité
+- Les agences de renseignements effectuent leurs recherches de manière autonome et sont responsables de la communication de leurs informations.
 - Elles sont des entités indépendantes et responsables, extérieures à l’entreprise demandeuse.
 
 ### Situation en matière de protection des données pour les services de recouvrement
 - Le prestataire de recouvrement décide de manière autonome des mesures à prendre (lettres de relance, relances téléphoniques, démarches judiciaires).
-- La transmission des données de créance du créancier à l’entreprise de recouvrement n’est pas non plus considérée comme un traitement de mandat.
+- La transmission des données de créance du créancier à l’entreprise de recouvrement n’est pas non plus considérée comme un traitement sur instruction.
 - L’entreprise de recouvrement est une entité indépendante et responsable au sens de la protection des données.
 
 ### État de la prise de position
@@ -57,18 +63,20 @@ Est-ce légal ?
 - S’applique également de la même manière selon le RGPD de l’UE.
 
 ### En résumé
-- Les renseignements de solvabilité et les services de recouvrement ne sont pas considérés comme un traitement de mandat au sens de la protection des données, car les agences de renseignements et les entreprises de recouvrement agissent de manière autonome et sous leur propre responsabilité.
+- Les renseignements de solvabilité et les services de recouvrement ne sont pas considérés comme un traitement sur instruction au sens de la protection des données, car les agences de renseignements et les entreprises de recouvrement agissent de manière autonome et sous leur propre responsabilité.
 
-## Déclaration de confidentialité LPD Suisse
+## Déclaration de protection des données LPD Suisse
+
+https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ihr_recht/31_datenschutz/01_Datenschutzerklaerung_2024_CH-DSG_DE.pdf
 
 ### Responsable du traitement
 - Association suisse Creditreform Gen (SVC), Saint-Gall.
 
 ### Finalité du traitement des données
 - Vérification de la solvabilité et de l’identité.
-- Calcul du risque d’impayés.
+- Calcul du risque de défaut de paiement.
 - Fourniture d’informations pour soutenir les décisions de crédit.
-- Prospection directe et marketing.
+- Publicité directe et marketing.
 - Lutte contre le blanchiment d’argent et vérification des listes de sanctions.
 
 ### Base légale
@@ -80,7 +88,7 @@ Est-ce légal ?
 
 ### Catégories de données stockées
 - Données d’identification (nom, adresse, date de naissance, etc.).
-- Informations issues du registre du commerce et du registre des poursuites.
+- Informations issues des registres du commerce et des poursuites.
 - Expériences de paiement et données pertinentes pour la solvabilité.
 
 ### Destinataires des données
@@ -96,19 +104,21 @@ Est-ce légal ?
 ### Droits des personnes concernées
 - Droit d’accès et de rectification des données stockées selon l’art. 32 LPD.
 
-## Déclaration de confidentialité RGPD UE
+## Déclaration de protection des données RGPD UE
+
+https://www.creditreform.ch/fileadmin/user_upload/central_files/_documents/03_ihr_recht/31_datenschutz/02_Datenschutzerklaerung_2024_EU-DSGVO_DE.pdf
 
 ### Responsable du traitement
 - Association suisse Creditreform Gen (SVC), représentée par BATLINER WANGER BATLINER Rechtsanwälte AG, Vaduz.
 
 ### Finalité du traitement des données
-- Vérification de l’identité et de la solvabilité pour l’évaluation du risque d’impayé.
+- Vérification de l’identité et de la solvabilité pour l’évaluation du risque de défaut de paiement.
 - Soutien aux clients dans les décisions de crédit (la décision appartient au client).
-- Prospection directe et marketing.
+- Publicité directe et marketing.
 - Lutte contre le blanchiment d’argent et vérification des listes de sanctions.
 
 ### Bases légales
-- Article 6, paragraphe 1, points b) et f) du RGPD UE (finalité contractuelle et préservation des intérêts légitimes, par ex. protection des créanciers et du crédit).
+- Article 6, paragraphe 1, point b) et f) du RGPD UE (exécution du contrat et intérêts légitimes, par ex. protection des créanciers et du crédit).
 
 ### Sources des données
 - Sources accessibles au public (registres, Internet, presse).
@@ -116,7 +126,7 @@ Est-ce légal ?
 
 ### Catégories de données stockées
 - Données d’identification (nom, adresse, date de naissance, etc.).
-- Données issues du registre du commerce et du registre des poursuites.
+- Données issues des registres du commerce et des poursuites.
 - Expériences de paiement et informations pertinentes pour la solvabilité issues des médias et d’Internet.
 
 ### Destinataires des données
@@ -128,7 +138,7 @@ Est-ce légal ?
 - Protection assurée par des accords contractuels.
 
 ### Durée de conservation
-- Les données sont conservées aussi longtemps qu’elles sont nécessaires à la réalisation de la finalité.
+- Les données sont conservées aussi longtemps que nécessaire à la réalisation de la finalité.
 
 ### Droits des personnes concernées
 - Droit d’accès, de rectification, d’effacement, de limitation du traitement.
@@ -146,7 +156,7 @@ Est-ce légal ?
      - de **demander un examen humain**.
 
 2. **Obligation de transparence**  
-   Creditreform doit indiquer **comment le score est calculé** (au moins de manière générale, par ex. quels types de données sont pris en compte).
+   Creditreform doit indiquer **comment le score est calculé** (au moins de manière générale, par ex. quels types de données sont pris en compte). => https://www.creditreform.ch/ihr-recht/selbstauskunft
 
 3. **Actualité et exactitude**  
    Les données sur lesquelles repose le score doivent être **correctes et à jour**. Sinon, il existe **un risque au sens de la LCD (concurrence déloyale)** ou du **CC (atteinte à la personnalité)**.

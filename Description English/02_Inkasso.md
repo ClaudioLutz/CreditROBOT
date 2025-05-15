@@ -1,12 +1,6 @@
-Possible Questions:
-What are the advantages of using Creditreform for debt collection?
-What should I do if I receive a payment reminder from a collection agency?
-What is CrediCAP debt collection insurance?
-Are there additional fees if a payment is late?
-
 # Debt Collection
 
-## INFORMATION FOR CREDITORS (Companies/Clients of Creditreform)
+## INFO FOR CREDITORS (Companies/Customers of Creditreform)
 
 ---
 
@@ -21,12 +15,12 @@ Are there additional fees if a payment is late?
   - Minimization of defaults  
   - Reduction of administrative burden  
 - **Process**  
-  - **Pre-legal collection**: Debtor identification, credit check, payment reminder, mediation, installment agreement and monitoring  
+  - **Pre-legal collection**: Debtor identification, credit check, payment request, mediation, installment agreement and monitoring  
   - **Legal/Judicial collection**: Legally compliant execution of debt enforcement, continuation, realization, bankruptcy petitions; communication with authorities  
 - **Further Information**  
-  - German [Inkasso- und Forderungsmanagement](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement)  
+  - German [Debt Collection and Receivables Management](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement)  
   - English [debt-collection](https://www.creditreform.ch/en/solutions/debt-collection)
-  - German [Inkassoauftrag für Mitglieder](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement/inkassoauftrag-erteilen)
+  - German [Collection Order for Members](https://www.creditreform.ch/loesungen/inkasso-und-forderungsmanagement/inkassoauftrag-erteilen)
   - English [issue-a-collection-order](https://www.creditreform.ch/en/solutions/debt-collection/issue-a-collection-order)
 ---
 
@@ -38,7 +32,7 @@ Are there additional fees if a payment is late?
 
 2. **Our Service**  
    - Identification and credit check of the debtor  
-   - Mediation and payment reminder, installment agreement, monitoring  
+   - Mediation and payment request, installment agreement, monitoring  
 
 3. **Your Advantage**  
    - Maintain customer relationships  
@@ -79,7 +73,7 @@ Are there additional fees if a payment is late?
 3. **Your Advantage**  
    - Professional, cost-effective process with transparent costs  
    - Administrative relief, fee only in case of success  
-   - Optional **CrediCAP debt collection insurance**  
+   - Optional **CrediCAP Collection Insurance**  
    - Worldwide support  
 
 ---
@@ -91,10 +85,10 @@ Are there additional fees if a payment is late?
 
 2. **Our Service**  
    - Persistent management of your loss certificates  
-   - Prevention of statute of limitations (20-year period)  
+   - Avoidance of statute of limitations (20-year period)  
 
 3. **Your Advantage**  
-   - No personnel effort or cost risk  
+   - No personnel effort and cost risk  
    - Increase in extraordinary income  
    - Fee only in case of success  
 
@@ -102,10 +96,10 @@ Are there additional fees if a payment is late?
 
 ---
 
-### CrediCAP Debt Collection Insurance for SMEs
+### CrediCAP Collection Insurance for SMEs
 
 1. **Common Challenge**  
-   - Objection complicates the collection of receivables  
+   - Objection makes debt collection more difficult  
 
 2. **Solution**  
    - Insurance for court and attorney costs in case of objection  
@@ -114,7 +108,7 @@ Are there additional fees if a payment is late?
 3. **Conditions**  
    - Membership with Creditreform  
    - Max. 25 employees **or** CHF 6 million annual turnover  
-   - Receivables between CHF 1,000 and CHF 25,000  
+   - Claims between CHF 1,000 and CHF 25,000  
    - Max. 3 cases per year  
    - Documented order (delivery note or order confirmation)  
    - No connection to projects requiring building permits  
@@ -122,16 +116,16 @@ Are there additional fees if a payment is late?
 4. **Your Advantage**  
    - Protection against legal costs  
    - Legal pursuit without cost risk  
-   - Greater certainty in decision-making for debt collection  
+   - Greater certainty in debt collection decisions  
 
 
-### Integrated Debt Collection Interfaces to Creditreform
+### Integrated Collection Interfaces to Creditreform
 
-The debt collection solution offers integrated interfaces to Creditreform for:
+The collection solution offers integrated interfaces to Creditreform for:
 
 - **Debtor Identification**
   - Reliable identification of debtors
-  - Matching with Creditreform database
+  - Comparison with Creditreform database
 
 - **Credit Assessment**
   - Automated creditworthiness check
@@ -150,18 +144,18 @@ The debt collection solution offers integrated interfaces to Creditreform for:
 
 ---
 
-## INFORMATION FOR DEBTORS (Received Payment Reminder from Collection Agency)
+## INFO FOR DEBTORS (Received Payment Reminder from Collection Agency)
 
 ---
 
 ### Received a Payment Reminder – What to Do?
 
 1. **Payment for a Legitimate Claim**  
-   - Transfer the outstanding amount using the payment slip provided  
+   - Transfer the outstanding amount using the payment slip received  
    - If you have financial difficulties: contact the collection agency, arrange installment payments  
 
 2. **Lost Payment Slip**  
-   - Request a new copy from the collection company  
+   - Request a new one from the collection company  
 
 3. **Already Paid but Still Received a Reminder**  
    - Overlap possible: briefly inform the collection agency about your payment  
@@ -181,7 +175,7 @@ The debt collection solution offers integrated interfaces to Creditreform for:
      - [Procedure for Objections (PDF)](https://inkassosuisse.ch/wp-content/uploads/2022/01/202214_Vorgehen-Beschwerden.pdf)  
 
 3. **Complaint to the Ombudsman**  
-   - Written complaint after an unsuccessful objection with the collection agency  
+   - Written complaint after an unsuccessful objection with the collection company  
    - [Information about the Ombudsman](https://www.inkassoverband.ch/#kontakt)  
    - [Instructions (PDF)](https://inkassosuisse.ch/wp-content/uploads/2022/01/202214_Vorgehen-Beschwerden.pdf)  
 
@@ -199,7 +193,7 @@ The debt collection solution offers integrated interfaces to Creditreform for:
    - Request correction directly from the collection agency  
 
 2. **Payment Reminder Does Not Concern Me**  
-   - Inform the collection agency so the matter can be checked  
+   - Inform the collection agency so the facts can be checked  
 
 3. **Unable to Meet Installment Payments**  
    - Contact the collection company as early as possible to arrange new solutions  
