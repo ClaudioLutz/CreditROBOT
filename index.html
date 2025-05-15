@@ -89,6 +89,7 @@
       /* padding-right:50px;        REMOVED - icon is outside */
       /* padding-bottom:45px;       REMOVED - icon is outside */
       margin-right: 45px;       /* Make space for the icon outside */
+      z-index: 1;         /* create a stacking context at z-level 1 */
     }
 
     /* 2️⃣  Paint the icon to the bottom-right, OUTSIDE the bubble */
@@ -115,6 +116,7 @@
       background:#f0f0f0;   /* bubble colour */
       transform:rotate(45deg);       /* makes a diamond shape */
       border-radius:2px;             /* softens the edges     */
+      z-index: -1;  /* all the way behind its parent */
     }
 
     /* Styling for HTML content in bot messages */

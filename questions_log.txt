@@ -263,3 +263,10 @@
 2025-05-14 16:06:33 | DE | Is it legal that creditreform can save information about my company? | Description Deutsch\06_Rechtliche_Aspekte.md | 0.839
 2025-05-14 17:13:25 | EN | how can i check the solvabilty of my customers? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.792
 2025-05-14 17:19:53 | DE | is this legal? | Description Deutsch\06_Rechtliche_Aspekte.md | 0.745
+2025-05-15 10:22:42 | EN | Can I get international credit reports? | Description English\01_Bonitaetsauskuenfte_und_Monitoring.md | 0.845
+2025-05-15 10:24:49 | EN | Can i connect our webshop | Description English\03_Systemintegration.md | 0.793
+2025-05-15 10:26:00 | EN | How to connect with Magento? | Description English\03_Systemintegration.md | 0.780
+2025-05-15 10:27:12 | EN | is it legal for creditrefomr  to have my information? | Description English\06_Rechtliche_Aspekte.md | 0.805
+2025-05-15 10:30:23 | EN | Can i trust creditreform | Description English\04_Mitgliedschaft.md | 0.837
+2025-05-15 10:59:32 | EN | What can i do if i want to delete my data from creditreform? | Description English\06_Rechtliche_Aspekte.md | 0.833
+2025-05-15 11:01:41 | EN | What can i do if i see the data creditreform has about me is incorrect? | Description English\06_Rechtliche_Aspekte.md | 0.840
