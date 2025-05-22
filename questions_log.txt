@@ -270,3 +270,5 @@
 2025-05-15 10:30:23 | EN | Can i trust creditreform | Description English\04_Mitgliedschaft.md | 0.837
 2025-05-15 10:59:32 | EN | What can i do if i want to delete my data from creditreform? | Description English\06_Rechtliche_Aspekte.md | 0.833
 2025-05-15 11:01:41 | EN | What can i do if i see the data creditreform has about me is incorrect? | Description English\06_Rechtliche_Aspekte.md | 0.840
+2025-05-22 19:57:50 | EN | Was weisst du über RiskCUBE? | Description English\03_Systemintegration.md | 0.781
+2025-05-22 19:59:15 | EN | Hi | Description English\02_Inkasso.md | 0.731

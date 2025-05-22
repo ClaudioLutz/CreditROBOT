@@ -271,6 +271,15 @@
       document.getElementById('send-button').textContent = translations[lang].sendButton;
     });
 
+    // Session ID management
+    const SESSION_STORAGE_KEY = 'creditrobot-session-id';
+    let currentSessionId = localStorage.getItem(SESSION_STORAGE_KEY);
+
+    if (!currentSessionId) {
+        currentSessionId = crypto.randomUUID();
+        localStorage.setItem(SESSION_STORAGE_KEY, currentSessionId);
+    }
+
     // Existing chat logic
     document.addEventListener('DOMContentLoaded', function() {
       const chatMessages = document.getElementById('chat-messages');
@@ -335,12 +344,24 @@
               'Content-Type': 'application/json',
             },
             // Include both the user message and the language code
-            body: JSON.stringify({ message: userMessage, lang: selectedLang }),
+            body: JSON.stringify({ 
+              message: userMessage, 
+              lang: selectedLang,
+              sessionId: currentSessionId // SEND THE SESSION ID
+            }),
           });
           
           const data = await response.json();
           if (!response.ok) {
             throw new Error(data.error || 'Failed to get response');
+          }
+
+          if (data.sessionId) {
+              // Update session ID from server response if it differs
+              if (currentSessionId !== data.sessionId) {
+                  currentSessionId = data.sessionId;
+                  localStorage.setItem(SESSION_STORAGE_KEY, currentSessionId);
+              }
           }
           return data.response;
         } catch (error) {
