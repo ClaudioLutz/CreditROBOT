@@ -13,16 +13,19 @@ CORS(app)
 # Load the API key from an environment variable
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
-    print("[ERROR] The OPENAI_API_KEY environment variable is not set.")
-    print("Please set it before running the application.")
-    # You might want to exit here if the key is crucial for startup
-    # import sys
-    # sys.exit(1) 
+    import sys
+    print("[ERROR] The OPENAI_API_KEY environment variable is not set.", file=sys.stderr)
+    print("Please set it before running the application, it cannot continue without it.", file=sys.stderr)
+    sys.exit(1) 
 client = OpenAI(api_key=api_key)
+
+# Configuration for OpenAI model names
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-ada-002")
+CHAT_MODEL = os.getenv("CHAT_MODEL", "gpt-4o")
 
 DOCS = []  # We'll store embedded documents here.
 
-def compute_embedding(text, model="text-embedding-ada-002"):
+def compute_embedding(text, model=EMBEDDING_MODEL):
     """Use the new OpenAI client syntax to compute embedding for a given text."""
     response = client.embeddings.create(model=model, input=[text])
     embedding = response.data[0].embedding
@@ -84,6 +87,10 @@ def retrieve_best_doc(user_query, user_lang=None):
     3) Calculates cosine similarity to each doc
     4) Returns the best doc + similarity score
     """
+    if not DOCS:
+        print("[WARN] DOCS list is empty. No documents to search.")
+        return None, -1
+        
     query_emb = compute_embedding(user_query)
 
     best_doc = None
@@ -101,35 +108,30 @@ def retrieve_best_doc(user_query, user_lang=None):
 
     return best_doc, best_score
 
-def load_base_prompt(language='de'):
-    """Return a short system prompt in the user's language."""
-    if language == 'de':
-        return """
+BASE_PROMPTS = {
+    'de': """
 Antworte auf Deutsch.
 
 **Rolle:**  
 Du bist ein hochspezialisierter Assistent der Creditreform, der präzise und kompetente Antworten zu Bonitätsinformationen, Inkasso und weiteren Creditreform-Dienstleistungen liefert.
 
 Hier sind Kontext-Infos aus dem passenden Dokument:
-        """
-    elif language == 'fr':
-        return """
+        """,
+    'fr': """
 Réponds en français.
 Rôle :
 Tu es un assistant hautement spécialisé de Creditreform, fournissant des réponses précises et compétentes concernant les informations de solvabilité, le recouvrement de créances et d'autres services proposés par Creditreform.
 
 Voici des informations contextuelles issues du document correspondant :        
-        """    
-    elif language == 'it':
-        return """
+        """,
+    'it': """
 Rispondi in italiano.
 Ruolo:
-Sei un assistente altamente specializzato di Creditreform, in grado di fornire risposte precise e competenti riguardo alle informazioni sulla solvibilità, al recupero crediti e ad altri servizi offerti da Creditreform.
+Sei un assistente altamente specializzato di Creditreform, in grado di fornire risposte precise e competenti riguardo alle informazioni sulla solvabilità, al recupero crediti e ad altri servizi offerti da Creditreform.
 
 Ecco le informazioni contestuali tratte dal documento corrispondente:
-        """
-    elif language == 'en':
-        return """
+        """,
+    'en': """
 Respond in English.
 
 **Role:**  
@@ -137,15 +139,10 @@ You are a highly-specialised Creditreform assistant who provides precise, expert
 
 Here is contextual information taken from the relevant document:
     """
-    else:
-        # fallback if unknown
-        return "You are a Creditreform assistant. Please answer in HTML."
-    
+}
 
-def load_final_prompt(language='de'):
-    """Return a short system prompt in the user's language."""
-    if language == 'de':
-        return """
+FINAL_PROMPTS = {
+    'de': """
 **Antwortformat**
 - Antworten ausschließlich in HTML
 - Verwende Absätze <p> für Fließtext
@@ -156,9 +153,8 @@ Am allerwichtigste:
 DU MUSST IMMER ALLE LINKS AUSGEBEN. WENN VORHANDEN IN DER RICHTIGEN SPRACHE
 HALTE DICH KURZ
 WENN DU NICHT SICHER BIST BEI DEINER ANTWORT VERWEISE AUF DAS KONTAKTFORMULAR: https://www.creditreform.ch/creditreform/kontakt
-        """
-    elif language == 'fr':
-        return """
+        """,
+    'fr': """
 **Format de réponse**  
 - Répondre exclusivement en HTML  
 - Utiliser les paragraphes `<p>` pour le texte courant  
@@ -170,10 +166,8 @@ TU DOIS TOUJOURS FOURNIR TOUS LES LIENS
 SOIS CONCIS  
 SI TU N’ES PAS SÛR DE TA RÉPONSE, RENVOIE AU FORMULAIRE DE CONTACT :  
 [https://www.creditreform.ch/creditreform/kontakt](https://www.creditreform.ch/creditreform/kontakt)
-
-        """    
-    elif language == 'it':
-        return """
+        """,
+    'it': """
 **Formato di risposta**  
 - Rispondere esclusivamente in HTML  
 - Utilizzare paragrafi `<p>` per il testo continuo  
@@ -185,9 +179,8 @@ DEVI SEMPRE FORNIRE TUTTI I LINK
 MANTIENITI BREVE  
 SE NON SEI SICURO DELLA TUA RISPOSTA, RIMANDA AL MODULO DI CONTATTO:  
 [https://www.creditreform.ch/creditreform/kontakt](https://www.creditreform.ch/creditreform/kontakt)
-"""
-    elif language == 'en':
-        return """
+""",
+    'en': """
 **Answer format**
 - Answer *exclusively* in HTML
 - Use paragraphs `<p>` for continuous text
@@ -200,9 +193,18 @@ KEEP IT SHORT
 IF YOU ARE NOT SURE ABOUT YOUR ANSWER, REFER TO THE CONTACT FORM:  
 https://www.creditreform.ch/creditreform/kontakt
 """
-    else:
-        # fallback if unknown
-        return "Please answer in HTML."
+}
+
+DEFAULT_BASE_PROMPT = BASE_PROMPTS['en']  # Fallback to English
+DEFAULT_FINAL_PROMPT = FINAL_PROMPTS['en'] # Fallback to English
+
+def load_base_prompt(language='de'):
+    """Return a short system prompt in the user's language."""
+    return BASE_PROMPTS.get(language, DEFAULT_BASE_PROMPT)
+    
+def load_final_prompt(language='de'):
+    """Return a short system prompt in the user's language."""
+    return FINAL_PROMPTS.get(language, DEFAULT_FINAL_PROMPT)
 
 ########################################################
 # 2) FLASK ROUTES
@@ -246,7 +248,7 @@ def chat():
 
         # Call GPT with the system prompt + user message
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model=CHAT_MODEL,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_message}
