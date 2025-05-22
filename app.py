@@ -1,6 +1,7 @@
 #%%
 import os
 import uuid # Added
+import pickle # Added for caching
 from flask import Flask, request, jsonify # ensure jsonify is imported
 from flask_cors import CORS
 from flask_migrate import Migrate
@@ -46,6 +47,8 @@ if not api_key:
 client = OpenAI(api_key=api_key)
 
 DOCS = []  # We'll store embedded documents here.
+BASE_PROJECT_DIR = "CreditROBOT" # Define base directory for the project
+CACHE_PATH = os.path.join(BASE_PROJECT_DIR, "embeddings_cache.pkl")  # Cache file inside CreditROBOT
 
 def compute_embedding(text, model="text-embedding-ada-002"):
     """Use the new OpenAI client syntax to compute embedding for a given text."""
@@ -68,39 +71,108 @@ def scan_language_folders():
       - "Description Französisch"
       - "Description Italienisch"
       - "Description English"
-    Each .txt file is read & embedded as a separate 'document'.
+    Each .md file is read & embedded as a separate 'document'.
+    Implements caching to avoid re-embedding unchanged files.
     """
+    # Load existing cache if available
+    embeddings_cache = {}
+    # Ensure the cache path is correct relative to where the script is run from
+    # If CACHE_PATH is now "CreditROBOT/embeddings_cache.pkl", os.path.exists will check correctly from c:/Codes/CRChatbot
+    if os.path.exists(CACHE_PATH):
+        try:
+            # Create instance directory if CACHE_PATH is in instance_path and it doesn't exist
+            # cache_dir = os.path.dirname(CACHE_PATH)
+            # if cache_dir and not os.path.exists(cache_dir):
+            #    os.makedirs(cache_dir) # Not strictly needed if CACHE_PATH is CreditROBOT/embeddings_cache.pkl
+
+            with open(CACHE_PATH, "rb") as f:
+                embeddings_cache = pickle.load(f)
+                print(f"Loaded {len(embeddings_cache)} cached embeddings from {CACHE_PATH}")
+        except (pickle.UnpicklingError, EOFError, FileNotFoundError) as e: # Added FileNotFoundError
+            print(f"[WARN] Could not load cache file {CACHE_PATH}: {e}. Starting with an empty cache.")
+            embeddings_cache = {} # Ensure cache is empty on error
+    
+    # DOCS will be populated here instead of being a global modified directly
+    local_docs = [] 
+    updated_cache = {}  # New cache data to save at the end
+    
     folders = [
         ("Description Deutsch", "de"),
         ("Description Französisch", "fr"),
-        ("Description Italienisch", "it"),  # <-- Temporarily commented out
+        ("Description Italienisch", "it"),
         ("Description English", "en"),
     ]
-    for folder_path, lang_code in folders:
-        if not os.path.exists(folder_path):
-            print(f"[WARN] Folder {folder_path} does not exist, skipping.")
-            continue
-        # List all .md files in that folder
-        for filename in os.listdir(folder_path):
-            if filename.lower().endswith(".md"):
-                full_path = os.path.join(folder_path, filename)
-                with open(full_path, "r", encoding="utf-8") as f:
-                    text_content = f.read()
-                print(f"Processing file: {full_path}, Length: {len(text_content)}")
-                
-                # Compute embedding
-                if not text_content.strip():
-                    print(f"[WARN] Skipping empty file: {full_path}")
-                    continue
 
-                emb = compute_embedding(text_content)
-                DOCS.append({
+    for folder_name, lang_code in folders:
+        # Construct the full path to the language folder relative to the project base
+        actual_folder_path = os.path.join(BASE_PROJECT_DIR, folder_name)
+
+        if not os.path.exists(actual_folder_path):
+            print(f"[WARN] Folder {actual_folder_path} does not exist, skipping.")
+            continue
+        
+        for filename in os.listdir(actual_folder_path):
+            if not filename.lower().endswith(".md"):
+                continue  # skip non-Markdown files
+            
+            file_path = os.path.join(actual_folder_path, filename)
+            
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    text_content = f.read()
+            except Exception as e:
+                print(f"[ERROR] Could not read file {file_path}: {e}")
+                continue
+
+            if not text_content.strip():
+                print(f"[WARN] Skipping empty file: {file_path}")
+                continue
+                
+            file_mod_time = os.path.getmtime(file_path)
+            embedding = None
+            
+            if file_path in embeddings_cache:
+                cached_entry = embeddings_cache[file_path]
+                if ("last_modified" in cached_entry and 
+                        cached_entry.get("last_modified") == file_mod_time and
+                        "embedding" in cached_entry and cached_entry["embedding"]): # Ensure embedding exists
+                    embedding = cached_entry["embedding"]
+                    print(f"Using cached embedding for: {file_path}")
+            
+            if embedding is None:
+                print(f"Computing embedding for: {file_path}")
+                try:
+                    embedding = compute_embedding(text_content)
+                except Exception as e:
+                    print(f"[ERROR] Failed to compute embedding for {file_path}: {e}")
+                    continue # Skip this file if embedding fails
+            
+            if embedding is not None: # Ensure embedding was successfully obtained
+                updated_cache[file_path] = {
+                    "embedding": embedding,
+                    "last_modified": file_mod_time
+                }
+                local_docs.append({
                     "language": lang_code,
-                    "filepath": full_path,
+                    "filepath": file_path,
                     "content": text_content,
-                    "embedding": emb
+                    "embedding": embedding
                 })
-                print(f"Embedded file: {full_path} (lang={lang_code})")
+            else:
+                print(f"[WARN] Embedding is None for {file_path}, not adding to docs or cache.")
+
+    # After processing all files, save the updated cache to disk
+    try:
+        with open(CACHE_PATH, "wb") as f:
+            pickle.dump(updated_cache, f)
+        print(f"Saved {len(updated_cache)} embeddings to {CACHE_PATH}")
+    except Exception as e:
+        print(f"[ERROR] Could not save cache file {CACHE_PATH}: {e}")
+
+    # Update the global DOCS variable
+    global DOCS
+    DOCS = local_docs
+    # No return needed as DOCS is global, but good practice if it were not
 
 def retrieve_best_doc(user_query, user_lang=None):
     """
