@@ -217,8 +217,8 @@ graph TD
 
     subgraph Flask Application
         direction LR
-        B1[index.html Frontend] -. Serves UI .-> A;
-        B -- Routes to --> B2[/api/chat Endpoint];
+        B1["index.html Frontend"] -. Serves UI .-> A;
+        B -- Routes to --> B2["/api/chat Endpoint"];
         B2 -- Gets/Creates Session --> DB[(SQLite Database)];
         B2 -- Logs User Message --> DB_Conv[Conversations Table];
         B2 -- Embed User Query --> OpenAI_Emb[OpenAI API Embeddings];
@@ -250,10 +250,9 @@ graph TD
     B2 -- Uses for RAG Context --> Cache;
     B2 -- Uses for Summarization --> OpenAI_Chat_Mini;
 
-    style User fill:#f9f,stroke:#333,stroke-width:2px;
+    style A fill:#f9f,stroke:#333,stroke-width:2px;
     style KB fill:#ccf,stroke:#333,stroke-width:2px;
     style DB fill:#fcc,stroke:#333,stroke-width:2px;
-    style OpenAI_Services fill:#cfc,stroke:#333,stroke-width:2px;
     style Cache fill:#lightgrey,stroke:#333,stroke-width:1px;
 ```
 
