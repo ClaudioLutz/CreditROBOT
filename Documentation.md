@@ -186,14 +186,14 @@ The `questions_log.txt` file is no longer used for detailed conversation logging
         OPENAI_API_KEY='your_actual_openai_api_key'
         ```
 3.  **Database Initialization**:
-    *   Run from within the `CreditROBOT` directory:
-        ```bash
+    *   ```bash
+        # Ensure you are in the CreditROBOT project root directory, then run:
         flask db upgrade
         ```
         This command creates the database and applies all migrations if it's the first time, or applies any pending migrations if the database already exists.
 4.  **Start the Server**:
-    *   Run from within the `CreditROBOT` directory:
-        ```bash
+    *   ```bash
+        # Ensure you are in the CreditROBOT project root directory, then run:
         python app.py
         ```
         The Flask development server will typically start on `http://localhost:5000`.
@@ -210,6 +210,8 @@ The `questions_log.txt` file is no longer used for detailed conversation logging
 -   **Development vs. Production**: The current setup uses the Flask development server. For production, a more robust WSGI server (like Gunicorn or uWSGI) behind a reverse proxy (like Nginx) would be recommended. Database choice might also change for production (e.g., PostgreSQL).
 
 ## 7. Project Architecture Diagram
+
+*Note: If the diagram below is not rendered correctly, please try viewing this document with a Markdown viewer or browser extension that supports Mermaid.js diagrams.*
 
 ```mermaid
 graph TD

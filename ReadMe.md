@@ -1,6 +1,6 @@
 # CreditROBOT
 
-CreditROBOT is a small chatbot application for Creditreform. It uses a Flask backend with SQLAlchemy for database persistence, Flask-Migrate for schema migrations, and the OpenAI API to answer user questions in multiple languages. The system features a session-based memory that maintains a running summary of conversations, allowing for more contextual and coherent interactions. It reads Markdown files from language-specific folders, embeds them using an OpenAI model (e.g., `text-embedding-ada-002`), and retrieves the most relevant document for each query using RAG (Retrieval Augmented Generation). Responses are generated with a powerful LLM (e.g., GPT-4o) and returned to a simple web front end.
+CreditROBOT is a small chatbot application for Creditreform. It uses a Flask backend with SQLAlchemy for database persistence, Flask-Migrate for schema migrations, and the OpenAI API to answer user questions in multiple languages. The system features a session-based memory that maintains a running summary of conversations, allowing for more contextual and coherent interactions. It reads Markdown files from language-specific folders, embeds them using an OpenAI model (e.g., `text-embedding-ada-002`), and retrieves the most relevant document for each query using RAG (Retrieval Augmented Generation). Responses are generated with a powerful LLM (e.g., GPT-4o) and returned to a simple web front end. For a more detailed technical explanation of the system, please see the [Project Documentation](Documentation.md).
 
 ## Features
 - Multi-lingual support (German, French, Italian, English).
@@ -38,6 +38,10 @@ CreditROBOT is a small chatbot application for Creditreform. It uses a Flask bac
 8. Open `index.html` in your browser and start chatting.
 
 The application automatically scans the language folders at startup, caches embeddings, and stores conversation data in the database. The `questions_log.txt` file is no longer the primary log for conversations.
+
+## How it Works
+The chatbot uses a Retrieval Augmented Generation (RAG) approach. It first searches a knowledge base of Markdown documents for information relevant to your query. This retrieved information is then used to help a large language model (LLM) generate a factual and relevant answer.
+To handle multi-turn conversations, the system maintains a session-based memory. A running summary of the conversation is kept and updated with each interaction, providing context to the LLM for more coherent responses over time.
 
 ## Repository layout
 
