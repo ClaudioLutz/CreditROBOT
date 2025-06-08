@@ -59,42 +59,43 @@ The application automatically scans the language folders at startup, caches embe
 
 ```mermaid
 graph TD
-    A[Creditreform Services for Businesses] --> B{Need to Understand Business Partners?};
-    B -- Yes --> C[Credit Reports & Monitoring];
-    C --> C1[Assess Creditworthiness (Companies & Individuals)];
-    C --> C2[Monitor Existing Partners for Changes];
-    C --> C3[Check for Compliance (e.g., Anti-Money Laundering)];
-    C --> C4[International Reports Available];
+    A["Creditreform Services for Businesses"] --> B{Need to Understand Business Partners?};
+    B -- Yes --> C["Credit Reports & Monitoring"];
+    C --> C1["Assess Creditworthiness (Companies & Individuals)"];
+    C --> C2["Monitor Existing Partners for Changes"];
+    C --> C3["Check for Compliance (e.g., Anti-Money Laundering)"];
+    C --> C4["International Reports Available"];
 
     A --> D{Experiencing Unpaid Invoices?};
-    D -- Yes --> E[Debt Collection Services];
-    E --> E1[Pre-legal & Legal Collection];
-    E --> E2[Loss Certificate Management];
-    E --> E3[CrediCAP: Collection Insurance for SMEs];
+    D -- Yes --> E["Debt Collection Services"];
+    E --> E1["Pre-legal & Legal Collection"];
+    E --> E2["Loss Certificate Management"];
+    E --> E3["CrediCAP: Collection Insurance for SMEs"];
 
     A --> F{Want to Integrate Risk Checks into Your Systems?};
-    F -- Yes --> G[System Integration];
-    G --> G1[CrediCONNECT: Link Your ERP/CRM to Creditreform Data];
-    G --> G2[RiskCUBE: Secure 'Buy on Account' for Online Shops];
-    G --> G3[Automate Debt Collection Processes];
+    F -- Yes --> G["System Integration"];
+    G --> G1["CrediCONNECT: Link Your ERP/CRM to Creditreform Data"];
+    G --> G2["RiskCUBE: Secure 'Buy on Account' for Online Shops"];
+    G --> G3["Automate Debt Collection Processes"];
 
     A --> H{Interested in Ongoing Support & Benefits?};
-    H -- Yes --> I[Membership];
-    I --> I1[Preferential Rates on Services];
-    I --> I2[Access to Shared Payment Experiences];
-    I --> I3[Regular Updates & Information];
+    H -- Yes --> I["Membership"];
+    I --> I1["Preferential Rates on Services"];
+    I --> I2["Access to Shared Payment Experiences"];
+    I --> I3["Regular Updates & Information"];
 
-    C1 --> Z[Make Informed Business Decisions];
+    C1 --> Z["Make Informed Business Decisions"];
     C2 --> Z;
     C3 --> Z;
-    E1 --> Y[Improve Cash Flow];
+    E1 --> Y["Improve Cash Flow"];
     E2 --> Y;
-    G1 --> X[Streamline Operations];
+    G1 --> X["Streamline Operations"];
     G2 --> X;
-    I1 --> W[Optimize Costs & Security];
+    I1 --> W["Optimize Costs & Security"];
 
-    Z --> V[Overall Goal: Minimize Risk & Secure Liquidity];
+    Z --> V["Overall Goal: Minimize Risk & Secure Liquidity"];
     Y --> V;
     X --> V;
     W --> V;
+
 ```
