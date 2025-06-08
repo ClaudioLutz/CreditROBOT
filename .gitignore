@@ -5,3 +5,4 @@ available_models.py
 .env
 embeddings_cache.pkl
 instance/
+__pycache__/

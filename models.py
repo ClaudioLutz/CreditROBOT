@@ -18,6 +18,11 @@ class Session(db.Model):
     # Establish the one-to-many relationship
     conversations = relationship('Conversation', back_populates='session')
 
+    def __init__(self, session_id: str):
+        self.session_id = session_id
+        # id, created_at, updated_at, and conversation_summary
+        # will be handled by SQLAlchemy column defaults or auto-increment.
+
     def __repr__(self):
         return f"<Session {self.session_id}>"
 
