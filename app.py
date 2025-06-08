@@ -47,7 +47,7 @@ if not api_key:
 client = OpenAI(api_key=api_key)
 
 DOCS = []  # We'll store embedded documents here.
-BASE_PROJECT_DIR = "CreditROBOT" # Define base directory for the project
+BASE_PROJECT_DIR = "" # Define base directory for the project - Corrected: script runs from within CreditROBOT
 CACHE_PATH = os.path.join(BASE_PROJECT_DIR, "embeddings_cache.pkl")  # Cache file inside CreditROBOT
 
 def compute_embedding(text, model="text-embedding-ada-002"):
@@ -301,6 +301,61 @@ https://www.creditreform.ch/creditreform/kontakt
         # fallback if unknown
         return "Please answer in HTML."
 
+def get_or_create_session(session_id: str) -> models.Session:
+    """Fetches a session from the DB or creates it if it doesn't exist."""
+    session = db.session.query(models.Session).filter_by(session_id=session_id).first()
+    if not session:
+        print(f"Creating new session for ID: {session_id}")
+        session = models.Session(session_id=session_id)
+        db.session.add(session)
+        # We commit here so the session is available immediately for the rest of the request
+        # A more advanced pattern could pass the session object around without this intermediate commit.
+        db.session.commit()
+    return session
+
+def update_conversation_summary(session: models.Session, user_message: str, assistant_message: str):
+    """Updates the session's running summary using a fast LLM."""
+    
+    current_summary = session.conversation_summary
+    
+    # This is a highly specific prompt for the summarization task
+    summarizer_prompt = f"""
+    Your task is to update a conversation summary. You will be given the previous summary
+    and the latest user-assistant interaction. Integrate the new information from the interaction
+    into the summary concisely. Preserve key details, names, topics, and user goals.
+    The user is asking about Creditreform.
+
+    PREVIOUS SUMMARY:
+    "{current_summary}"
+
+    LATEST INTERACTION:
+    User: "{user_message}"
+    Assistant: "{assistant_message}"
+
+    UPDATED SUMMARY:
+    """
+    
+    try:
+        response = client.chat.completions.create(
+            # Use a fast and cheap model for this summarization task
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": "You are an expert conversation summarizer."},
+                {"role": "user", "content": summarizer_prompt}
+            ],
+            temperature=0.2,
+            max_tokens=250 # Keep the summary concise
+        )
+        new_summary = response.choices[0].message.content
+        
+        # Update the summary on the session object in memory
+        session.conversation_summary = new_summary.strip() if new_summary else current_summary
+        # The calling function will be responsible for the final db.session.commit()
+        
+    except Exception as e:
+        app.logger.error(f"Failed to update conversation summary for session {session.session_id}: {e}")
+        # If summarization fails, we don't crash. The old summary will be used next time.
+
 ########################################################
 # Function to get history
 def get_history(session_id_to_fetch, limit=20):
@@ -313,7 +368,7 @@ def get_history(session_id_to_fetch, limit=20):
 
     rows = db.session.execute(
         db.select(models.Conversation) # Use models.Conversation
-          .where(models.Conversation.session_id == session_id_to_fetch)
+          .where(models.Conversation.session_uuid == session_id_to_fetch) # Changed session_id to session_uuid
           .order_by(models.Conversation.timestamp.asc()) # ASC for oldest first
           .limit(limit)
     ).scalars().all()
@@ -331,154 +386,78 @@ def get_history(session_id_to_fetch, limit=20):
 @app.route('/api/chat', methods=['POST'])
 def chat():
     data = request.get_json() or {}
-    
-    # 1. Get or ensure session_id
-    session_id_str = data.get('sessionId')
-    if not session_id_str:
-        session_id_str = str(uuid.uuid4())
-    
+    session_id_str = data.get('sessionId') or str(uuid.uuid4())
     user_message = data.get('message', '').strip()
     language = (data.get('lang') or 'de')[:5].lower()
 
     if not user_message:
         return jsonify({"error": "Empty message received"}), 400
 
-    # --- Persist User Message ---
-    user_entry = models.Conversation(
-        session_id=session_id_str,
-        role='user',
-        language=language,
-        content=user_message
-    )
+    # 1. Get or create the session object
+    session = get_or_create_session(session_id_str)
+
+    # 2. Persist the user message turn (but don't commit yet)
+    user_entry = models.Conversation(session_uuid=session.session_id, role='user', language=language, content=user_message)
     db.session.add(user_entry)
 
-    # --- Existing logic for language detection, RAG, LLM call ---
-    # Retrieve best doc for the user query
+    # 3. Perform RAG retrieval as before
     best_doc, score = retrieve_best_doc(user_message, user_lang=language)
 
-    # Placeholder for RAG details (replace with actual values from your RAG logic)
-    match_path_placeholder = None
-    match_score_placeholder = None
-    if best_doc:
-        match_path_placeholder = best_doc['filepath']
-        match_score_placeholder = score
-        print(f"Best match: {best_doc['filepath']} (score={score:.3f})")
-        base_prompt = load_base_prompt(language)
-        final_prompt = load_final_prompt(language)
-        system_prompt = (
-            f"{base_prompt}\n\n"
-            f"{best_doc['content']}\n"
-            f"---\n"
-            f"{final_prompt}\n"
-        )
-    else:
-        # fallback: no doc found or the folder was empty
-        system_prompt = load_base_prompt(language)
-        system_prompt += "\n\n(Keine passenden Dokumente gefunden.)\n"
-
-    # --- Integrate History for LLM Call ---
-    # 1. Retrieve conversation history
-    conversation_history = get_history(session_id_str, limit=10) # Adjust limit as needed
-
-    # 2. Prepare messages for LLM
-    messages_for_llm = []
-    for entry in conversation_history:
-        messages_for_llm.append({"role": entry["role"], "content": entry["content"]})
+    # 4. Construct the main prompt using the SUMMARY, not the full history
+    base_prompt = load_base_prompt(language)
+    final_prompt = load_final_prompt(language)
     
-    # Add current system prompt (if you want to reiterate it - or adjust based on LLM needs)
-    # For many models, the system prompt is a one-time setup for the conversation.
-    # If your system_prompt is dynamic per turn (e.g. includes RAG context), 
-    # you might structure messages_for_llm differently, e.g.,
-    # messages_for_llm = [{"role": "system", "content": system_prompt}] + history_messages + [{"role": "user", "content": user_message}]
-    # For now, let's assume system_prompt is passed as a separate parameter or at the start of messages.
-    # The example in the plan adds user message after history.
+    # Inject the conversation summary into the prompt
+    contextual_history = f"CONTEXT FROM PREVIOUSLY IN THE CONVERSATION:\n{session.conversation_summary}"
     
-    # Add current user message to the history for the LLM
-    messages_for_llm.append({"role": "user", "content": user_message}) # This is the current user message added to historical messages
+    system_prompt = (
+        f"{base_prompt}\n\n"
+        f"{contextual_history}\n\n"
+        f"CONTEXT FROM KNOWLEDGE BASE DOCUMENT '{best_doc['filepath']}':\n{best_doc['content']}\n"
+        f"---\n"
+        f"{final_prompt}\n"
+    ) if best_doc else f"{base_prompt}\n\n{contextual_history}\n\n(No matching document found.)\n---\n{final_prompt}"
 
-    # Construct type-safe messages for OpenAI API
-    typed_llm_input_messages: list[ChatCompletionSystemMessageParam | ChatCompletionUserMessageParam | ChatCompletionAssistantMessageParam] = [
-        ChatCompletionSystemMessageParam(role="system", content=system_prompt)
-    ]
-    # conversation_history already contains the current user's message if messages_for_llm was built from it.
-    # The plan's logic for messages_for_llm:
-    # 1. conversation_history = get_history(...)
-    # 2. messages_for_llm = [] from conversation_history
-    # 3. messages_for_llm.append({"role": "user", "content": user_message}) <-- current user message
-    # 4. llm_input_messages = [{"role": "system", "content": system_prompt}] + messages_for_llm
-    # So, messages_for_llm contains historical user/assistant turns AND the current user message.
-
-    # Let's rebuild typed_llm_input_messages from messages_for_llm (which includes history + current user message)
-    # and prepend the system prompt.
-    
-    # messages_for_llm was:
-    # history_entries = []
-    # for entry in conversation_history: # from get_history (oldest first)
-    #    history_entries.append({"role": entry["role"], "content": entry["content"]})
-    # history_entries.append({"role": "user", "content": user_message}) # current user message
-    # This is what messages_for_llm variable holds.
-
-    for msg_data in messages_for_llm: # messages_for_llm contains history AND current user message
-        role = msg_data.get("role")
-        content = msg_data.get("content", "")
-        if role == "user":
-            typed_llm_input_messages.append(ChatCompletionUserMessageParam(role="user", content=content))
-        elif role == "assistant":
-            typed_llm_input_messages.append(ChatCompletionAssistantMessageParam(role="assistant", content=content))
-        # System message is already added as the first element.
-    
-    app.logger.info(f"Messages for LLM (Session: {session_id_str}): {typed_llm_input_messages}")
-
+    # 5. Call the main LLM (gpt-4o) with only the current user message
     try:
         llm_api_response = client.chat.completions.create(
-            model="gpt-4o", # Or your chosen model
-            messages=typed_llm_input_messages, # Pass the type-safe list
+            model="gpt-4o",
+            messages=[
+                ChatCompletionSystemMessageParam(role="system", content=system_prompt),
+                ChatCompletionUserMessageParam(role="user", content=user_message)
+            ],
             max_tokens=700,
             temperature=0.0
         )
-        bot_response_content = llm_api_response.choices[0].message.content
-        bot_response_content = bot_response_content if bot_response_content is not None else ""
+        bot_response_content = llm_api_response.choices[0].message.content or ""
         bot_response_content = bot_response_content.replace("```html", "").replace("```", "")
-
     except Exception as e:
         app.logger.error(f"LLM API call failed: {e}")
-        # Fallback if LLM call fails, but still log the attempt
-        bot_response_content = f"DEV: Echo with history. User said: {user_message}"
-        # Optionally, you could return an error to the user here, but the plan suggests a fallback.
-        # return jsonify({"error": "Failed to get response from LLM."}), 500
+        bot_response_content = "I am sorry, but I encountered an error. Please try again."
     
-    # Ensure bot_response_content is defined (fallback from plan)
-    if 'bot_response_content' not in locals() or not bot_response_content: 
-         bot_response_content = f"DEV: Echo with history. User said: {user_message}"
-    
-    # --- Persist Assistant Message ---
+    # 6. Persist the assistant message turn (don't commit yet)
     assistant_entry = models.Conversation(
-        session_id=session_id_str,
+        session_uuid=session.session_id,
         role='assistant',
-        language=language, # Assuming bot replies in the same language
+        language=language,
         content=bot_response_content,
-        doc_path=match_path_placeholder, # Use actual path from RAG
-        similarity=match_score_placeholder # Use actual score from RAG
+        doc_path=best_doc['filepath'] if best_doc else None,
+        similarity=score if best_doc else None
     )
     db.session.add(assistant_entry)
 
-    # --- Commit to Database (with error handling) ---
+    # 7. IMPORTANT: Update the conversation summary
+    update_conversation_summary(session, user_message, bot_response_content)
+
+    # 8. Commit the entire transaction (new turns, updated summary)
     try:
         db.session.commit()
     except Exception as e:
         db.session.rollback()
-        app.logger.error(f"Database commit failed in /api/chat: {e}") # Ensure app.logger is configured or use print
-        return jsonify({"error": "Could not save conversation turn."}), 500
-    
-    # --- Remove old text file logging (commented out as per plan) ---
-    # timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    # match_path  = best_doc['filepath'] if best_doc else "NO_MATCH"
-    # match_score = f"{score:.3f}"          if best_doc else "-"
-    # with open("questions_log.txt", "a", encoding="utf-8") as log:
-    #     log.write(f"{timestamp} | {language.upper()} | {user_message} | "
-    #               f"{match_path} | {match_score}\n")
+        app.logger.error(f"Database commit failed: {e}")
+        return jsonify({"error": "Could not save conversation."}), 500
 
-    # --- Return response including session_id ---
+    # 9. Return the response to the user
     return jsonify({
         'response': bot_response_content,
         'sessionId': session_id_str

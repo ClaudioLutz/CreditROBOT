@@ -4,3 +4,4 @@ translate.py
 available_models.py
 .env
 embeddings_cache.pkl
+instance/
