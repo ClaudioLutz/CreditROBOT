@@ -2,6 +2,7 @@
 import os
 import uuid # Added
 import pickle # Added for caching
+import hashlib # Add this import at the top of app.py
 from flask import Flask, request, jsonify # ensure jsonify is imported
 from flask_cors import CORS
 from flask_migrate import Migrate
@@ -356,6 +357,19 @@ def update_conversation_summary(session: models.Session, user_message: str, assi
         app.logger.error(f"Failed to update conversation summary for session {session.session_id}: {e}")
         # If summarization fails, we don't crash. The old summary will be used next time.
 
+def generate_llm_cache_key(user_message: str, retrieved_doc_content: str | None, conversation_summary: str | None, language: str) -> str:
+    """
+    Generates a SHA256 hash key for caching LLM responses.
+    The key is based on the user's message, the content of the retrieved document (if any),
+    the current conversation summary, and the language.
+    """
+    key_string = f"{user_message.strip()}|" \
+                 f"{retrieved_doc_content.strip() if retrieved_doc_content else 'NO_DOC'}|" \
+                 f"{conversation_summary.strip() if conversation_summary else 'NO_SUMMARY'}|" \
+                 f"{language.strip()}"
+
+    return hashlib.sha256(key_string.encode('utf-8')).hexdigest()
+
 ########################################################
 # Function to get history
 def get_history(session_id_to_fetch, limit=20):
@@ -393,63 +407,101 @@ def chat():
     if not user_message:
         return jsonify({"error": "Empty message received"}), 400
 
-    # 1. Get or create the session object
-    session = get_or_create_session(session_id_str)
+    session = get_or_create_session(session_id_str) # models.Session object
 
-    # 2. Persist the user message turn (but don't commit yet)
     user_entry = models.Conversation(session_uuid=session.session_id, role='user', language=language, content=user_message)
     db.session.add(user_entry)
 
-    # 3. Perform RAG retrieval as before
-    best_doc, score = retrieve_best_doc(user_message, user_lang=language)
-
-    # 4. Construct the main prompt using the SUMMARY, not the full history
-    base_prompt = load_base_prompt(language)
-    final_prompt = load_final_prompt(language)
-    
-    # Inject the conversation summary into the prompt
-    contextual_history = f"CONTEXT FROM PREVIOUSLY IN THE CONVERSATION:\n{session.conversation_summary}"
-    
-    system_prompt = (
-        f"{base_prompt}\n\n"
-        f"{contextual_history}\n\n"
-        f"CONTEXT FROM KNOWLEDGE BASE DOCUMENT '{best_doc['filepath']}':\n{best_doc['content']}\n"
-        f"---\n"
-        f"{final_prompt}\n"
-    ) if best_doc else f"{base_prompt}\n\n{contextual_history}\n\n(No matching document found.)\n---\n{final_prompt}"
-
-    # 5. Call the main LLM (gpt-4.1) with only the current user message
     try:
-        llm_api_response = client.chat.completions.create(
-            model="gpt-4.1",
-            messages=[
-                ChatCompletionSystemMessageParam(role="system", content=system_prompt),
-                ChatCompletionUserMessageParam(role="user", content=user_message)
-            ],
-            max_tokens=700,
-            temperature=0.0
-        )
-        bot_response_content = llm_api_response.choices[0].message.content or ""
-        bot_response_content = bot_response_content.replace("```html", "").replace("```", "")
-    except Exception as e:
-        app.logger.error(f"LLM API call failed: {e}")
-        bot_response_content = "I am sorry, but I encountered an error. Please try again."
-    
-    # 6. Persist the assistant message turn (don't commit yet)
+        best_doc, score = retrieve_best_doc(user_message, user_lang=language)
+        retrieved_doc_content = best_doc['content'] if best_doc else None
+        doc_path_for_assistant_entry = best_doc['filepath'] if best_doc else None
+        similarity_for_assistant_entry = score if best_doc else None
+    except Exception as e: # Catching potential errors from RAG, e.g. OpenAI key error during embedding
+        app.logger.error(f"RAG (retrieve_best_doc) failed: {e}")
+        best_doc = None # Ensure best_doc is None so flow continues predictably
+        retrieved_doc_content = None
+        doc_path_for_assistant_entry = None
+        similarity_for_assistant_entry = None
+
+    bot_response_content = None  # Initialize
+
+    # CACHE LOOKUP
+    # Ensure session.conversation_summary is available here
+    cache_key = generate_llm_cache_key(user_message, retrieved_doc_content, session.conversation_summary, language)
+    cached_item = db.session.query(models.LlmResponseCache).filter_by(cache_key=cache_key).first()
+
+    if cached_item:
+        # Optional: Add TTL check here if desired
+        # if (datetime.now(timezone.utc) - cached_item.created_at) < timedelta(days=YOUR_TTL_DAYS):
+        app.logger.info(f"Cache HIT for key: {cache_key[:10]}...") # Ensure app.logger is configured
+        bot_response_content = cached_item.llm_response
+        cached_item.last_accessed_at = datetime.now(timezone.utc)
+        db.session.add(cached_item)
+        doc_path_for_assistant_entry = cached_item.source_document_path
+        similarity_for_assistant_entry = None
+        # else:
+        #   app.logger.info(f"Cache STALE for key: {cache_key[:10]}... Treating as miss.")
+        #   cached_item = None # Ensure it's treated as a miss, so bot_response_content remains None
+
+    if bot_response_content is None:
+        app.logger.info(f"Cache MISS for key: {cache_key[:10]}... Calling LLM.")
+        base_prompt_text = load_base_prompt(language) # Renamed to avoid conflict
+        final_prompt_text = load_final_prompt(language) # Renamed to avoid conflict
+
+        # Ensure session.conversation_summary is correctly used
+        contextual_history = f"CONTEXT FROM PREVIOUSLY IN THE CONVERSATION:\n{session.conversation_summary}"
+
+        system_prompt = (
+            f"{base_prompt_text}\n\n"
+            f"{contextual_history}\n\n"
+            f"CONTEXT FROM KNOWLEDGE BASE DOCUMENT '{doc_path_for_assistant_entry}':\n{retrieved_doc_content}\n" # Use determined doc path and content
+            f"---\n"
+            f"{final_prompt_text}\n"
+        ) if best_doc else f"{base_prompt_text}\n\n{contextual_history}\n\n(No matching document found.)\n---\n{final_prompt_text}"
+
+        llm_call_succeeded = False # Flag
+        try:
+            # Ensure client, ChatCompletionSystemMessageParam, ChatCompletionUserMessageParam are defined
+            llm_api_response = client.chat.completions.create(
+                model="gpt-4.1",
+                messages=[
+                    ChatCompletionSystemMessageParam(role="system", content=system_prompt),
+                    ChatCompletionUserMessageParam(role="user", content=user_message)
+                ],
+                max_tokens=700,
+                temperature=0.0
+            )
+            llm_response_str = llm_api_response.choices[0].message.content or "" # Renamed
+            bot_response_content = llm_response_str.replace("```html", "").replace("```", "")
+            llm_call_succeeded = True # Mark as success
+        except Exception as e:
+            app.logger.error(f"LLM API call failed: {e}")
+            bot_response_content = "I am sorry, but I encountered an error. Please try again."
+            # llm_call_succeeded remains False
+
+        if llm_call_succeeded and bot_response_content: # Cache only on success and if content exists
+            new_cache_entry = models.LlmResponseCache(
+                cache_key=cache_key,
+                llm_response=bot_response_content,
+                language=language,
+                source_document_path=doc_path_for_assistant_entry
+            )
+            db.session.add(new_cache_entry)
+
     assistant_entry = models.Conversation(
         session_uuid=session.session_id,
         role='assistant',
         language=language,
-        content=bot_response_content,
-        doc_path=best_doc['filepath'] if best_doc else None,
-        similarity=score if best_doc else None
+        content=bot_response_content, # This is now from cache or LLM
+        doc_path=doc_path_for_assistant_entry,
+        similarity=similarity_for_assistant_entry
     )
     db.session.add(assistant_entry)
 
-    # 7. IMPORTANT: Update the conversation summary
+    # update_conversation_summary must be called AFTER bot_response_content is finalized
     update_conversation_summary(session, user_message, bot_response_content)
 
-    # 8. Commit the entire transaction (new turns, updated summary)
     try:
         db.session.commit()
     except Exception as e:
@@ -457,7 +509,6 @@ def chat():
         app.logger.error(f"Database commit failed: {e}")
         return jsonify({"error": "Could not save conversation."}), 500
 
-    # 9. Return the response to the user
     return jsonify({
         'response': bot_response_content,
         'sessionId': session_id_str
@@ -487,6 +538,6 @@ if __name__ == '__main__':
 
     if not client.api_key:
         print("[WARNING] No OpenAI API key set.")
-    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
 # %%

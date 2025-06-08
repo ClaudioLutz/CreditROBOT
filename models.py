@@ -1,6 +1,6 @@
 # models.py
 from datetime import datetime, timezone
-from sqlalchemy import Text, Float, String, DateTime, Integer, ForeignKey
+from sqlalchemy import Text, Float, String, DateTime, Integer, ForeignKey, Index # Added Index
 from sqlalchemy.orm import relationship
 from db import db
 
@@ -71,3 +71,27 @@ class Conversation(db.Model):
             'doc_path': self.doc_path,
             'similarity': self.similarity
         }
+
+class LlmResponseCache(db.Model):
+    __tablename__ = 'llm_response_cache'
+
+    id = db.Column(Integer, primary_key=True)
+    cache_key = db.Column(String(64), unique=True, nullable=False, index=True) # SHA256 hash is 64 chars
+    llm_response = db.Column(Text, nullable=False)
+    created_at = db.Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
+    last_accessed_at = db.Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc), nullable=False)
+    language = db.Column(String(5), nullable=False) # To store language like 'de', 'en'
+    source_document_path = db.Column(Text, nullable=True) # Path to the .md file used for context
+
+    def __init__(self, cache_key: str, llm_response: str, language: str, source_document_path: str | None = None):
+        self.cache_key = cache_key
+        self.llm_response = llm_response
+        self.language = language
+        self.source_document_path = source_document_path
+        # id, created_at, last_accessed_at are handled by SQLAlchemy defaults
+
+    def __repr__(self):
+        return f"<LlmResponseCache (Key: {self.cache_key[:10]}...) (Lang: {self.language}) (Created: {self.created_at.strftime('%Y-%m-%d %H:%M')})>"
+
+# Optional: Add an index for frequently queried columns if necessary, e.g., created_at for cleanup jobs
+# Index('idx_llm_cache_created_at', LlmResponseCache.created_at)
