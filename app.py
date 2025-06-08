@@ -338,7 +338,7 @@ def update_conversation_summary(session: models.Session, user_message: str, assi
     try:
         response = client.chat.completions.create(
             # Use a fast and cheap model for this summarization task
-            model="gpt-4o-mini",
+            model="gpt-4.1-mini",
             messages=[
                 {"role": "system", "content": "You are an expert conversation summarizer."},
                 {"role": "user", "content": summarizer_prompt}
@@ -418,10 +418,10 @@ def chat():
         f"{final_prompt}\n"
     ) if best_doc else f"{base_prompt}\n\n{contextual_history}\n\n(No matching document found.)\n---\n{final_prompt}"
 
-    # 5. Call the main LLM (gpt-4o) with only the current user message
+    # 5. Call the main LLM (gpt-4.1) with only the current user message
     try:
         llm_api_response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4.1",
             messages=[
                 ChatCompletionSystemMessageParam(role="system", content=system_prompt),
                 ChatCompletionUserMessageParam(role="user", content=user_message)
