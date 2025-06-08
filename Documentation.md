@@ -208,3 +208,74 @@ The `questions_log.txt` file is no longer used for detailed conversation logging
 -   **Error Logging**: The Flask application uses `app.logger` for logging errors and informational messages, which will typically output to the console where the server is running.
 -   **Security**: The `.env` file containing the API key should never be committed to version control. The `.gitignore` file is configured to prevent this.
 -   **Development vs. Production**: The current setup uses the Flask development server. For production, a more robust WSGI server (like Gunicorn or uWSGI) behind a reverse proxy (like Nginx) would be recommended. Database choice might also change for production (e.g., PostgreSQL).
+
+## 7. Project Architecture Diagram
+
+```mermaid
+graph TD
+    A[User] -- HTTP Request (Message, Lang, SessionID) --> B{Flask Application};
+
+    subgraph Flask Application
+        direction LR
+        B1[index.html Frontend] -. Serves UI .-> A;
+        B -- Routes to --> B2[/api/chat Endpoint];
+        B2 -- Gets/Creates Session --> DB[(SQLite Database)];
+        B2 -- Logs User Message --> DB_Conv[Conversations Table];
+        B2 -- Embed User Query --> OpenAI_Emb[OpenAI API Embeddings];
+        B2 -- Retrieves Docs --> KB[Knowledge Base (.md files)];
+        KB -- Scans & Embeds (on startup/update) --> OpenAI_Emb;
+        KB -- Stores/Retrieves Embeddings --> Cache[embeddings_cache.pkl];
+        B2 -- Constructs Prompt --> OpenAI_Chat[OpenAI API Chat Completions];
+        OpenAI_Chat -- HTML Response --> B2;
+        B2 -- Logs Assistant Response --> DB_Conv;
+        B2 -- Updates Summary (via OpenAI_Chat_Mini) --> DB_Sess[Sessions Table];
+        B2 -- HTTP Response (HTML) --> B1;
+    end
+
+    subgraph Database
+        direction TB
+        DB_Sess[Sessions Table];
+        DB_Conv[Conversations Table];
+    end
+
+    subgraph OpenAI Services
+        direction TB
+        OpenAI_Emb;
+        OpenAI_Chat;
+        OpenAI_Chat_Mini[OpenAI API Chat (Summarization)];
+    end
+
+    DB -- Contains --> DB_Sess;
+    DB -- Contains --> DB_Conv;
+    B2 -- Uses for RAG Context --> Cache;
+    B2 -- Uses for Summarization --> OpenAI_Chat_Mini;
+
+    style User fill:#f9f,stroke:#333,stroke-width:2px;
+    style KB fill:#ccf,stroke:#333,stroke-width:2px;
+    style DB fill:#fcc,stroke:#333,stroke-width:2px;
+    style OpenAI_Services fill:#cfc,stroke:#333,stroke-width:2px;
+    style Cache fill:#lightgrey,stroke:#333,stroke-width:1px;
+```
+
+## Diagram Explanation
+
+This diagram illustrates the architecture of the CreditRobot application. The main components and flow are as follows:
+
+1.  **User Interaction**: The User interacts with the application through the `index.html` frontend. Messages, selected language, and a session ID are sent to the Flask backend.
+2.  **Flask Application (Backend)**:
+    *   The `/api/chat` endpoint processes the user's request.
+    *   It manages user sessions and conversation history stored in an **SQLite Database**. The database has two main tables: `Sessions` (for session data and conversation summaries) and `Conversations` (for individual messages).
+    *   **Knowledge Base Retrieval (RAG)**:
+        *   The application scans `.md` files from language-specific folders (`Description Deutsch/`, `Description English/`, etc.) to build its knowledge base.
+        *   Text from these files is embedded using the **OpenAI Embeddings API**. These embeddings are cached in `embeddings_cache.pkl` for efficiency.
+        *   When a user sends a message, it's embedded, and the most relevant document from the knowledge base is retrieved by comparing embeddings.
+    *   **OpenAI Chat Completions**:
+        *   A detailed prompt is constructed using the system role, conversation summary (from the `Sessions` table), the content of the retrieved document, and the current user message.
+        *   This prompt is sent to the **OpenAI Chat API** (e.g., gpt-4.1) to generate a response.
+        *   A separate, faster OpenAI model (e.g., gpt-4.1-mini) is used to update the conversation summary after each turn.
+    *   The generated HTML response is logged and sent back to the user.
+3.  **OpenAI Services**: The application relies on OpenAI for text embeddings and chat message generation/summarization.
+4.  **Database**: Stores session information, conversation history, and summaries.
+5.  **Knowledge Base & Cache**: Markdown files form the core information source, and their embeddings are cached to speed up retrieval.
+
+The diagram shows the flow of data from the user's request through the backend processing, interaction with OpenAI and the database, and finally the response back to the user.
