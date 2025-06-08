@@ -220,29 +220,29 @@ graph TD
         B1["index.html Frontend"] -. Serves UI .-> A;
         B -- Routes to --> B2["/api/chat Endpoint"];
         B2 -- Gets/Creates Session --> DB[(SQLite Database)];
-        B2 -- Logs User Message --> DB_Conv[Conversations Table];
+        B2 -- Logs User Message --> DB_Conv["Conversations Table"];
         B2 -- Embed User Query --> OpenAI_Emb[OpenAI API Embeddings];
-        B2 -- Retrieves Docs --> KB[Knowledge Base (.md files)];
+        B2 -- Retrieves Docs --> KB["Knowledge Base (.md files)"];
         KB -- Scans & Embeds (on startup/update) --> OpenAI_Emb;
-        KB -- Stores/Retrieves Embeddings --> Cache[embeddings_cache.pkl];
+        KB -- Stores/Retrieves Embeddings --> Cache["embeddings_cache.pkl"];
         B2 -- Constructs Prompt --> OpenAI_Chat[OpenAI API Chat Completions];
         OpenAI_Chat -- HTML Response --> B2;
         B2 -- Logs Assistant Response --> DB_Conv;
-        B2 -- Updates Summary (via OpenAI_Chat_Mini) --> DB_Sess[Sessions Table];
+        B2 -- Updates Summary (via OpenAI_Chat_Mini) --> DB_Sess["Sessions Table"];
         B2 -- HTTP Response (HTML) --> B1;
     end
 
     subgraph Database
         direction TB
-        DB_Sess[Sessions Table];
-        DB_Conv[Conversations Table];
+        DB_Sess["Sessions Table"];
+        DB_Conv["Conversations Table"];
     end
 
     subgraph OpenAI Services
         direction TB
         OpenAI_Emb;
         OpenAI_Chat;
-        OpenAI_Chat_Mini[OpenAI API Chat (Summarization)];
+        OpenAI_Chat_Mini["OpenAI API Chat (Summarization)"];
     end
 
     DB -- Contains --> DB_Sess;
@@ -254,6 +254,7 @@ graph TD
     style KB fill:#ccf,stroke:#333,stroke-width:2px;
     style DB fill:#fcc,stroke:#333,stroke-width:2px;
     style Cache fill:#lightgrey,stroke:#333,stroke-width:1px;
+
 ```
 
 ## Diagram Explanation
