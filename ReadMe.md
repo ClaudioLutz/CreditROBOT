@@ -40,7 +40,7 @@ CreditROBOT is a small chatbot application for Creditreform. It uses a Flask bac
 The application automatically scans the language folders at startup, caches embeddings, and stores conversation data in the database. The `questions_log.txt` file is no longer the primary log for conversations.
 
 ## How it Works
-The chatbot uses a Retrieval Augmented Generation (RAG) approach. It first searches a knowledge base of Markdown documents for information relevant to your query. This retrieved information is then used to help a large language model (LLM) generate a factual and relevant answer.
+The chatbot uses a Retrieval Augmented Generation (RAG) approach. It first searches a knowledge base of Markdown documents for information relevant to your query, selecting multiple relevant sections based on similarity and ensuring their combined size is suitable for context. This retrieved information is then used to help a large language model (LLM) generate a factual and relevant answer.
 To handle multi-turn conversations, the system maintains a session-based memory. A running summary of the conversation is kept and updated with each interaction, providing context to the LLM for more coherent responses over time.
 
 ## Repository layout

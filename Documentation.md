@@ -58,13 +58,18 @@ The following steps outline the process from when a user sends a message to when
         Note: `session.session_id` (the UUID string) is used for `session_uuid` to link to the `sessions` table.
     *   This `user_entry` is added to the current SQLAlchemy database session: `db.session.add(user_entry)`. It is not yet written to the database; it's pending the final commit.
 
-5.  **Retrieval Augmented Generation (RAG) (`retrieve_best_doc` function)**:
-    *   The `user_message` and `user_lang` are passed to `retrieve_best_doc`.
-    *   `compute_embedding(user_message)` is called, which in turn calls the OpenAI embeddings API (e.g., `text-embedding-ada-002`) to get a vector representation of the user's query.
-    *   The function iterates through the globally loaded `DOCS` list (which contains pre-embedded knowledge base documents, filtered by `user_lang`).
-    *   `cosine_similarity(query_emb, doc["embedding"])` calculates the similarity between the user query embedding and each document embedding.
-    *   The document with the highest similarity score (above a certain threshold, implicitly) is selected as `best_doc`.
-    *   Returns `best_doc` (a dictionary containing filepath, content, etc.) and `score`.
+5.  **Retrieval Augmented Generation (RAG) (`retrieve_relevant_docs` function)**:
+    *   The `user_message` and `user_lang` are passed to `retrieve_relevant_docs` (along with default values for `top_n=3` and `max_total_chars=5000` as seen in the `/api/chat` route).
+    *   `compute_embedding(user_message)` is called to get a vector representation of the user's query.
+    *   The function filters the globally loaded `DOCS` list by `user_lang` if a language is specified.
+    *   It then iterates through the (filtered) `DOCS`. For each document, `cosine_similarity(query_emb, doc["embedding"])` calculates the similarity.
+    *   All documents (with their scores) are sorted by similarity score in descending order.
+    *   The function then selects the top documents based on two criteria:
+        *   `top_n`: It will select at most this many documents (e.g., default is 3).
+        *   `max_total_chars`: The combined character count of the content of all selected documents must not exceed this limit (e.g., default is 5000).
+    *   It iterates through the sorted list, adding documents to the `selected_docs` list if they fit within the `top_n` count and their content, when added to the already selected documents' content, does not cause the `current_total_chars` to exceed `max_total_chars`.
+    *   This means if a highly similar document is too large and would exceed `max_total_chars`, it might be skipped in favor of a less similar but smaller document that fits.
+    *   Returns a list of `selected_docs`, where each item is a dictionary containing the document's original data plus its similarity `score`.
 
 6.  **Prompt Construction for Main LLM**:
     *   `load_base_prompt(language)` and `load_final_prompt(language)` fetch language-specific instruction templates.
@@ -142,7 +147,7 @@ The application uses a SQLite database (managed by SQLAlchemy and Flask-Migrate)
         *   Stores document content, metadata, and embeddings in the global `DOCS` list.
     *   **`compute_embedding(text, model)`**: Helper function to get text embeddings from OpenAI.
     *   **`cosine_similarity(a, b)`**: Helper function to calculate cosine similarity between two vectors.
-    *   **`retrieve_best_doc(user_query, user_lang)`**: Implements the retrieval part of RAG.
+    *   **`retrieve_relevant_docs(user_query, user_lang, top_n, max_total_chars)`**: Implements the retrieval part of RAG. It embeds the user query, filters documents by language, calculates cosine similarity, and then selects a list of the most relevant documents. The selection is constrained by `top_n` (maximum number of documents to return) and `max_total_chars` (the maximum combined character count of the content of these documents). Documents are prioritized by similarity, but larger documents might be skipped if they exceed character limits, potentially allowing smaller, less similar documents to be selected if they fit.
     *   **`load_base_prompt(language)` & `load_final_prompt(language)`**: Return language-specific prompt templates.
     *   **`get_or_create_session(session_id)`**: Manages session persistence (described in Lifecycle).
     *   **`update_conversation_summary(session, user_message, assistant_message)`**: Updates the conversation summary (described in Lifecycle).
