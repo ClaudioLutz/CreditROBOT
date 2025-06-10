@@ -18,15 +18,19 @@ The Flask development server is not suitable for production.
 
 ## 3. (Severity: High) Database Management
 The current SQLite database (`instance/creditrobot.db`) needs careful consideration for production.
-- **Option A (Volume Mounting - for simpler setups):**
+- **Option A (Volume Mounting - for simpler SQLite setups):**
     - Mount a Docker volume to persist the SQLite database file outside the container. This ensures data isn't lost when the container stops or is removed.
     - Example: `docker run -v /path/on/host/db:/app/instance ...`
-- **Option B (Dedicated Database Container - recommended for scalability):**
+- **Option B (Dedicated Database Container - for PostgreSQL/MySQL):**
     - Use a separate Docker container for a database like PostgreSQL or MySQL.
     - Update the application to connect to this database (connection strings via environment variables).
     - Use Docker Compose to manage multi-container applications.
-- **Option C (Managed Database Service):**
-    - Use a cloud-provider's managed database service (e.g., AWS RDS, Google Cloud SQL).
+- **Option C (Dedicated Database Container - for MS SQL Server):**
+    - Use a separate Docker container for Microsoft SQL Server.
+    - Update the application to connect, including installing necessary ODBC drivers and configuring connection strings via environment variables.
+    - Use Docker Compose to manage multi-container applications. See `03b_Database_Management_MSSQL.md` for a detailed guide.
+- **Option D (Managed Database Service):**
+    - Use a cloud-provider's managed database service (e.g., AWS RDS, Google Cloud SQL, Azure SQL Database).
     - Configure the application to connect to the managed database (connection strings via environment variables).
 - **Backups:** Implement a regular backup strategy for the production database.
 
