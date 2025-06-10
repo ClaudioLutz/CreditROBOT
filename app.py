@@ -156,7 +156,8 @@ def scan_language_folders():
                     "language": lang_code,
                     "filepath": file_path,
                     "content": text_content,
-                    "embedding": embedding
+                    "embedding": embedding,
+                    "char_count": len(text_content)  # Added char_count
                 })
             else:
                 print(f"[WARN] Embedding is None for {file_path}, not adding to docs or cache.")
@@ -174,69 +175,121 @@ def scan_language_folders():
     DOCS = local_docs
     # No return needed as DOCS is global, but good practice if it were not
 
-def retrieve_best_doc(user_query, user_lang=None):
+def retrieve_relevant_docs(user_query, user_lang=None, top_n=5, max_total_chars=8000):
     """
-    1) Embeds user_query
-    2) Optionally filters DOCS by user_lang
-    3) Calculates cosine similarity to each doc
-    4) Returns the best doc + similarity score
+    1) Embeds user_query.
+    2) Optionally filters DOCS by user_lang.
+    3) Calculates cosine similarity to each doc.
+    4) Sorts docs by similarity.
+    5) Selects docs based on top_n and max_total_chars constraints.
+    6) Returns a list of selected documents, each including its score.
     """
     query_emb = compute_embedding(user_query)
 
-    best_doc = None
-    best_score = -1
-
+    docs_with_scores = []
     for doc in DOCS:
-        # If you want cross-lingual retrieval, remove the language check:
         if user_lang and (doc["language"] != user_lang):
+            continue
+        
+        # Ensure doc has 'embedding' and 'char_count'
+        if "embedding" not in doc or "char_count" not in doc:
+            print(f"[WARN] Document {doc.get('filepath', 'Unknown')} is missing 'embedding' or 'char_count'. Skipping.")
             continue
 
         score = cosine_similarity(query_emb, doc["embedding"])
-        if score > best_score:
-            best_score = score
-            best_doc = doc
+        docs_with_scores.append({
+            **doc,  # Unpack all existing doc info (filepath, content, char_count, etc.)
+            "score": score
+        })
+        
+    # Sort by score descending
+    docs_with_scores.sort(key=lambda x: x["score"], reverse=True)
+    
+    selected_docs = []
+    current_total_chars = 0
+    
+    for doc_with_score in docs_with_scores:
+        if len(selected_docs) >= top_n:
+            break  # Reached max number of documents
 
-    return best_doc, best_score
+        # Check if adding this document would exceed the character limit
+        if (current_total_chars + doc_with_score['char_count']) <= max_total_chars:
+            selected_docs.append(doc_with_score)
+            current_total_chars += doc_with_score['char_count']
+        # If it doesn't fit, we skip it and try the next one,
+        # as a less similar but smaller document might still fit.
+            
+    return selected_docs
 
 def load_base_prompt(language='de'):
-    """Return a short system prompt in the user's language."""
+    """Return a short system prompt in the user's language with instructions on context usage."""
     if language == 'de':
         return """
 Antworte auf Deutsch.
 
-**Rolle:**  
-Du bist ein hochspezialisierter Assistent der Creditreform, der präzise und kompetente Antworten zu Bonitätsinformationen, Inkasso und weiteren Creditreform-Dienstleistungen liefert.
+**Rolle:**
+Du bist ein hochspezialisierter Assistent der Creditreform. Deine Aufgabe ist es, präzise und kompetente Antworten zu liefern.
 
-Hier sind Kontext-Infos aus dem passenden Dokument:
-        """
+**Kontext-Anleitung:**
+Du erhältst unten möglicherweise zwei separate Kontextabschnitte:
+1.  `ZUSAMMENFASSUNG DES BISHERIGEN GESPRÄCHS`: Dies ist eine Zusammenfassung eurer vorherigen Interaktionen.
+2.  `RELEVANTE INFORMATIONEN AUS WISSENSDOKUMENTEN`: Dies sind Auszüge aus Wissensartikeln, die für die aktuelle Anfrage relevant sein könnten.
+
+**WIE DU ANTWORTEN SOLLST:**
+-   Wenn der Nutzer explizit nach dem bisherigen Gesprächsverlauf fragt (z.B. "Worüber haben wir gesprochen?", "Was war meine letzte Frage?"), dann antworte **primär** basierend auf der `ZUSAMMENFASSUNG DES BISHERIGEN GESPRÄCHS`. Die Wissensdokumente sollten in diesem Fall eine untergeordnete Rolle spielen oder ignoriert werden, es sei denn, sie sind direkt Teil der erinnerten Konversation.
+-   Für alle anderen Fachfragen oder allgemeinen Anfragen, nutze primär die `RELEVANTE INFORMATIONEN AUS WISSENSDOKUMENTEN`, um deine Antwort zu formulieren. Die Gesprächszusammenfassung kann dir helfen, den breiteren Kontext der Nutzeranliegen zu verstehen, aber die Fakten für die Antwort sollten hauptsächlich aus den Wissensdokumenten stammen.
+"""
     elif language == 'fr':
         return """
 Réponds en français.
-Rôle :
-Tu es un assistant hautement spécialisé de Creditreform, fournissant des réponses précises et compétentes concernant les informations de solvabilité, le recouvrement de créances et d'autres services proposés par Creditreform.
 
-Voici des informations contextuelles issues du document correspondant :        
-        """    
+**Rôle :**
+Tu es un assistant hautement spécialisé de Creditreform. Ta tâche est de fournir des réponses précises et compétentes.
+
+**Instructions sur le contexte :**
+Tu pourrais recevoir ci-dessous deux sections de contexte distinctes :
+1.  `RÉSUMÉ DE LA CONVERSATION PRÉCÉDENTE` : Ceci est un résumé de vos interactions précédentes.
+2.  `INFORMATIONS PERTINENTES DES DOCUMENTS DE CONNAISSANCE` : Ce sont des extraits d'articles de connaissance qui pourraient être pertinents pour la requête actuelle.
+
+**COMMENT RÉPONDRE :**
+-   Si l'utilisateur demande explicitement le déroulement de la conversation précédente (par exemple, "De quoi avons-nous parlé ?", "Quelle était ma dernière question ?"), réponds **principalement** en te basant sur le `RÉSUMÉ DE LA CONVERSATION PRÉCÉDENTE`. Les documents de connaissance devraient jouer un rôle secondaire dans ce cas ou être ignorés, à moins qu'ils ne fassent directement partie de la conversation mémorisée.
+-   Pour toutes les autres questions techniques ou générales, utilise principalement les `INFORMATIONS PERTINENTES DES DOCUMENTS DE CONNAISSANCE` pour formuler ta réponse. Le résumé de la conversation peut t'aider à comprendre le contexte plus large des préoccupations de l'utilisateur, mais les faits pour la réponse devraient provenir principalement des documents de connaissance.
+"""
     elif language == 'it':
         return """
 Rispondi in italiano.
-Ruolo:
-Sei un assistente altamente specializzato di Creditreform, in grado di fornire risposte precise e competenti riguardo alle informazioni sulla solvibilità, al recupero crediti e ad altri servizi offerti da Creditreform.
 
-Ecco le informazioni contestuali tratte dal documento corrispondente:
-        """
+**Ruolo:**
+Sei un assistente altamente specializzato di Creditreform. Il tuo compito è fornire risposte precise ed esperte.
+
+**Istruzioni sul contesto:**
+Potresti ricevere di seguito due sezioni di contesto separate:
+1.  `RIASSUNTO DELLA CONVERSAZIONE PRECEDENTE`: Questo è un riassunto delle vostre interazioni precedenti.
+2.  `INFORMAZIONI RILEVANTI DAI DOCUMENTI DI CONOSCENZA`: Questi sono estratti da articoli di conoscenza che potrebbero essere rilevanti per la richiesta attuale.
+
+**COME RISPONDERE:**
+-   Se l'utente chiede esplicitamente dello storico della conversazione precedente (ad esempio, "Di cosa abbiamo parlato?", "Qual è stata la mia ultima domanda?"), rispondi **principalmente** basandoti sul `RIASSUNTO DELLA CONVERSAZIONE PRECEDENTE`. I documenti di conoscenza dovrebbero avere un ruolo secondario in questo caso o essere ignorati, a meno che non facciano direttamente parte della conversazione memorizzata.
+-   Per tutte le altre domande tecniche o generali, utilizza principalmente le `INFORMAZIONI RILEVANTI DAI DOCUMENTI DI CONOSCENZA` per formulare la tua risposta. Il riassunto della conversazione può aiutarti a comprendere il contesto più ampio delle preoccupazioni dell'utente, ma i fatti per la risposta dovrebbero provenire principalmente dai documenti di conoscenza.
+"""
     elif language == 'en':
         return """
 Respond in English.
 
-**Role:**  
-You are a highly-specialised Creditreform assistant who provides precise, expert answers about creditworthiness information, debt-collection and other Creditreform services.
+**Role:**
+You are a highly-specialised Creditreform assistant. Your task is to provide precise and expert answers.
 
-Here is contextual information taken from the relevant document:
-    """
+**Context Instructions:**
+You may receive two separate context sections below:
+1.  `SUMMARY OF THE PREVIOUS CONVERSATION`: This is a summary of your previous interactions.
+2.  `RELEVANT INFORMATION FROM KNOWLEDGE DOCUMENTS`: These are excerpts from knowledge articles that might be relevant to the current query.
+
+**HOW YOU SHOULD RESPOND:**
+-   If the user explicitly asks about the previous course of the conversation (e.g., "What did we talk about?", "What was my last question?"), then respond **primarily** based on the `SUMMARY OF THE PREVIOUS CONVERSATION`. The knowledge documents should play a secondary role in this case or be ignored, unless they are directly part of the remembered conversation.
+-   For all other technical or general inquiries, primarily use the `RELEVANT INFORMATION FROM KNOWLEDGE DOCUMENTS` to formulate your answer. The conversation summary can help you understand the broader context of the user's concerns, but the facts for the answer should mainly come from the knowledge documents.
+"""
     else:
         # fallback if unknown
-        return "You are a Creditreform assistant. Please answer in HTML."
+        return "You are a Creditreform assistant. Please answer in HTML. You may receive context from conversation history or documents."
     
 
 def load_final_prompt(language='de'):
@@ -316,7 +369,8 @@ def get_or_create_session(session_id: str) -> models.Session:
 def update_conversation_summary(session: models.Session, user_message: str, assistant_message: str):
     """Updates the session's running summary using a fast LLM."""
     
-    current_summary = session.conversation_summary
+    # Use a placeholder if the current summary is None or empty
+    current_summary_for_prompt = session.conversation_summary if session.conversation_summary and session.conversation_summary.strip() else "(No previous summary)"
     
     # This is a highly specific prompt for the summarization task
     summarizer_prompt = f"""
@@ -326,7 +380,7 @@ def update_conversation_summary(session: models.Session, user_message: str, assi
     The user is asking about Creditreform.
 
     PREVIOUS SUMMARY:
-    "{current_summary}"
+    "{current_summary_for_prompt}"
 
     LATEST INTERACTION:
     User: "{user_message}"
@@ -349,7 +403,8 @@ def update_conversation_summary(session: models.Session, user_message: str, assi
         new_summary = response.choices[0].message.content
         
         # Update the summary on the session object in memory
-        session.conversation_summary = new_summary.strip() if new_summary else current_summary
+        # Fallback to the original session.conversation_summary if new_summary is empty
+        session.conversation_summary = new_summary.strip() if new_summary and new_summary.strip() else session.conversation_summary
         # The calling function will be responsible for the final db.session.commit()
         
     except Exception as e:
@@ -400,23 +455,55 @@ def chat():
     user_entry = models.Conversation(session_uuid=session.session_id, role='user', language=language, content=user_message)
     db.session.add(user_entry)
 
-    # 3. Perform RAG retrieval as before
-    best_doc, score = retrieve_best_doc(user_message, user_lang=language)
+    # 3. Perform RAG retrieval
+    # Retrieve top N relevant documents, considering character limits
+    retrieved_docs = retrieve_relevant_docs(user_message, user_lang=language, top_n=3, max_total_chars=5000)
 
-    # 4. Construct the main prompt using the SUMMARY, not the full history
+    # 4. Construct the main prompt using the SUMMARY, and new multi-doc context
     base_prompt = load_base_prompt(language)
     final_prompt = load_final_prompt(language)
     
+    # Define language-specific headings for context sections
+    summary_heading = {
+        'de': "ZUSAMMENFASSUNG DES BISHERIGEN GESPRÄCHS",
+        'fr': "RÉSUMÉ DE LA CONVERSATION PRÉCÉDENTE",
+        'it': "RIASSUNTO DELLA CONVERSAZIONE PRECEDENTE",
+        'en': "SUMMARY OF THE PREVIOUS CONVERSATION"
+    }.get(language, "SUMMARY OF THE PREVIOUS CONVERSATION")
+
+    kb_heading = {
+        'de': "RELEVANTE INFORMATIONEN AUS WISSENSDOKUMENTEN",
+        'fr': "INFORMATIONS PERTINENTES DES DOCUMENTS DE CONNAISSANCE",
+        'it': "INFORMAZIONI RILEVANTI DAI DOCUMENTI DI CONOSCENZA",
+        'en': "RELEVANT INFORMATION FROM KNOWLEDGE DOCUMENTS"
+    }.get(language, "RELEVANT INFORMATION FROM KNOWLEDGE DOCUMENTS")
+
     # Inject the conversation summary into the prompt
-    contextual_history = f"CONTEXT FROM PREVIOUSLY IN THE CONVERSATION:\n{session.conversation_summary}"
+    if session.conversation_summary and session.conversation_summary.strip():
+        contextual_history_content = session.conversation_summary
+    else:
+        contextual_history_content = "(No summary yet for this session.)"
+    contextual_history = f"{summary_heading}:\n{contextual_history_content}"
     
+    knowledge_base_section = ""
+    if retrieved_docs:
+        knowledge_base_content = ""
+        for doc in retrieved_docs:
+            knowledge_base_content += f"---\nSource: {doc['filepath']}\nContent:\n{doc['content']}\n"
+        # Remove the last "---" if it exists and add a final one or ensure proper formatting
+        if knowledge_base_content.endswith("---\n"):
+             knowledge_base_content = knowledge_base_content[:-4] # remove last "---" + newline
+        knowledge_base_content += "---" # Add a final separator
+        knowledge_base_section = f"\n{kb_heading}:\n{knowledge_base_content}\n"
+    else:
+        knowledge_base_section = f"\n{kb_heading}:\n(No matching document found.)\n---\n"
+        
     system_prompt = (
         f"{base_prompt}\n\n"
-        f"{contextual_history}\n\n"
-        f"CONTEXT FROM KNOWLEDGE BASE DOCUMENT '{best_doc['filepath']}':\n{best_doc['content']}\n"
-        f"---\n"
+        f"{contextual_history}\n" # Removed extra \n as kb_section will add one if present
+        f"{knowledge_base_section}\n" 
         f"{final_prompt}\n"
-    ) if best_doc else f"{base_prompt}\n\n{contextual_history}\n\n(No matching document found.)\n---\n{final_prompt}"
+    )
 
     # 5. Call the main LLM (gpt-4.1) with only the current user message
     try:
@@ -436,13 +523,17 @@ def chat():
         bot_response_content = "I am sorry, but I encountered an error. Please try again."
     
     # 6. Persist the assistant message turn (don't commit yet)
+    # Determine doc_path and similarity for logging (using the top document from retrieved_docs)
+    log_doc_path = retrieved_docs[0]['filepath'] if retrieved_docs else None
+    log_similarity = retrieved_docs[0]['score'] if retrieved_docs else None
+
     assistant_entry = models.Conversation(
         session_uuid=session.session_id,
         role='assistant',
         language=language,
         content=bot_response_content,
-        doc_path=best_doc['filepath'] if best_doc else None,
-        similarity=score if best_doc else None
+        doc_path=log_doc_path,
+        similarity=log_similarity
     )
     db.session.add(assistant_entry)
 
