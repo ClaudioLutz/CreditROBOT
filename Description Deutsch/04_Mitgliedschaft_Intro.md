@@ -1,7 +1,7 @@
 # Mitgliedschaft bei Creditreform
 Deutsch [Mitgliedschafts Formular](https://www.creditreform.ch/mitgliedschaft/mitglied-werden/formular-mitglied-werden) (Sie werden im Anschluss von einem unserer Spezialisten kontaktiert)
 English [form-become-member](https://www.creditreform.ch/en/membership/become-member/form-become-member)
-- Mitglieder profitieren von Spezialtarifen im Inkasso und günstigeren Konditionen beim Bezug von Bonitäts-Auskünften.  
+- Mitglieder profitieren von Spezialtarifen im Inkasso und günstigeren Konditionen beim Bezug von Bonitäts-Auskünften.
 - Creditreform ist die grösste Gläubigerschutzorganisation der Schweiz.
 
 Creditreform bietet seinen Mitgliedern umfassende Dienstleistungen, um Risiken durch Zahlungsausfälle zu minimieren und deren wirtschaftlichen Erfolg langfristig zu sichern. Mitglieder erhalten Zugang zu aktuellen Bonitätsauskünften, die auf Daten aus Handelsregistereinträgen, Betreibungsämtern, Einwohnerämtern und zusätzlichen Recherchen basieren. Über eine gemeinsame Online-Datenbank tauschen mehr als 12'000 Mitglieder und Kunden Zahlungserfahrungen und Inkassofälle aus, wodurch frühzeitig schlechte Zahler erkannt und finanzielle Verluste vermieden werden.
@@ -10,16 +10,16 @@ Creditreform verfügt über sieben eigenständige regionale Büros in der Schwei
 
 Die Mitgliedschaft umfasst verschiedene Kernleistungen:
 
-1. **Akquisition und Prävention:**  
+1. **Akquisition und Prävention:**
    Creditreform unterstützt Mitglieder bei der Überprüfung der Zahlungsfähigkeit von Neukunden und überwacht kontinuierlich bestehende Kreditlimiten. Bei Veränderungen in der Zahlungsweise oder steigendem Kundenumsatz werden Bonitätsauskünfte aktualisiert, um Verluste effektiv zu minimieren.
 
-2. **Realisation (Inkasso):**  
+2. **Realisation (Inkasso):**
    Mitglieder profitieren von professionellem vorrechtlichen, rechtlichen und gerichtlichen Inkasso sowie der Verlustscheinrealisierung zu Spezialtarifen. Zusätzlich gibt es exklusiv für Mitglieder eine Inkassoversicherung.
 
-3. **Analyse:**  
+3. **Analyse:**
    Die Kundendatenanalyse zeigt potenzielle Risiken auf, ermöglicht präventive Maßnahmen und unterstützt somit die Sicherung der Unternehmensliquidität.
 
-4. **Integration:**  
+4. **Integration:**
    Creditreform bietet individuelle Schnittstellen zur Systemanbindung, welche eine nahtlose Integration in bestehende Unternehmenssysteme ermöglichen. Dadurch wird ein effizientes und ganzheitliches Kunden- und Kreditrisikomanagement gefördert.
 
 Die konkreten Vorteile einer Mitgliedschaft beinhalten unter anderem:
